@@ -11,12 +11,53 @@
 
 + `__proto__`属性和`prototype`属性都是一个对象[代码演示][1]
 
+接下来我们来使用一些代码来解释上面所说的那些要点:
+```javascript
+    // 这是一个普通函数,我们把它用来当做构造函数,也当做一个[父类]
+    function Car(name) {
+        this.name = name;
+    }
+    Car.prototype.introduce = function() {
+      console.log('[From Car.prototype.introduce] ' + 'Hello, my name is: ' + this.name);
+    };
+    
+    var car = new Car('porsche');
+    console.log(car.name); // porsche
+    car.introduce(); // [From Car.prototype.introduce] Hello, my name is: porsche
+    
+    
+    // 我们开始构建另外一个函数,我们把这个函数当做一个[子类],暂时这么说.
+    function MiniCar(name, color) {
+        this.name = name;
+        this.color = color;
+    
+        this.getColor = function() {
+            console.log('My color is: ' + this.color);
+        }
+    }
+    MiniCar.prototype = new Car();
+    
+    var miniCar = new MiniCar('benz', 'black');
+    console.log('\n');
+    console.log('name: ' + miniCar.name + ';color: ' + miniCar.color); // name: benz;color: black
+    miniCar.introduce(); // [From Car.prototype.introduce] Hello, my name is: benz
+    miniCar.getColor(); // My color is: black
+    
+    // 如果使用A表示一个构造函数,那么 (new A()).__proto__ === A.prototype
+    console.log((new MiniCar()).__proto__ === MiniCar.prototype); // true
+    // 如果使用a表示A的一个示例的话,那么 a.__proto__ === A.prototype
+    console.log(miniCar.__proto__ === MiniCar.prototype); // true
+    // 一个对象是没有prototype属性的
+    console.log(miniCar.prototype === undefined); // true
+```
+
 
 
 ------
 参考的文章或者问答:
 + [How does __proto__ differ from constructor.prototype?](http://stackoverflow.com/questions/650764/how-does-proto-differ-from-constructor-prototype)
 + [__proto__ VS. prototype in JavaScript](http://stackoverflow.com/questions/9959727/proto-vs-prototype-in-javascript)
++ [Inheritance and the prototype chain](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Inheritance_and_the_prototype_chain)
 + [JavaScript difference between __proto__ and prototype](https://coderwall.com/p/j1khtg/javascript-difference-between-__proto__-and-prototype)
 + [Understanding "Prototypes" in JavaScript](http://yehudakatz.com/2011/08/12/understanding-prototypes-in-javascript/)
 + [JavaScript Prototype in Plain Language](http://javascriptissexy.com/javascript-prototype-in-plain-detailed-language)
