@@ -104,6 +104,7 @@
   这个属性指向`Car.prototype`,如此一来这个伪继承就实现了.**然后我们将这个对象(c)的索引赋值给`miniCar`,所以通过`miniCar`可以操作对象(c).
   ![8](http://angular.angular-china.org/de786c99-ff50-42d1-9240-972193ccad89.jpg)
 + 然后接下来的一切应该都顺理成章了:joy:.
+  ![9](http://angular.angular-china.org/b162d3c2-be19-46f9-99e0-c6c6a6d6f085.jpg)
 
 
 
