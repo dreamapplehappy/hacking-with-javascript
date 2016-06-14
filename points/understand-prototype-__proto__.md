@@ -92,7 +92,9 @@
   ![5](http://angular.angular-china.org/b285b41a-dfbe-4873-be5c-b1ca1af5461b.jpg)
 + 接下来我们输出了这个对象的名字,然后调用了这个对象(的构造函数的原型上的)的`introduce`方法.输出的结果如下图:
   ![6](http://angular.angular-china.org/85bec1c9-bf2a-4c7b-bdbc-4b94a886a6b3.jpg)
-+   
++ 然后我们有定义了一个函数`MiniCar`,我们把它当做`Car`(父类)的一个`子类`;
+  我使用代码`MiniCar.prototype = new Car()`来实现这个功能,这段代码更值得好好分析一下.
+  ![7](http://angular.angular-china.org/a6320832-aee7-484a-9e8c-3b3e19994223.jpg)
 
 
 
