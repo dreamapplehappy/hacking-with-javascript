@@ -82,9 +82,17 @@
 + 然后我们给Car的原型上添加了一个方法`introduce`,如下图所示:
   ![2](http://angular.angular-china.org/cbe213bb-6f1e-4fc5-84d4-fa082bf50a89.jpg)
 + 接下来`var car = new Car('porsche')`这一行代码可不像它看起来那样,它内部的实现还是有许多值得玩味的;
-  首先,函数`Car`创建了一个新的对象(a),这个对象有一个隐藏的属性`__proto__`,这个属性和`Car`的原型都指向同一个对象.
+  首先,函数`Car`创建了一个新的对象(a),**这个对象有一个隐藏的属性`__proto__`,这个属性和`Car`的原型都指向同一个对象.**
   然后`Car`函数内部的`this`指向哪个新创建的对象(a).如下图所示:
   ![3](http://angular.angular-china.org/6441a0ee-2acd-4667-82b7-8d8a7b57f188.jpg)
++ 然后我们给这个对象添加了一个属性`name`,并且为其赋值.**还要注意的一点是,我们这个`Car`函数是有返回值的,虽然没有使用`return`关键字
+  把这个值显式的返回**,这个返回值是一个引用,然后变量`car`就可以用来操作那个对象了(a).
+  ![4](http://angular.angular-china.org/0d7b4f2a-8261-4b2d-8d24-cf4383281811.jpg)
++ 然后上面的语句运行完之后,场面上是下图这个样子:
+  ![5](http://angular.angular-china.org/b285b41a-dfbe-4873-be5c-b1ca1af5461b.jpg)
++ 接下来我们输出了这个对象的名字,然后调用了这个对象(的构造函数的原型上的)的`introduce`方法.输出的结果如下图:
+  ![6](http://angular.angular-china.org/85bec1c9-bf2a-4c7b-bdbc-4b94a886a6b3.jpg)
++   
 
 
 
@@ -94,6 +102,8 @@
 `var car = new Car('porsche');`别看这一行简单的代码,内部还是有很多值得玩味的.
 
 首先,我们
+
+
 
 
 
