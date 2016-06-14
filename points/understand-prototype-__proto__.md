@@ -1,4 +1,4 @@
-## 掌握JavaScript的`prototype`和`__proto__`
+## 理解JavaScript的`prototype`和`__proto__`
 
 > 这篇文章的的目的试图通过最简单的表述,让大家理解`prototype`和`__proto__`
 
