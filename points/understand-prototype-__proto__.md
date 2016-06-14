@@ -95,18 +95,15 @@
 + 然后我们有定义了一个函数`MiniCar`,我们把它当做`Car`(父类)的一个`子类`;
   我使用代码`MiniCar.prototype = new Car()`来实现这个功能,这段代码更值得好好分析一下.
   ![7](http://angular.angular-china.org/a6320832-aee7-484a-9e8c-3b3e19994223.jpg)
-
-
-
-
-我们首先创建了一个`Car`函数,我们把它用作父类,然后我们在它的原型(`prototype`)上,定义了一个`introduce`函数,
-首先要明白,所谓`原型`指的就是函数的`prototype`属性,这个`prototype`是一个对象;后来我们使用了这个方法创建了一个父类的实例,
-`var car = new Car('porsche');`别看这一行简单的代码,内部还是有很多值得玩味的.
-
-首先,我们
-
-
-
+  首先如上图所示,`MiniCar`这个函数的`prototype`是函数`Car`使用`new`关键字创建的一个对象(b),
+  **所以`MiniCar`的实例具有这个对象(b)能够使用的任何属性和方法**.
++ 让我们更进一步吧,这一步我们开始运行`var miniCar = new MiniCar('benz', 'black')`这段代码,
+  首先我们先要运行函数`MiniCar`函数,所以通过`new`操作,我们新创建了一个对象(c),我们首先给这个对象
+  添加了了两个属性,分别是`name`和`color`,然后分别赋值`benz`和`black`,*其实我们可以只添加一个属性,因为`name`属性在`Car`上是已经存在的.*
+  我们还给它添加了一个`getColor`方法,**它的`__proto__`属性指向`MiniCar.prototype`, 而`MiniCar.prototype`是一个对象,这个对象也有一个`__proto__`属性,
+  这个属性指向`Car.prototype`,如此一来这个伪继承就实现了.**然后我们将这个对象(c)的索引赋值给`miniCar`,所以通过`miniCar`可以操作对象(c).
+  ![8](http://angular.angular-china.org/de786c99-ff50-42d1-9240-972193ccad89.jpg)
++ 然后接下来的一切应该都顺理成章了:joy:.
 
 
 
