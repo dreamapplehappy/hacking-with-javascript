@@ -12,7 +12,7 @@
   这种情况下我们代码的**内存占用**就比较小.
 + **在实际的应用中,这两种方法往往是结合使用的;所以我们要首先了解我们需要的是什么,然后再去选择如何使用.**
 
-我们还是根据下面的代码来说明一下这些要点吧,下面是代码部分:
+我们还是根据下面的代码来说明一下这些要点吧,下面是[代码部分][2]:
 ```javascript
 // 构造函数A
 function A(name) {
@@ -115,6 +115,9 @@ Person.prototype.getProfile = function() {
 + [Use of 'prototype' vs. 'this' in JavaScript?](http://stackoverflow.com/questions/310870/use-of-prototype-vs-this-in-javascript)
 + [Advantages of using prototype, vs defining methods straight in the constructor? [duplicate]](http://stackoverflow.com/questions/4508313/advantages-of-using-prototype-vs-defining-methods-straight-in-the-constructor)
 
+
+[2]:
+http://pythontutor.com/visualize.html#code=//+%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0A%0Afunction+A%28name%29+%7B%0A++++this.name+=+name+%7C%7C+%27a%27;%0A++++this.sayHello+=+function%28%29+%7B%0A++++++++console.log%28%27Hello,+my+name+is:+%27+++this.name%29;%0A++++%7D%0A%7D%0A%0A//+%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0B%0Afunction+B%28name%29+%7B%0A++++this.name+=+name+%7C%7C+%27b%27;%0A%7D%0AB.prototype.sayHello+=+function%28%29+%7B%0A++++console.log%28%27Hello,+my+name+is:+%27+++this.name%29;%0A%7D;%0A%0Avar+a1+=+new+A%28%27a1%27%29;%0Avar+a2+=+new+A%28%27a2%27%29;%0Aa1.sayHello%28%29;%0Aa2.sayHello%28%29;%0A%0Avar+b1+=+new+B%28%27b1%27%29;%0Avar+b2+=+new+B%28%27b2%27%29;%0Ab1.sayHello%28%29;%0Ab2.sayHello%28%29;&mode=display&origin=opt-frontend.js&cumulative=false&heapPrimitives=false&textReferences=false&py=js&rawInputLstJSON=%5B%5D&curInstr=27
 ---
 
 1.使用`prototype`方法小心 ,改变所有 也是优点
