@@ -53,13 +53,56 @@ b2.sayHello();
 **定义在构造函数内部的方法,会在它的每一个实例上都克隆这个方法;定义在构造函数的`prototype`属性上的方法会让它的所有示例都共享这个方法,但是不会在每个实例的内部重新定义这个方法.**
 **如果我们的应用需要创建很多新的对象,并且这些对象还有许多的方法,为了节省内存,我们建议把这些方法都定义在构造函数的`prototype`属性上**
 
+当然,在某些情况下,我们需要将某些方法定义在构造函数中,这种情况一般是因为我们需要**访问构造函数内部的私有变量**.
+
+
+下面我们举一个两者结合的例子,代码如下:
+```javascript
+function Person(name, family) {
+    this.name = name;
+    this.family = family;
+    
+    var records = [{type: "in", amount: 0}];
+
+    this.addTransaction = function(trans) {
+        if(trans.hasOwnProperty("type") && trans.hasOwnProperty("amount")) {
+           records.push(trans);
+        }
+    }
+
+    this.balance = function() {
+       var total = 0;
+
+       records.forEach(function(record) {
+           if(record.type === "in") {
+             total += record.amount;
+           }
+           else {
+             total -= record.amount;
+           }
+       });
+    
+        return total;
+    };
+};
+
+Person.prototype.getFull = function() {
+    return this.name + " " + this.family;
+};
+
+Person.prototype.getProfile = function() {
+     return this.getFull() + ", total balance: " + this.balance();
+};
+```
 
 
 
 
 
 
-参考的文章或者回答:
+
+
+参考的文章或者问答:
 + [Methods Within Constructor vs Prototype in Javascript](http://thecodeship.com/web-development/methods-within-constructor-vs-prototype-in-javascript/ )
 + [Use of 'prototype' vs. 'this' in JavaScript?](http://stackoverflow.com/questions/310870/use-of-prototype-vs-this-in-javascript)
 + [Advantages of using prototype, vs defining methods straight in the constructor? [duplicate]](http://stackoverflow.com/questions/4508313/advantages-of-using-prototype-vs-defining-methods-straight-in-the-constructor)
