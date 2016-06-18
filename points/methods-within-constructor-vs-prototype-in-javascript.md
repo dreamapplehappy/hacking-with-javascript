@@ -103,11 +103,32 @@ Person.prototype.getProfile = function() {
 
 
 
-
-
-
-
-
+另外,需要注意的一些地方:
+ + 首先如果是在函数的`prototype`属性上定义方法的话,要牢记一点,如果你改变某个方法,那么由这个构造函数产生的所有对象的那个方法都会被改变.
+ + 还有一点就是变量提升的问题,我们可以稍微的看一下下面的代码:
+   ```javascript
+   func1(); // 这里会报错,因为在函数执行的时候,func1还没有被赋值. error: func1 is not a function
+   var func1 = function() {
+       console.log('func1');
+   };
+   
+   func2(); // 这个会被正确执行,因为函数的声明会被提升.
+   function func2() {
+       console.log('func2');
+   }
+   ```
+ + 关于对象序列化的问题.定义在函数的`prototype`上的属性不会被序列化,可以看下面的代码:
+   ```javascript
+   function A(name) {
+       this.name = name;
+   }
+   A.prototype.sayWhat = 'say what...';
+   
+   var a = new A('dreamapple');
+   console.log(JSON.stringify(a));
+   ```
+   我们可以看到输出结果是`{"name":"dreamapple"}`
+   
 
 
 参考的文章或者问答:
@@ -118,9 +139,4 @@ Person.prototype.getProfile = function() {
 
 [2]:
 http://pythontutor.com/visualize.html#code=//+%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0A%0Afunction+A%28name%29+%7B%0A++++this.name+=+name+%7C%7C+%27a%27;%0A++++this.sayHello+=+function%28%29+%7B%0A++++++++console.log%28%27Hello,+my+name+is:+%27+++this.name%29;%0A++++%7D%0A%7D%0A%0A//+%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0B%0Afunction+B%28name%29+%7B%0A++++this.name+=+name+%7C%7C+%27b%27;%0A%7D%0AB.prototype.sayHello+=+function%28%29+%7B%0A++++console.log%28%27Hello,+my+name+is:+%27+++this.name%29;%0A%7D;%0A%0Avar+a1+=+new+A%28%27a1%27%29;%0Avar+a2+=+new+A%28%27a2%27%29;%0Aa1.sayHello%28%29;%0Aa2.sayHello%28%29;%0A%0Avar+b1+=+new+B%28%27b1%27%29;%0Avar+b2+=+new+B%28%27b2%27%29;%0Ab1.sayHello%28%29;%0Ab2.sayHello%28%29;&mode=display&origin=opt-frontend.js&cumulative=false&heapPrimitives=false&textReferences=false&py=js&rawInputLstJSON=%5B%5D&curInstr=27
----
 
-1.使用`prototype`方法小心 ,改变所有 也是优点
-2.变量提升
-3.序列化
-4.
