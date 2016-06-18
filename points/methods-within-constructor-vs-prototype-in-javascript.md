@@ -12,6 +12,35 @@
   这种情况下我们代码的**内存占用**就比较小.
 + **在实际的应用中,这两种方法往往是结合使用的;所以我们要首先了解我们需要的是什么,然后再去选择如何使用.**
 
+我们还是根据下面的代码来说明一下这些要点吧,下面是代码部分:
+```javascript
+// 构造函数A
+function A(name) {
+    this.name = name || 'a';
+    this.sayHello = function() {
+        console.log('Hello, my name is: ' + this.name);
+    }
+}
+
+// 构造函数B
+function B(name) {
+    this.name = name || 'b';
+}
+B.prototype.sayHello = function() {
+    console.log('Hello, my name is: ' + this.name);
+};
+
+var a1 = new A('a1');
+var a2 = new A('a2');
+a1.sayHello();
+a2.sayHello();
+
+var b1 = new B('b1');
+var b2 = new B('b2');
+b1.sayHello();
+b2.sayHello();
+```
+
 
 
 
@@ -21,3 +50,10 @@
 + [Methods Within Constructor vs Prototype in Javascript](http://thecodeship.com/web-development/methods-within-constructor-vs-prototype-in-javascript/ )
 + [Use of 'prototype' vs. 'this' in JavaScript?](http://stackoverflow.com/questions/310870/use-of-prototype-vs-this-in-javascript)
 + [Advantages of using prototype, vs defining methods straight in the constructor? [duplicate]](http://stackoverflow.com/questions/4508313/advantages-of-using-prototype-vs-defining-methods-straight-in-the-constructor)
+
+---
+
+1.使用`prototype`方法小心 ,改变所有 也是优点
+2.变量提升
+3.序列化
+4.
