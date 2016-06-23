@@ -136,8 +136,156 @@ var scope1 = function () {
 当然我们可以返回一个指向`name`的引用,但是永远不会是`name`变量本身.
 
 ### 作用域链
+作用域链为一个给定的函数建立了作用域.就像我们知道的那样,每一个被定义的函数都有它自己嵌套的作用域,并且任何定义在别的函数中的函数都有一个
+连接外部函数的局部作用域,这个连接就是我们所说的作用域链中的链.它常常是代码中那些能够定义作用域的位置,当我们访问一个变量的时候,
+`JavaScript`从最里面的作用域沿着作用域链向外部开始查找,直到找到我们想要的那个变量/对象/函数.
 
+### 闭包
+闭包和词法作用域是紧密联系在一起的,关于闭包是如何工作的一个好例子就是当我们返回一个函数的引用的时候,这是一个更实际的用法.
+在我们的作用域里,我们可以返回一些东西以便这些东西能够在父作用域里被访问和使用:
+```javascript
+var sayHello = function (name) {
+  var text = 'Hello, ' + name;
+  return function () {
+    console.log(text);
+  };
+};
+```
+我们这里使用的`闭包`概念使我们在`sayHello`的作用域不能够被外部(公共的)作用域访问.单独运行这个函数不会有什么结果因为它只是返回了一个函数:
+```javascript
+sayHello('Todd'); // nothing happens, no errors, just silence...
+```
+这个函数返回了一个函数,那就意味着我们需要对它进行赋值,然后对它进行调用:
+```javascript
+var helloTodd = sayHello('Todd');
+helloTodd(); // will call the closure and log 'Hello, Todd'
+```
+好吧,我撒谎了,你也可以直接调用它,你也许之前已经见到过像这样的函数,这种方式也是可以运行你的闭包:
+```javascript
+sayHello('Bob')(); // calls the returned function without assignment
+```
+AngularJS的`$compile`方法使用了上面的技术,你可以将当前作用的引用域传递给这个闭包:
+```javascript
+$compile(template)(scope);
+```
+我们可以猜测他们关于这个方法的(简化)代码大概是下面这个样子:
+```javascript
+var $compile = function (template) {
+  // some magic stuff here
+  // scope is out of scope, though...
+  return function (scope) {
+    // access to `template` and `scope` to do magic with too
+  };
+};
+```
+当然一个函数不必有返回值也能够被称为一个闭包.只要能够访问外部变量的一个即时的词法作用域就创建了一个闭包.
 
+### 作用域和`this`
+每一个作用域都绑定了一个不同值的`this`,这取决于这个函数是如何调用的.我们都是用过`this`关键词,但是并不是所有的人都理解它,还有它是如何的不同当被调用的时候.
+默认情况下,`this`指向的是最外层的全局对象`window`.我们可以很容易的展示关于不同的调用方式我们绑定的`this`的值也是不同的:
+```javascript
+var myFunction = function () {
+  console.log(this); // this = global, [object Window]
+};
+myFunction();
+
+var myObject = {};
+myObject.myMethod = function () {
+  console.log(this); // this = Object { myObject }
+};
+
+var nav = document.querySelector('.nav'); // <nav class="nav">
+var toggleNav = function () {
+  console.log(this); // this = <nav> element
+};
+nav.addEventListener('click', toggleNav, false);
+```
+当我们处理`this`的值的时候我们又遇到了一些问题,举个例子如果我添加一些代码在上面的例子中.就算是在同一个函数内部,作用域和`this`都是会发生改变的:
+```javascript
+var nav = document.querySelector('.nav'); // <nav class="nav">
+var toggleNav = function () {
+  console.log(this); // <nav> element
+  setTimeout(function () {
+    console.log(this); // [object Window]
+  }, 1000);
+};
+nav.addEventListener('click', toggleNav, false);
+```
+所以这里发生了什么?我们创建了一个新的作用域,这个作用域没有被我们的事件处理程序调用,所以默认情况下,这里的`this`指向的是`window`对象.
+当然我们可以做一些事情不让这个新的作用域影响我们,以便我们能够访问到这个正确的`this`值.你也许已经见到过我们这样做的方法了,我们可以缓存当前的`this`值使用`that`变量,
+然后在新的作用域中使用它.
+```javascript
+var nav = document.querySelector('.nav'); // <nav class="nav">
+var toggleNav = function () {
+  var that = this;
+  console.log(that); // <nav> element
+  setTimeout(function () {
+    console.log(that); // <nav> element
+  }, 1000);
+};
+nav.addEventListener('click', toggleNav, false);
+```
+这是一个小技巧,让我们能够使用到正确的`this`值,并且在新的作用域解决一些问题.
+
+### 使用`.call()`,`.apply()`或者`.bind()`改变作用域
+有时,你需要根据你所处理的情况来处理JavaScript的作用域.一个简单的例子展示如何在循环的时候改变作用域:
+```javascript
+var links = document.querySelectorAll('nav li');
+for (var i = 0; i < links.length; i++) {
+  console.log(this); // [object Window]
+}
+```
+这里的`this`没有指向我们需要的元素,我们不能够在这里使用`this`调用我们需要的元素,或者改变循环里面的作用域.
+让我们来思考一下如何能够改变我们的作用域(好吧,看起来好像是我们改变了作用域,但是实际上我们真正做的事情是去改变我们那个函数的运行上下文).
+
++ .call()和.apply()
+  `.call()`和`.apply()`函数是非常实用的,它们允许你传递一个作用域到一个函数里面,这个作用与绑定了正确的`this`值.
+  让我们来处理上面的那些代码吧,让循环里面的`this`指向正确的元素值:
+  ```javascript
+  var links = document.querySelectorAll('nav li');
+  for (var i = 0; i < links.length; i++) {
+    (function () {
+      console.log(this);
+    }).call(links[i]);
+  }
+  ```
+  你可以看到我是如何做的,首先我们创建了一个立即执行的**函数**(*新的函数就表明创建了新的作用域*),
+  然后我们调用了`.call()`方法,将数组里面的循环元素`link[i]`当做参数传递给了`.call()`方法,
+  然后我们就改变了哪个立即执行的函数的作用域.我们可以使用`.call()`或者`.apply()`方法,但是它们的不同之处是参数的传递形式,
+  `.call()`方法的参数的传递形式是这样的`.call(scope, arg1, arg2, arg3)`,`.apply()`的参数的传递形式是这样的`.apply(scope, [arg1, arg2])`.
+  
+  所以当你需要改变你的函数的作用域的时候,不要使用下面的方法:
+  ```javascript
+  myFunction(); // invoke myFunction
+  ```
+  而应该是这样,使用`.call()`去调用我们的方法
+  ```javascript
+  myFunction.call(scope); // invoke myFunction using .call()
+  ```
++ .bind()
+  不像上面的方法,使用`.bind()`方法不会调用一个函数,它仅仅在函数调用之前,绑定我们需要的值.就像我们知道的那样,
+  我们不能够给函数的引用传递参数.就像下面这样:
+  ```javascript
+  // works
+  nav.addEventListener('click', toggleNav, false);
+  
+  // will invoke the function immediately
+  nav.addEventListener('click', toggleNav(arg1, arg2), false);
+  ```
+  我们可以解决这个问题,通过在它里面创建一个新的函数:
+  ```javascript
+  nav.addEventListener('click', function () {
+    toggleNav(arg1, arg2);
+  }, false);
+  ```
+  但是这样就改变了作用域,我们又一次创建了一个不需要的函数,这样做需要花费很多,当我们在一个循环中绑定事件监听的时候.
+  这时候就需要`.bind()`闪亮登场了,因为我们可以使用他来进行绑定作用域,传递参数,并且函数还不会立即执行:
+  ```javascript
+  nav.addEventListener('click', toggleNav.bind(scope, arg1, arg2), false);
+  ```
+  上面的函数没有被立即调用,并且作用域在需要的情况下也会改变,而且函数的参数也是可以通过这个方法传入的.
+  
+### 私有/共有的作用域
 
 
 
