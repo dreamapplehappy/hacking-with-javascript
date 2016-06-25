@@ -1,7 +1,8 @@
 ## 你想知道的关于JavaScript作用域的一切(译)
 
-原文链接: [Everything you wanted to know about JavaScript scope](https://toddmotto.com/everything-you-wanted-to-know-about-javascript-scope/)
-原文作者: [Todd Motto](https://github.com/toddmotto),好厉害的说.
+原文链接: [**Everything you wanted to know about JavaScript scope**](https://toddmotto.com/everything-you-wanted-to-know-about-javascript-scope/)
+
+原文作者: [**Todd Motto**](https://github.com/toddmotto)
 
 JavaScript中有许多章节是关于`scope`的,但是对于初学者来说(甚至是一些有经验的JavaScript开发者),这些有关作用域的章节既不直接也不容易理解.
 这篇文章的目的就是为了帮助那些想更深一步学习了解JavaScript作用域的开发者,尤其是当他们听到一些关于作用域的单词的时候,
@@ -287,6 +288,150 @@ for (var i = 0; i < links.length; i++) {
   
 ### 私有/共有的作用域
 
+在许多编程语言中,你应该听到过私有作用域或者共有作用域,在JavaScript中,是没有这些概念的.当然我们也可以通过一些手段比如闭包来模拟公共作用域或者是私有作用域.
+
+通过使用JavaScript的设计模式,比如`模块`模式,我们可以创造公共作用域和私有作用域.一个简单的方法创建私有作用域就是使用一个函数去包裹我们自己定义的函数.
+就像上面所说的那样,函数创建了一个与全局作用域隔离的一个作用域:
+```javascript
+(function () {
+  // private scope inside here
+})();
+```
+我们可能需要为我们的应用添加一些函数:
+```javascript
+(function () {
+  var myFunction = function () {
+    // do some stuff here
+  };
+})();
+```
+
+但是当我们去调用位于函数内部的函数的时候,这些函数在外部的作用域是不可得到的:
+```javascript
+(function () {
+  var myFunction = function () {
+    // do some stuff here
+  };
+})();
+
+myFunction(); // Uncaught ReferenceError: myFunction is not defined
+```
+成功了,我们创建了私有的作用域.但是问题又来了,我如何在公共作用域内使用我们之前定义好的函数?不要担心,我们的模块设计模式或者说是提示模块模式,
+允许我们将我们的函数在公共作用域内发挥作用,它们使用了公共作用域和私有作用域以及对象.在下面我定义了我的全局命名空间,叫做`Module`,
+这个命名空间里包含了与那个模块相关的所有代码:
+```javascript
+// define module
+var Module = (function () {
+  return {
+    myMethod: function () {
+      console.log('myMethod has been called.');
+    }
+  };
+})();
+
+// call module + methods
+Module.myMethod();
+```
+上面的`return`声明表明了我们返回了我们的`public`方法,这些方法是可以在全局作用域里使用的,不过需要通过命名空间来调用.
+这就表明了我们的那个模块只是存在于哪个命名空间中,它可以包含我们想要的任意多的方法或者变量.我们也可以按照我们的意愿来扩展这个模块:
+```javascript
+// define module
+var Module = (function () {
+  return {
+    myMethod: function () {
+
+    },
+    someOtherMethod: function () {
+
+    }
+  };
+})();
+
+// call module + methods
+Module.myMethod();
+Module.someOtherMethod();
+```
+那么我们的私有方法该如何使用以及定义呢?总是有许多的开发者随意的堆砌他们的方法在那个模块里面,这样的做法污染了全局的命名空间.
+那些帮助我们的代码运行并且是不必要出现在全局作用域的方法,就不要导出在全局作用域中,我们只导出那些需要在全局作用域内被调用的函数.
+我们可以定义私有的方法,只要不返回它们就行:
+```javascript
+var Module = (function () {
+  var privateMethod = function () {
+
+  };
+  return {
+    publicMethod: function () {
+
+    }
+  };
+})();
+```
+上面的代码意味着,`publicMethod`是可以在全局的命名空间里调用的,但是`privateMethod`是不可以的,因为它是在私有的作用域中被定义的.
+这些私有的函数方法一般都是一些帮助性的函数,比如`addClass`,`removeClass`,`Ajax/XHR calls`,`Arrays`,`Objects`等等.
+
+这里有一些概念需要我们知道,就是同一个作用域中的函数变量可以访问在同一个作用域中的函数或者变量,甚至是这些函数已经被作为结果返回.
+这意味着,我们的公共函数可以访问我们的私有函数,所以这些私有的函数是仍然可以运行的,只不过他们不可以在公共的作用域里被访问而已.
+```javascript
+var Module = (function () {
+  var privateMethod = function () {
+
+  };
+  return {
+    publicMethod: function () {
+      // has access to `privateMethod`, we can call it:
+      // privateMethod();
+    }
+  };
+})();
+```
+这允许一个非常强大级别的交互,以及代码的安全;JavaScript非常重要的一个部分就是确保安全.这就是为什么我们不能够把所有的函数都放在公共的作用域内,
+因为一旦那样做了就会暴漏我们系统的漏洞,让一些心怀恶意的人能够对这些漏洞进行攻击.
+
+下面的例子就是返回了一个对象,然后在这个对象上面调用一些公有的方法的例子:
+```javascript
+var Module = (function () {
+  var myModule = {};
+  var privateMethod = function () {
+
+  };
+  myModule.publicMethod = function () {
+
+  };
+  myModule.anotherPublicMethod = function () {
+
+  };
+  return myModule; // returns the Object with public methods
+})();
+
+// usage
+Module.publicMethod();
+```
+一个比较规范的命名私有方法的约定是,在私有方法的名字前面加上一个下划线,这可以快速的帮助你区分公有方法或者私有方法:
+```javascript
+var Module = (function () {
+  var _privateMethod = function () {
+
+  };
+  var publicMethod = function () {
+
+  };
+})();
+```
+这个约定帮助我们可以简单地给我们的函数索引赋值,当我们返回一个匿名对象的时候:
+```javascript
+var Module = (function () {
+  var _privateMethod = function () {
+
+  };
+  var publicMethod = function () {
+
+  };
+  return {
+    publicMethod: publicMethod,
+    anotherPublicMethod: anotherPublicMethod
+  }
+})();
+```
 
 
 
