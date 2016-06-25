@@ -4,7 +4,11 @@
 + [理解`prototype`和`__proto__`](points/understand-prototype-__proto__.md)
 + [构造函数内的方法与构造函数`prototype`属性上方法的对比](points/methods-within-constructor-vs-prototype-in-javascript.md)
 + [掌握JavaScript的闭包](points/master-javascript-closure.md)
++ [执行环境以及作用域](points/execution-context-and-scope.md)
 
+
+### 翻译的文章
++ [你想知道的关于JavaScript作用域的一切](translate/everything-you-wanted-to-know-about-javascript-scope.md)
 
 
 ### 系列教程
