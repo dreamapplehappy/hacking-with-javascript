@@ -10,6 +10,10 @@
 ### 翻译的文章
 + [你想知道的关于JavaScript作用域的一切](translate/everything-you-wanted-to-know-about-javascript-scope.md)
 
+### You Don't Know JS
++ 异步和执行
+    - [异步:现在和稍后](you-do-not-know-js/async-performance/now-later.md)
+
 ### 系列教程
 + [Angular2 系列教程](series-tutorial/ng2/README.md)
 + [Vue 系列教程](series-tutorial/vue/README.md)
