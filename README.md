@@ -3,7 +3,7 @@
 #### *你也可以在这里做贡献 fork - > pull request :stuck_out_tongue_winking_eye:*
 
 #### 你肯定不会系列
-+ [你肯定不会这样使用JavaScript(1)](magic/about-bitwise-operators-1.md)
++ [你肯定不会这样使用JavaScript: 0x1](magic/about-bitwise-operators-1.md)
 
 #### 一点一滴:
 + [理解`prototype`和`__proto__`](points/understand-prototype-__proto__.md)
