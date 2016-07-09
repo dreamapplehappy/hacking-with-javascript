@@ -101,26 +101,33 @@ function RGB2HEX(r, g, b) {
 
 #### 交换变量值
 当然现在如果使用ES6的一些语法的话,也是很方便的就可以替换两个变量的值:
-```
+```javascript
 let a = 3;
 let b = 6;
 [a, b] = [b, a];
 console.log(a, b) // 6, 3
 ```
 当然你也可以这样做:
-```
+```javascript
 a ^= b;
 b ^= a;
 a ^= b;
 console.log(a, b); // 6, 3
 ```
+#### 求2的幂次方
+一般情况下我们会使用`Math.pow(2, n)`求2的n次幂,当然我们也可以使用下面的方法来进行运算:
+```javascript
+var n = 3;
+var result = 1 << n;
+console.log(result); // 8
+console.log(result === Math.pow(2, 3)); // true
+```
 
+**当然这些相关的例子还有很多,欢迎大家来提issue或者pull request:grinning:**
 
+#### 参考的文章:
 
-
-
-
-+ [http://www.w3school.com.cn/js/pro_js_operators_bitwise.asp](http://www.w3school.com.cn/js/pro_js_operators_bitwise.asp)
-+ [http://graphics.stanford.edu/~seander/bithacks.html](http://graphics.stanford.edu/~seander/bithacks.html)
-+ [http://michalbe.blogspot.jp/2013/03/javascript-less-known-parts-bitwise.html](http://michalbe.blogspot.jp/2013/03/javascript-less-known-parts-bitwise.html)
-+ 
++ [ECMAScript 位运算符](http://www.w3school.com.cn/js/pro_js_operators_bitwise.asp)
++ [Bit Twiddling Hacks](http://graphics.stanford.edu/~seander/bithacks.html)
++ [JavaScript: The less known parts. Bitwise Operators.](http://michalbe.blogspot.jp/2013/03/javascript-less-known-parts-bitwise.html)
++ [Bitwise operators](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/Bitwise_Operators)
