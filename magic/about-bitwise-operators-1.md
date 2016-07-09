@@ -80,10 +80,47 @@ var isPowerOf2 = a && !(a & (a - 1)); // true
 ```javascript
 var c = 3.1415926;
 var d = c | 0; // d === Math.floor(c)
+var e = ~~c; // e === d
 ```
+
+#### 颜色转换RGB转换为HEX
+我们可以使用位操作符来写这么一个函数,方便快速的达到我们的目的:
+```javascript
+var bgColor = {
+    r: 234,
+    g: 36,
+    b: 122
+};
+var hexColor = RGB2HEX(bgColor.r, bgColor.g, bgColor.b);
+console.log(hexColor); // #ea247a
+
+function RGB2HEX(r, g, b) {
+    return '#' + ((1 << 24) + (r << 16) + (g << 8) + b).toString(16).substr(1);
+}
+```
+
+#### 交换变量值
+当然现在如果使用ES6的一些语法的话,也是很方便的就可以替换两个变量的值:
+```
+let a = 3;
+let b = 6;
+[a, b] = [b, a];
+console.log(a, b) // 6, 3
+```
+当然你也可以这样做:
+```
+a ^= b;
+b ^= a;
+a ^= b;
+console.log(a, b); // 6, 3
+```
+
+
 
 
 
 
 + [http://www.w3school.com.cn/js/pro_js_operators_bitwise.asp](http://www.w3school.com.cn/js/pro_js_operators_bitwise.asp)
 + [http://graphics.stanford.edu/~seander/bithacks.html](http://graphics.stanford.edu/~seander/bithacks.html)
++ [http://michalbe.blogspot.jp/2013/03/javascript-less-known-parts-bitwise.html](http://michalbe.blogspot.jp/2013/03/javascript-less-known-parts-bitwise.html)
++ 
