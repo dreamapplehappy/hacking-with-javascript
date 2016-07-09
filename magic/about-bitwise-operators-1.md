@@ -75,7 +75,15 @@ var a = 64;
 var isPowerOf2 = a && !(a & (a - 1)); // true
 ```
 
+#### 向下取整
+我们常常使用`Math.floor()`,当然我们可以使用下面的方法,更快速高效:
+```javascript
+var c = 3.1415926;
+var d = c | 0; // d === Math.floor(c)
+```
+
 
 
 
 + [http://www.w3school.com.cn/js/pro_js_operators_bitwise.asp](http://www.w3school.com.cn/js/pro_js_operators_bitwise.asp)
++ [http://graphics.stanford.edu/~seander/bithacks.html](http://graphics.stanford.edu/~seander/bithacks.html)
