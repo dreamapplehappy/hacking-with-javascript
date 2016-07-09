@@ -1,5 +1,8 @@
 ## 攀登JavaScript的高峰
 
+### Magic
++ [你肯定不会这样使用JavaScript - 1](magic/about-bitwise-operators-1.md)
+
 ### 一点一滴:
 + [理解`prototype`和`__proto__`](points/understand-prototype-__proto__.md)
 + [构造函数内的方法与构造函数`prototype`属性上方法的对比](points/methods-within-constructor-vs-prototype-in-javascript.md)
