@@ -3,7 +3,7 @@
 **[@卢生](http://gold.xitu.io/user/57830bad1532bc005f557f4b), 指出了一些不严谨的地方,在此表示感谢;主要是下面的一些场景适合整数而不是适合小数.**
 **我重新的理了一下思路,把相关需要注意的地方都做了标注,也希望大家注意一下.**
 
-我特地测试了一下速度问题,在`Node.js`环境中,如果是两个整数比较大小的话,使用位运算符的速度比使用函数速度快太多了,
+我特地测试了一下速度问题,在`Node.js`环境中和浏览器环境中,如果是两个**整数**比较大小的话,使用位运算符的速度比使用函数速度快太多了,
 详情可以看下面一个代码例子:
 ```javascript
 var a = 1;
@@ -18,12 +18,19 @@ console.time('use bitwise operators');
 console.log(a ^ ( (a ^ b) & -(a < b) ));
 console.timeEnd('use bitwise operators');
 ```
-运行结果如下:
+`Node.js`环境中运行结果如下:
 ```javascript
 2
 use func: 2.366ms
 2
 use bitwise operators: 0.198ms
+```
+浏览器(chrome)运行结果如下:
+```javascript
+2
+use func: 10.642ms
+2
+use bitwise operators: 0.801ms
 ```
 虽然每次的时间都不太一样,但是结果基本一致,使用位运算符要快很多.
 
