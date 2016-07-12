@@ -1,6 +1,6 @@
 ### 攀登JavaScript的高峰
 
-#### *你也可以在这里做贡献 fork - > pull request :stuck_out_tongue_winking_eye:*
+ **欢迎贡献 fork - > pull request :stuck_out_tongue_winking_eye:**
 
 #### 你肯定不会系列
 + [你肯定不会这样使用JavaScript: 0x1](magic/about-bitwise-operators-1.md)
