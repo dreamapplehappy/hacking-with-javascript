@@ -3,6 +3,58 @@
 **[@卢生](http://gold.xitu.io/user/57830bad1532bc005f557f4b), 指出了一些不严谨的地方,在此表示感谢;主要是下面的一些场景适合整数而不是适合小数.**
 **我重新的理了一下思路,把相关需要注意的地方都做了标注,也希望大家注意一下.**
 
+**[@卢生](http://gold.xitu.io/user/57830bad1532bc005f557f4b)再次指出我的测试不严谨,因为使用三目运算符的时候,调用了函数,所以结果会有较大的偏差.**
+**他给出的[测试用例]()表明使用位运算符是最慢的:joy:,好吧,我自己又亲自测试了一遍,测试代码和结果如下:**
+```javascript
+var a = 1;
+var b = 2;
+var c;
+
+console.time('use bitwise');
+for(var i = 0; i < 1000; i++) {
+    a = Math.random() * 2 | 0;
+    b = Math.random() * 9 | 0;
+    c = a ^ ( (a ^ b) & -(a < b) );
+}
+console.timeEnd('use bitwise');
+
+console.time('use triple');
+for(var i = 0; i < 1000; i++) {
+    a = Math.random() * 2 | 0;
+    b = Math.random() * 9 | 0;
+    c = a > b ? a : b;
+}
+console.timeEnd('use triple');
+
+console.time('use bitwise once');
+a = Math.random() * 2 | 0;
+b = Math.random() * 9 | 0;
+c = a ^ ( (a ^ b) & -(a < b) );
+console.timeEnd('use bitwise once');
+
+console.time('use triple once');
+a = Math.random() * 2 | 0;
+b = Math.random() * 9 | 0;
+c = a > b ? a : b;
+console.timeEnd('use triple once');
+```
+在`Node.js`环境和浏览器环境中的结果分别如下:
+```javascript
+// node.js
+use bitwise: 1.562ms
+use triple: 0.159ms
+use bitwise once: 0.094ms
+use triple once: 0.011ms
+```
+```javascript
+// chrome
+use bitwise: 0.922ms
+use triple: 0.393ms
+use bitwise once: 0.027ms
+use triple once: 0.017ms
+```
+
+**以下测试有偏差**
 我特地测试了一下速度问题,在`Node.js`环境中和浏览器环境中,如果是两个**整数**比较大小的话,使用位运算符的速度比使用函数速度快太多了,
 详情可以看下面一个代码例子:
 ```javascript
