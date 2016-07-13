@@ -22,3 +22,7 @@
 + [Angular2 系列教程](series-tutorial/ng2/README.md)
 + [Vue 系列教程](series-tutorial/vue/README.md)
 + [ES6 系列教程](series-tutorial/es6/README.md)
+
+------
+#### 工具集合
++ [关于动画的库,包括CSS以及JavaScript](tool/animation/animation/animation-lib.md)
