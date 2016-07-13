@@ -1,9 +1,6 @@
 ### 攀登JavaScript的高峰
 
- **欢迎贡献 fork - > pull request :stuck_out_tongue_winking_eye:**
-
-#### 你肯定不会系列
-+ [你肯定不会这样使用JavaScript: 0x1](magic/about-bitwise-operators-1.md)
+**欢迎贡献 fork - > pull request :stuck_out_tongue_winking_eye:**
 
 #### 一点一滴:
 + [理解`prototype`和`__proto__`](points/understand-prototype-__proto__.md)
@@ -11,13 +8,15 @@
 + [掌握JavaScript的闭包](points/master-javascript-closure.md)
 + [执行环境以及作用域](points/execution-context-and-scope.md)
 
-
 #### 翻译的文章
 + [你想知道的关于JavaScript作用域的一切](translate/everything-you-wanted-to-know-about-javascript-scope.md)
 
 #### You Don't Know JS
 + 异步和执行
     - [异步:现在和稍后](you-do-not-know-js/async-performance/now-later.md)
+    
+#### 你肯定不会系列
++ [你肯定不会这样使用JavaScript: 0x1](magic/about-bitwise-operators-1.md)
 
 #### 系列教程
 + [Angular2 系列教程](series-tutorial/ng2/README.md)
