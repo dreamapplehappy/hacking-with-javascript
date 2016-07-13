@@ -25,4 +25,4 @@
 
 ------
 #### 工具集合
-+ [关于动画的库,包括CSS以及JavaScript](tool/animation/animation/animation-lib.md)
++ [关于动画的库,包括CSS以及JavaScript](tool/animation/animation-lib.md)
