@@ -8,6 +8,11 @@
 + [掌握JavaScript的闭包](points/master-javascript-closure.md)
 + [执行环境以及作用域](points/execution-context-and-scope.md)
 
+#### 关于书籍
++ **JavaScript: The Good Parts**
+    - 函数
+        + [柯里化](books/javascript-the-good-parts/chapter-4-function/curry.md)
+
 #### 翻译的文章
 + [你想知道的关于JavaScript作用域的一切](translate/everything-you-wanted-to-know-about-javascript-scope.md)
 
@@ -26,8 +31,3 @@
 ------
 #### 工具集合
 + [关于动画的库,包括CSS以及JavaScript](tool/animation/animation-lib.md)
-
-#### 关于书籍
-+ **JavaScript: The Good Parts**
-    - 函数
-        + [柯里化](books/javascript-the-good-parts/chapter-4-function/curry.md)
