@@ -26,3 +26,8 @@
 ------
 #### 工具集合
 + [关于动画的库,包括CSS以及JavaScript](tool/animation/animation-lib.md)
+
+#### 关于书籍
++ **JavaScript: The Good Parts**
+    - 函数
+        + [柯里化](books/javascript-the-good-parts/chapter-4-function/curry.md)

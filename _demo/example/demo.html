@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<iframe src="https://ghbtns.com/github-btn.html?user=dreamapplehappy&repo=hacking-with-javascript&type=star&count=true&size=large"
+        frameborder="0" scrolling="0" width="160px" height="30px"></iframe>
+<script>
+    //    var a = 1;
+    //    var b = 2;
+    //    function compare(a, b) {
+    //        return a > b ? a: b;
+    //    }
+    //    console.log(new Date);
+    //    console.log(compare(a, b));
+    //    console.log(new Date);
+    //    console.log(new Date);
+    //    console.log(a ^ ( (a ^ b) & -(a < b) ));
+    //    console.log(new Date);
+    var a = 1;
+    var b = 2;
+    function compare(a, b) {
+        return a > b ? a : b;
+    }
+    console.time('use func');
+    console.log(compare(a, b));
+    console.timeEnd('use func');
+    console.time('use bitwise operators');
+    console.log(a ^ ( (a ^ b) & -(a < b) ));
+    console.timeEnd('use bitwise operators');
+</script>
+</body>
+</html>
