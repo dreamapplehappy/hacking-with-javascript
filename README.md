@@ -7,6 +7,7 @@
 + [构造函数内的方法与构造函数`prototype`属性上方法的对比](points/methods-within-constructor-vs-prototype-in-javascript.md)
 + [掌握JavaScript的闭包](points/master-javascript-closure.md)
 + [执行环境以及作用域](points/execution-context-and-scope.md)
++ [理解JS的柯里化,这一篇就够了](books/javascript-the-good-parts/chapter-4-function/curry.md)
 
 #### 关于书籍
 + **JavaScript: The Good Parts**
