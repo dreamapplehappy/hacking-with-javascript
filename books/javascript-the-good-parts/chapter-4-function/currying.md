@@ -112,15 +112,83 @@ curryingAdd(1)(2); // 3
   接下来我们来检验一下这个函数的正确性:
   ```javascript
   var betterShowMsg = betterCurryingHelper(showMsg);
+  betterShowMsg('dreamapple', 22, 'apple'); // My name is dreamapple, I'm 22 years old,  and I like eat apple
   betterShowMsg('dreamapple', 22)('apple'); // My name is dreamapple, I'm 22 years old,  and I like eat apple
   betterShowMsg('dreamapple')(22, 'apple'); // My name is dreamapple, I'm 22 years old,  and I like eat apple
   betterShowMsg('dreamapple')(22)('apple'); // My name is dreamapple, I'm 22 years old,  and I like eat apple
   ```
   其中`showMsg`就是**II 小鸡炖蘑菇**部分提及的那个函数.
-  我们可以看出来,这个`betterCurryingHelper`确实实现了我们想要的那个功能.
-+ **IV 超级大餐**
+  我们可以看出来,这个`betterCurryingHelper`确实实现了我们想要的那个功能.并且我们也可以像使用原来的那个函数一样使用柯里化后的函数.
++ **IV 泡椒凤爪**
 
-  啊实打实
+  我们已经能够写出很好的柯里化辅助函数了,但是这还不算是最刺激的,如果我们在传递参数的时候可以不按照顺来那一定很酷;当然我们也可以写出这样的函数来,
+  这个`crazyCurryingHelper`函数如下所示:
+  ```javascript
+  var _ = {};
+  function crazyCurryingHelper(fn, length, args, holes) {
+      length = length || fn.length;
+      args   = args   || [];
+      holes  = holes  || [];
+  
+      return function() {
+          var _args       = args.slice(),
+              _holes      = holes.slice();
+  
+          // 存储接收到的args和holes的长度
+          var argLength   = _args.length,
+              holeLength  = _holes.length;
+  
+          var allArgumentsSpecified = false;
+  
+          // 循环
+          var arg     = null,
+              i       = 0,
+              aLength = arguments.length;
+  
+          for(; i < aLength; i++) {
+              arg = arguments[i];
+  
+              if(arg === _ && holeLength) {
+                  // 循环holes的位置
+                  holeLength--;
+                  _holes.push(_holes.shift());
+              } else if (arg === _) {
+                  // 存储hole就是_的位置
+                  _holes.push(argLength + i);
+              } else if (holeLength) {
+                  // 是否还有没有填补的hole
+                  // 在参数列表指定hole的地方插入当前参数
+                  holeLength--;
+                  _args.splice(_holes.shift(), 0, arg);
+              } else {
+                  // 不需要填补hole,直接添加到参数列表里面
+                  _args.push(arg);
+              }
+          }
+  
+          // 判断是否所有的参数都已满足
+          allArgumentsSpecified = (_args.length >= length);
+          if(allArgumentsSpecified) {
+              return fn.apply(this, _args);
+          }
+  
+          // 递归的进行柯里化
+          return crazyCurryingHelper.call(this, fn, length, _args, _holes);
+      };
+  }
+  ```
+  一些解释,我们使用`_`来表示参数中的那些缺失的参数,如果你使用了[lodash](https://lodash.com/)的话,会有冲突的;那么你可以使用别的符号替代.
+  按照一贯的尿性,我们还是要验证一下这个`crazyCurryingHelper`是不是实现了我们所说的哪些功能,代码如下:
+  ```javascript
+  var crazyShowMsg = crazyCurryingHelper(showMsg);
+  crazyShowMsg(_, 22)('dreamapple')('apple'); // My name is dreamapple, I'm 22 years old,  and I like eat apple
+  crazyShowMsg( _, 22, 'apple')('dreamapple'); // My name is dreamapple, I'm 22 years old,  and I like eat apple
+  crazyShowMsg( _, 22, _)('dreamapple', _, 'apple'); // My name is dreamapple, I'm 22 years old,  and I like eat apple
+  crazyShowMsg( 'dreamapple', _, _)(22)('apple'); // My name is dreamapple, I'm 22 years old,  and I like eat apple
+  crazyShowMsg('dreamapple')(22)('apple'); // My name is dreamapple, I'm 22 years old,  and I like eat apple
+  ```
+  结果显示,我们这个函数也实现了我们所说的那些功能.
+  
 
 #### 柯里化的一些应用场景
 
