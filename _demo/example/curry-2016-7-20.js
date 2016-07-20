@@ -1,3 +1,41 @@
+function curryingHelper(fn) {
+    var _args = Array.prototype.slice.call(arguments, 1);
+    return function() {
+        var _newArgs = Array.prototype.slice.call(arguments);
+        var _totalArgs = _args.concat(_newArgs);
+        return fn.apply(this, _totalArgs);
+    }
+}
+
+function showMsg(name, age, fruit) {
+    console.log('My name is ' + name + ', I\'m ' + age + ' years old, ' + ' and I like eat ' + fruit);
+}
+
+var curryingShowMsg1 = curryingHelper(showMsg, 'dreamapple');
+curryingShowMsg1(22, 'apple'); // My name is dreamapple, I'm 22 years old,  and I like eat apple
+
+var curryingShowMsg2 = curryingHelper(showMsg, 'dreamapple', 20);
+curryingShowMsg2('watermelon'); // My name is dreamapple, I'm 20 years old,  and I like eat watermelon
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //function add(a, b) {
 //    return a + b;
 //}
@@ -12,19 +50,19 @@
 //curryingAdd(1)(2); // 3
 
 
-function printInfo(name, song) {
-    console.log(name + '喜欢的歌曲是: ' + song);
-}
-printInfo('Tom', '七里香');
-printInfo('Jerry', '雅俗共赏');
-
-
-function curryingPrintInfo(name) {
-    return function(song) {
-        console.log(name + '喜欢的歌曲是: ' + song);
-    }
-}
-var tomLike = curryingPrintInfo('Tom');
-tomLike('七里香');
-var jerryLike = curryingPrintInfo('Jerry');
-jerryLike('雅俗共赏');
+//function printInfo(name, song) {
+//    console.log(name + '喜欢的歌曲是: ' + song);
+//}
+//printInfo('Tom', '七里香');
+//printInfo('Jerry', '雅俗共赏');
+//
+//
+//function curryingPrintInfo(name) {
+//    return function(song) {
+//        console.log(name + '喜欢的歌曲是: ' + song);
+//    }
+//}
+//var tomLike = curryingPrintInfo('Tom');
+//tomLike('七里香');
+//var jerryLike = curryingPrintInfo('Jerry');
+//jerryLike('雅俗共赏');

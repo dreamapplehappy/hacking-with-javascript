@@ -54,9 +54,37 @@ curryingAdd(1)(2); // 3
   var jerryLike = curryingPrintInfo('Jerry');
   jerryLike('雅俗共赏');
   ```
-+ **升级套餐**
-
-  啊实打实的
++ **小鸡炖蘑菇**
+  上面我们虽然对对函数`printInfo`进行了柯里化,但是我们可不想在需要柯里化的时候对每一个函数都进行柯里化,那简直是噩梦;
+  所以我们要创造一些帮助其它函数进行柯里化的函数,我们暂且叫它为`curryingHelper`吧,一个简单的`curryingHelper`函数如下所示:
+  ```javascript
+  function curryingHelper(fn) {
+      var _args = Array.prototype.slice.call(arguments, 1);
+      return function() {
+          var _newArgs = Array.prototype.slice.call(arguments);
+          var _totalArgs = _args.concat(_newArgs);
+          return fn.apply(this, _totalArgs);
+      }
+  }
+  ```
+  这里解释一点东西,首先函数的`arguments`表示的是传递到函数中的参数对象,它不是一个数组,它是一个类数组对象;
+  所以我们可以使用函数的`Array.prototype.slice`方法,然后使用`.call`方法来获取`arguments`里面的内容.
+  我们使用`fn.apply(this, _totalArgs)`来给函数`fn`传递正确的参数.
+  
+  接下来我们来写一个简单的函数验证上面的辅助柯里化函数的正确性, 代码部分如下:
+  ```javascript
+  function showMsg(name, age, fruit) {
+      console.log('My name is ' + name + ', I\'m ' + age + ' years old, ' + ' and I like eat ' + fruit);
+  }
+  
+  var curryingShowMsg1 = curryingHelper(showMsg, 'dreamapple');
+  curryingShowMsg1(22, 'apple'); // My name is dreamapple, I'm 22 years old,  and I like eat apple
+  
+  var curryingShowMsg2 = curryingHelper(showMsg, 'dreamapple', 20);
+  curryingShowMsg2('watermelon'); // My name is dreamapple, I'm 20 years old,  and I like eat watermelon
+  ```
+  
+  
 + **大餐**
 
   啊实打实的
@@ -67,6 +95,9 @@ curryingAdd(1)(2); // 3
 #### 柯里化的一些应用场景
 
 #### 关于柯里化的性能
+
+#### 文中其它知识点的简单解释
++ **I**: 
 
 
 
