@@ -2,8 +2,9 @@
 
 > [Haskell](https://www.haskell.org/)和[scala](http://www.scala-lang.org/)都支持函数的柯里化,JavaScript函数的柯里化还与[JavaScript的函数编程](http://eloquentjavascript.net/1st_edition/chapter6.html)有很大的联系,如果你感兴趣的话,可以在这些方面多下功夫了解,相信收获一定很多.
 
-#### :tangerine:本篇文章的一些知识点
+#### :tangerine:看本篇文章需要知道的一些知识点
 + 函数的`.call`,`.apply`,`arguments`
++ 闭包
 + 高阶函数
 + 不完全函数
 
@@ -39,7 +40,7 @@ curryingAdd(1)(2); // 3
 + 函数柯里化允许和鼓励你分隔复杂功能变成更小更容易分析的部分。这些小的逻辑单元显然是更容易理解和测试的，然后你的应用就会变成干净而整洁的组合，由一些小单元组成的组合。
 
 #### :tangerine:如何对函数进行柯里化?
-在这一部分里,我们由浅入深的一步步来告诉大家如何对一个多参数的函数进行柯里化.
+在这一部分里,我们由浅入深的一步步来告诉大家如何对一个多参数的函数进行柯里化.其中用到的知识有`闭包`,`高阶函数`,`不完全函数`等等.
 
 + **I 先上开胃菜**
 
@@ -63,9 +64,10 @@ curryingAdd(1)(2); // 3
   var jerryLike = curryingPrintInfo('Jerry');
   jerryLike('雅俗共赏');
   ```
+  
 + **II 小鸡炖蘑菇**
 
-  上面我们虽然对对函数`printInfo`进行了柯里化,但是我们可不想在需要柯里化的时候对每一个函数都进行柯里化,那简直是噩梦;
+  上面我们虽然对对函数`printInfo`进行了柯里化,但是我们可不想在需要柯里化的时候,都像上面那样不断地进行函数的嵌套,那简直是噩梦;
   所以我们要创造一些帮助其它函数进行柯里化的函数,我们暂且叫它为`curryingHelper`吧,一个简单的`curryingHelper`函数如下所示:
   ```javascript
   function curryingHelper(fn) {
@@ -93,7 +95,7 @@ curryingAdd(1)(2); // 3
   var curryingShowMsg2 = curryingHelper(showMsg, 'dreamapple', 20);
   curryingShowMsg2('watermelon'); // My name is dreamapple, I'm 20 years old,  and I like eat watermelon
   ```
-  上面的结果表示,我们的这个柯里化的函数是正确的.
+  上面的结果表示,我们的这个柯里化的函数是正确的.上面的`curryingHelper`就是一个**高阶函数**,关于高阶函数的解释可以参照下文.
   
 + **III 牛肉火锅**
   
@@ -299,7 +301,7 @@ curryingAdd(1)(2); // 3
 
 
 #### 参考的资料
-+ [Gettin’ Freaky Functional w/Curried JavaScript](http://blog.carbonfive.com/2015/01/14/gettin-freaky-functional-wcurried-javascript/)
++ [:mag_right:Gettin’ Freaky Functional w/Curried JavaScript](http://blog.carbonfive.com/2015/01/14/gettin-freaky-functional-wcurried-javascript/)
 + [Currying, Spice Up Your Javascript Functions](http://requiremind.com/currying-spice-up-your-javascript-functions/)
 + [函数式JavaScript（4）：函数柯里化](http://blog.jobbole.com/77956/)
 + [前端开发者进阶之函数柯里化Currying](http://www.cnblogs.com/pigtail/p/3447660.html)
