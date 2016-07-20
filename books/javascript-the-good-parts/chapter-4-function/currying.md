@@ -2,7 +2,7 @@
 
 #### :tangerine:本篇文章的一些知识点
 + 函数的`.call`,`.apply`,`arguments`
-+ 高阶函数(higher-order function)
++ 高阶函数
 + 不完全函数
 
 文章后面有对这些知识的简单解释,大家可以看看.
@@ -235,6 +235,62 @@ curryingAdd(1)(2); // 3
   console.log(f3(2, 3)); // 25
   ```
   我们通过函数`func3`将函数`f1`,`f2`结合到了一起,然后返回了一个新的函数`f3`;这个函数就是我们期望的那个函数.
+  
++ 不完全函数(partial function)
+
+  什么是不完全函数呢?所谓的不完全函数和我们上面所说的柯里化基本差不多;所谓的不完全函数,就是给你想要运行的那个函数绑定一个固定的参数值;
+  然后后面的运行或者说传递参数都是在前面的基础上进行运行的.看下面的例子:
+  ```javascript
+  // 一个将函数的arguments对象变成一个数组的方法
+  function array(a, n) {
+      return Array.prototype.slice.call(a, n || 0);
+  }
+  // 我们要运行的函数
+  function showMsg(a, b, c){
+      return a * (b - c);
+  }
+  
+  function partialLeft(f) {
+      var args = arguments;
+      return function() {
+          var a = array(args, 1);
+          a = a.concat(array(arguments));
+          console.log(a); // 打印实际传递到函数中的参数列表
+          return f.apply(this, a);
+      }
+  }
+  
+  function partialRight(f) {
+      var args = arguments;
+      return function() {
+          var a = array(arguments);
+          a = a.concat(array(args, 1));
+          console.log(a); // 打印实际传递到函数中的参数列表
+          return f.apply(this, a);
+      }
+  }
+  
+  function partial(f) {
+      var args = arguments;
+      return function() {
+          var a = array(args, 1);
+          var i = 0; j = 0;
+          for(; i < a.length; i++) {
+              if(a[i] === undefined) {
+                  a[i] = arguments[j++];
+              }
+          }
+          a = a.concat(array(arguments, j));
+          console.log(a); // 打印实际传递到函数中的参数列表
+          return f.apply(this, a);
+      }
+  }
+  
+  
+  partialLeft(showMsg, 1)(2, 3); // 实际参数列表: [1, 2, 3] 所以结果是 1 * (2 - 3) = -1
+  partialRight(showMsg, 1)(2, 3); // 实际参数列表: [2, 3, 1] 所以结果是 2 * (3 - 1) = 4
+  partial(showMsg, undefined, 1)(2, 3); // 实际参数列表: [2, 1, 3] 所以结果是 2 * (1 - 3) = -4
+  ```
 
 
 
