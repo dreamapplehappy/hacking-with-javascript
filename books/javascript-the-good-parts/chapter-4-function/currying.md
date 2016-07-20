@@ -30,6 +30,16 @@ curryingAdd(1)(2); // 3
 + 函数柯里化允许和鼓励你分隔复杂功能变成更小更容易分析的部分。这些小的逻辑单元显然是更容易理解和测试的，然后你的应用就会变成干净而整洁的组合，由一些小单元组成的组合。
 
 #### 如何对函数进行柯里化?
+在这一部分里,我们由浅入深的一步步来告诉大家如何对一个多参数的函数进行柯里化.
+
++ **先来一份开胃菜**
+爱仕达啊实打实的
++ **升级套餐**
+啊实打实的
++ **大餐**
+啊实打实的
++ **超级大餐**
+啊实打实
 
 #### 柯里化的一些应用场景
 
@@ -61,6 +71,7 @@ curryingAdd(1)(2); // 3
 
 
 #### 参考的资料
++ [Currying, Spice Up Your Javascript Functions](http://requiremind.com/currying-spice-up-your-javascript-functions/)
 + [函数式JavaScript（4）：函数柯里化](http://blog.jobbole.com/77956/)
 + [前端开发者进阶之函数柯里化Currying](http://www.cnblogs.com/pigtail/p/3447660.html)
 + [JS中的柯里化(currying)](http://www.zhangxinxu.com/wordpress/2013/02/js-currying/)
