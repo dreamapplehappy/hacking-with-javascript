@@ -208,7 +208,33 @@ curryingAdd(1)(2); // 3
 #### 关于本章一些知识点的解释
 + 高阶函数(high-order function)
     
-  adasd  
+  **高阶函数就是操作函数的函数,它接受一个或多个函数作为参数,并返回一个新的函数.**
+  我们来看一个例子,来帮助我们理解这个概念.就举一个我们高中经常遇到的场景,如下:
+  ```javascript
+  f1(x, y) = x + y;
+  f2(x) = x * x;
+  f3 = f2(f3(x, y));
+  ```
+  我们来实现`f3`函数,看看应该如何实现,具体的代码如下所示:
+  ```javascript
+  function f1(x, y) {
+      return x + y;
+  }
+  
+  function f2(x) {
+      return x * x;
+  }
+  
+  function func3(func1, func2) {
+      return function() {
+          return func2.call(this, func1.apply(this, arguments));
+      }
+  }
+  
+  var f3 = func3(f1, f2);
+  console.log(f3(2, 3)); // 25
+  ```
+  我们通过函数`func3`将函数`f1`,`f2`结合到了一起,然后返回了一个新的函数`f3`;这个函数就是我们期望的那个函数.
 
 
 
