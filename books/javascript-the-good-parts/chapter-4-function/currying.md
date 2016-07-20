@@ -32,9 +32,28 @@ curryingAdd(1)(2); // 3
 #### 如何对函数进行柯里化?
 在这一部分里,我们由浅入深的一步步来告诉大家如何对一个多参数的函数进行柯里化.
 
-+ **先来一份开胃菜**
++ **先上开胃菜**
 
-爱仕达啊实打实的
+  假如我们要实现一个功能,就是输出语句`name`喜欢`song`,其中`name`和`song`都是可变参数;那么一般情况下我们会这样写:
+  ```javascript
+  function printInfo(name, song) {
+      console.log(name + '喜欢的歌曲是: ' + song);
+  }
+  printInfo('Tom', '七里香');
+  printInfo('Jerry', '雅俗共赏');
+  ```
+  对上面的函数进行柯里化之后,我们可以这样写: 
+  ```javascript
+  function curryingPrintInfo(name) {
+      return function(song) {
+          console.log(name + '喜欢的歌曲是: ' + song);
+      }
+  }
+  var tomLike = curryingPrintInfo('Tom');
+  tomLike('七里香');
+  var jerryLike = curryingPrintInfo('Jerry');
+  jerryLike('雅俗共赏');
+  ```
 + **升级套餐**
 
   啊实打实的
