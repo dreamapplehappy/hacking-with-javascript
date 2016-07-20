@@ -1,5 +1,12 @@
 ### 理解JS的柯里化,这一篇就够了
 
+#### 本篇文章的一些知识点
++ 函数的`.call`,`.apply`,`arguments`
++ 高阶函数(higher-order function)
++ 不完全函数
+
+文章后面有对这些知识的简单解释,大家可以看看.
+
 #### 什么是柯里化?
 我们先来看看[维基百科][1]中是如何定义的:**在计算机科学中，柯里化（英语：Currying），又译为卡瑞化或加里化，是把接受多个参数的函数变换成接受一个单一参数（最初函数的第一个参数）的函数，并且返回接受余下的参数而且返回结果的新函数的技术。**
 
@@ -198,32 +205,13 @@ curryingAdd(1)(2); // 3
 
 #### 关于柯里化的性能
 
-#### 文中其它知识点的简单解释
-+ **I**: 
+#### 关于本章一些知识点的解释
++ 高阶函数(high-order function)
+    
+  adasd  
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-[1]: https://zh.wikipedia.org/zh-cn/%E6%9F%AF%E9%87%8C%E5%8C%96
 
 
 #### 参考的资料
@@ -236,6 +224,12 @@ curryingAdd(1)(2); // 3
 + [:mag_right:Js函数柯里化](http://www.w3cfuns.com/notes/17507/f742cc715cacdc1a9656c2645aea55a4.html)
 + [深入解析JavaScript中函数的Currying柯里化](http://www.jb51.net/article/81190.htm)
 + [js基础篇之——JavaScript的柯里化函数详解](http://toutiao.com/i6220924016044016129/)
+
+
+
+
+
+[1]: https://zh.wikipedia.org/zh-cn/%E6%9F%AF%E9%87%8C%E5%8C%96
 
 
 
