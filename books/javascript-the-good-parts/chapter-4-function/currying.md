@@ -84,11 +84,40 @@ curryingAdd(1)(2); // 3
   var curryingShowMsg2 = curryingHelper(showMsg, 'dreamapple', 20);
   curryingShowMsg2('watermelon'); // My name is dreamapple, I'm 20 years old,  and I like eat watermelon
   ```
+  上面的结果表示,我们的这个柯里化的函数是正确的.
   
++ **III 牛肉火锅**
   
-+ **III 大餐**
-
-  啊实打实的
+  上面的柯里化帮助函数确实已经能够达到我们的一般性需求了,但是它还不够好,我们希望那些经过柯里化后的函数可以每次只传递进去一个参数,
+  然后可以进行多次参数的传递,那么应该怎么办呢?我们可以再花费一些脑筋,写出一个`betterCurryingHelper`函数,实现我们上面说的那些
+  功能.代码如下:
+  ```javascript
+  function betterCurryingHelper(fn, len) {
+      var length = len || fn.length;
+      return function () {
+          var allArgsFulfilled = (arguments.length >= length);
+  
+          // 如果参数全部满足,就可以终止递归调用
+          if (allArgsFulfilled) {
+              return fn.apply(this, arguments);
+          }
+          else {
+              var argsNeedFulfilled = [fn].concat(Array.prototype.slice.call(arguments));
+              return betterCurryingHelper(curryingHelper.apply(this, argsNeedFulfilled), length - arguments.length);
+          }
+      };
+  }
+  ```
+  其中`curryingHelper`就是上面**II 小鸡炖蘑菇**中提及的那个函数.需要注意的是`fn.length`表示的是这个函数的参数长度.
+  接下来我们来检验一下这个函数的正确性:
+  ```javascript
+  var betterShowMsg = betterCurryingHelper(showMsg);
+  betterShowMsg('dreamapple', 22)('apple'); // My name is dreamapple, I'm 22 years old,  and I like eat apple
+  betterShowMsg('dreamapple')(22, 'apple'); // My name is dreamapple, I'm 22 years old,  and I like eat apple
+  betterShowMsg('dreamapple')(22)('apple'); // My name is dreamapple, I'm 22 years old,  and I like eat apple
+  ```
+  其中`showMsg`就是**II 小鸡炖蘑菇**部分提及的那个函数.
+  我们可以看出来,这个`betterCurryingHelper`确实实现了我们想要的那个功能.
 + **IV 超级大餐**
 
   啊实打实
