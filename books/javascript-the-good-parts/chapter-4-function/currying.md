@@ -1,5 +1,7 @@
 ### 理解JS的柯里化,这一篇就够了
 
+> [Haskell](https://www.haskell.org/)和[scala](http://www.scala-lang.org/)都支持函数的柯里化,JavaScript函数的柯里化还与[JavaScript的函数编程](http://eloquentjavascript.net/1st_edition/chapter6.html)有很大的联系,如果你感兴趣的话,可以在这些方面多下功夫了解,相信收获一定很多.
+
 #### :tangerine:本篇文章的一些知识点
 + 函数的`.call`,`.apply`,`arguments`
 + 高阶函数
@@ -297,6 +299,7 @@ curryingAdd(1)(2); // 3
 
 
 #### 参考的资料
++ [Gettin’ Freaky Functional w/Curried JavaScript](http://blog.carbonfive.com/2015/01/14/gettin-freaky-functional-wcurried-javascript/)
 + [Currying, Spice Up Your Javascript Functions](http://requiremind.com/currying-spice-up-your-javascript-functions/)
 + [函数式JavaScript（4）：函数柯里化](http://blog.jobbole.com/77956/)
 + [前端开发者进阶之函数柯里化Currying](http://www.cnblogs.com/pigtail/p/3447660.html)
