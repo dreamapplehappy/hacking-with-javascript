@@ -233,7 +233,7 @@ curryingAdd(1)(2); // 3
 + [JS中的柯里化(currying)](http://www.zhangxinxu.com/wordpress/2013/02/js-currying/)
 + [浅析 JavaScript 中的 函数 currying 柯里化](http://www.2cto.com/kf/201412/357997.html)
 + [JS闭包与柯里化](http://www.itxueyuan.org/view/5637.html)
-+ [Js函数柯里化](http://www.w3cfuns.com/notes/17507/f742cc715cacdc1a9656c2645aea55a4.html)
++ [:mag_right:Js函数柯里化](http://www.w3cfuns.com/notes/17507/f742cc715cacdc1a9656c2645aea55a4.html)
 + [深入解析JavaScript中函数的Currying柯里化](http://www.jb51.net/article/81190.htm)
 + [js基础篇之——JavaScript的柯里化函数详解](http://toutiao.com/i6220924016044016129/)
 
