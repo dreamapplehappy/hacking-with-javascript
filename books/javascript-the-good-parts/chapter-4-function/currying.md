@@ -211,14 +211,28 @@ curryingAdd(1)(2); // 3
     
         一般情况下,我们如果想给一个`setTimeout`传递进来的函数添加参数的话,一般会使用之种方法:
         ```javascript
-            function hello(name) {
-                console.log('Hello, ' + name);
-            }
-            setTimeout(hello('dreamapple'), 3600); //立即执行,不会在3.6s后执行
-            setTimeout(function() {
-                hello('dreamapple');
-            }, 3600); // 3.6s 后执行
+        function hello(name) {
+            console.log('Hello, ' + name);
+        }
+        setTimeout(hello('dreamapple'), 3600); //立即执行,不会在3.6s后执行
+        setTimeout(function() {
+            hello('dreamapple');
+        }, 3600); // 3.6s 后执行
         ```
+        我们使用了一个新的匿名函数包裹我们要执行的函数,然后在函数体里面给那个函数传递参数值.
+        
+        当然,在ES5里面,我们也可以使用函数的[`bind`][2]方法,如下所示:
+        ```javascript
+        setTimeout(hello.bind(this, 'dreamapple'), 3600); // 3.6s 之后执行函数
+        ```
+        这样也是非常的方便快捷.
+        
+        我们本篇文章是讨论函数的柯里化,当然我们这里也可以使用函数的柯里化来达到这个效果:
+        ```javascript
+        setTimeout(curryingHelper(hello, 'dreamapple'), 3600); // 其中curryingHelper是上面已经提及过的
+        ```
+        这样也是可以的,是不是很酷.
+        
 
 #### :tangerine:关于柯里化的性能
 
@@ -330,6 +344,7 @@ curryingAdd(1)(2); // 3
 
 
 [1]: https://zh.wikipedia.org/zh-cn/%E6%9F%AF%E9%87%8C%E5%8C%96
+[2]: https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Function/bind
 
 
 
