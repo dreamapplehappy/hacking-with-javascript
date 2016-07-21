@@ -208,16 +208,17 @@ curryingAdd(1)(2); // 3
 
 + 关于函数柯里化的一些小技巧
     - 给`setTimeout`传递地进来的函数添加参数
-    一般情况下,我们如果想给一个`setTimeout`传递进来的函数添加参数的话,一般会使用之种方法:
-    ```javascript
-    function hello(name) {
-        console.log('Hello, ' + name);
-    }
-    setTimeout(hello('dreamapple'), 3600); //立即执行,不会在3.6s后执行
-    setTimeout(function() {
-        hello('dreamapple');
-    }, 3600); // 3.6s 后执行
-    ```
+    
+        一般情况下,我们如果想给一个`setTimeout`传递进来的函数添加参数的话,一般会使用之种方法:
+        ```javascript
+            function hello(name) {
+                console.log('Hello, ' + name);
+            }
+            setTimeout(hello('dreamapple'), 3600); //立即执行,不会在3.6s后执行
+            setTimeout(function() {
+                hello('dreamapple');
+            }, 3600); // 3.6s 后执行
+        ```
 
 #### :tangerine:关于柯里化的性能
 
