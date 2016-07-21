@@ -338,6 +338,7 @@ curryingAdd(1)(2); // 3
 + [:mag_right:Js函数柯里化](http://www.w3cfuns.com/notes/17507/f742cc715cacdc1a9656c2645aea55a4.html)
 + [深入解析JavaScript中函数的Currying柯里化](http://www.jb51.net/article/81190.htm)
 + [js基础篇之——JavaScript的柯里化函数详解](http://toutiao.com/i6220924016044016129/)
++ [:mag_right:JS函数柯里化及其应用](http://blog.csdn.net/yhjw2bah/article/details/7897032)
 
 
 
@@ -352,7 +353,7 @@ curryingAdd(1)(2); // 3
 
 
 
-00: http://blog.csdn.net/yhjw2bah/article/details/7897032
+
 1.http://requiremind.com/currying-spice-up-your-javascript-functions/
 2.callee/caller
 3.http://www.cnblogs.com/pigtail/p/3447660.html
