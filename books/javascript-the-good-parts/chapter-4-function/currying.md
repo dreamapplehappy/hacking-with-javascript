@@ -225,7 +225,7 @@ curryingAdd(1)(2); // 3
         ```javascript
         setTimeout(hello.bind(this, 'dreamapple'), 3600); // 3.6s 之后执行函数
         ```
-        这样也是非常的方便快捷.
+        这样也是非常的方便快捷,并且可以绑定函数执行的上下文.
         
         我们本篇文章是讨论函数的柯里化,当然我们这里也可以使用函数的柯里化来达到这个效果:
         ```javascript
