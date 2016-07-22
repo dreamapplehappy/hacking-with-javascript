@@ -1,4 +1,4 @@
-### 理解JS的柯里化,这一篇就够了
+### 玩一玩JS函数的柯里化
 
 > [Haskell](https://www.haskell.org/)和[scala](http://www.scala-lang.org/)都支持函数的柯里化,JavaScript函数的柯里化还与[JavaScript的函数编程](http://eloquentjavascript.net/1st_edition/chapter6.html)有很大的联系,如果你感兴趣的话,可以在这些方面多下功夫了解,相信收获一定很多.
 
@@ -386,3 +386,6 @@ curryingAdd(1)(2); // 3
 3.有什么作用
 4.扩展的函数库
 5.isuee 提出
+
+1.https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Function/bind#分离函数（Partial_Functions）
+setTimeout(xx, 3600)  xx是什么
