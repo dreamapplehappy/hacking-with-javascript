@@ -36,7 +36,8 @@ curryingAdd(1)(2); // 3
 #### :tangerine:为什么要对函数进行柯里化?
 + 可以使用一些小技巧
     - 可以给setTimeout传递的函数添加参数
-+ 参数复用/函数柯里化用来创建已经设置好一个或多个参数的函数/提高适用性/固定易变因素
++ 固定易变因素
++ 函数的柯里化可以提前绑定好函数里面的某些参数,达到参数复用的效果,提高了适用性.
 + 提前返回
 + 延迟计算
 + 函数柯里化允许和鼓励你分隔复杂功能变成更小更容易分析的部分。这些小的逻辑单元显然是更容易理解和测试的，然后你的应用就会变成干净而整洁的组合，由一些小单元组成的组合。
@@ -237,6 +238,35 @@ curryingAdd(1)(2); // 3
 #### :tangerine:关于柯里化的性能
 
 #### :tangerine:关于本章一些知识点的解释
++ 琐碎的知识点
+    
+  `fn.length`: 表示的是这个函数中参数的个数.
+  `arguments.callee`: 指向的是当前运行的函数.`callee`是`arguments`对象的属性。
+  在该函数的函数体内,它可以指向当前正在执行的函数.当函数是匿名函数时,这是很有用的,比如没有名字的函数表达式(也被叫做"匿名函数").
+  我们可以看一下下面的例子:
+  ```javascript
+  function hello() {
+      return function() {
+          console.log('hello');
+          if(!arguments.length) {
+              console.log('from a anonymous function.');
+              return arguments.callee;
+          }
+      }
+  }
+  
+  hello()(1); // hello
+  
+  /*
+   * hello
+   * from a anonymous function.
+   * hello
+   * from a anonymous function.
+   */
+  hello()()();
+  ```
+  
+    
 + 高阶函数(high-order function)
     
   **高阶函数就是操作函数的函数,它接受一个或多个函数作为参数,并返回一个新的函数.**
@@ -357,7 +387,7 @@ curryingAdd(1)(2); // 3
 1.http://requiremind.com/currying-spice-up-your-javascript-functions/
 2.callee/caller
 3.http://www.cnblogs.com/pigtail/p/3447660.html
-4.fn.length
+
 5.http://www.zhangxinxu.com/wordpress/2013/02/js-currying/
 6.http://blog.jobbole.com/77956/
 7.http://www.jb51.net/article/81190.htm
