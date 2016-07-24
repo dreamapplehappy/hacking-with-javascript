@@ -459,8 +459,10 @@ curryingAdd(1)(2); // 3
   partialRight(showMsg, 1)(2, 3); // 实际参数列表: [2, 3, 1] 所以结果是 2 * (3 - 1) = 4
   partial(showMsg, undefined, 1)(2, 3); // 实际参数列表: [2, 1, 3] 所以结果是 2 * (1 - 3) = -4
   ```
+
+  
 #### 一些你可能会喜欢的JS库
-JavaScript的柯里化与JavaScript的函数式编程密不可分,下面列举了一些关于JavaScript函数式编程的库,大家可以看一下:
+  JavaScript的柯里化与JavaScript的函数式编程密不可分,下面列举了一些关于JavaScript函数式编程的库,大家可以看一下:
 
 + [underscore](https://github.com/jashkenas/underscore)
 + [lodash](https://github.com/lodash/lodash/)
