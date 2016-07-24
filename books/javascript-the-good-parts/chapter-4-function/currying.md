@@ -369,7 +369,8 @@ curryingAdd(1)(2); // 3
   ```
 
 
-
+#### 欢迎提意见
++ [玩一玩函数的柯里化](https://github.com/dreamapplehappy/hacking-with-javascript/issues/2)
 
 
 #### 参考的资料
