@@ -278,7 +278,7 @@ curryingAdd(1)(2); // 3
       add(1)(2)(3)(); // 6
       add(1, 2, 3)(); // 6
       ```
-     - 当我们的需要兼容IE9之前版本的IE浏览器的话,我们可能需要写出一些兼容的方案 ,比如事件监听;一般情况下我们应该会这样写:
+    - 当我们的需要兼容IE9之前版本的IE浏览器的话,我们可能需要写出一些兼容的方案 ,比如事件监听;一般情况下我们应该会这样写:
      ```javascript
      var addEvent = function(el, type, fn ,capture) {
              if(window.addEventListener) {
