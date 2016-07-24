@@ -280,31 +280,12 @@ curryingAdd(1)(2); // 3
       ```
     - 当我们的需要兼容IE9之前版本的IE浏览器的话,我们可能需要写出一些兼容的方案 ,比如事件监听;一般情况下我们应该会这样写:
       ```javascript
-      var addEvent = function(el, type, fn ,capture) {
-             if(window.addEventListener) {
-                  el.addEventListener(type, fn, capture);
-              }
-              else {
-                  el.attachEvent('on'+type, fn);
-              }
-          };
+      爱仕达
       ```
       这也写也是可以的,但是性能上会差一点,因为如果是在低版本的IE浏览器上每一次都会运行`if()`语句,产生了不必要的性能开销.
       我们也可以这样写:
       ```javascript
-      var addEvent = (function() {
-              if(window.addEventListener) {
-                  return function(el, type, fn, capture) {
-                      el.addEventListener(type, fn, capture);
-                  }
-              }
-              else {
-                  return function(el, type, fn) {
-                      var IEtype = 'on' + type;
-                      el.attachEvent(IEtype, fn);
-                  }
-              }
-          })();
+      爱仕达
       ```
       这样就减少了不必要的开支,整个函数运行一次就可以了.
      
