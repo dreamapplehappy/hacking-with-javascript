@@ -468,7 +468,7 @@ curryingAdd(1)(2); // 3
 + [Currying, Spice Up Your Javascript Functions](http://requiremind.com/currying-spice-up-your-javascript-functions/)
 + [函数式JavaScript（4）：函数柯里化](http://blog.jobbole.com/77956/)
 + [前端开发者进阶之函数柯里化Currying](http://www.cnblogs.com/pigtail/p/3447660.html)
-+ [JS中的柯里化(currying)](http://www.zhangxinxu.com/wordpress/2013/02/js-currying/)
++ [:mag_right:JS中的柯里化(currying)](http://www.zhangxinxu.com/wordpress/2013/02/js-currying/)
 + [浅析 JavaScript 中的 函数 currying 柯里化](http://www.2cto.com/kf/201412/357997.html)
 + [JS闭包与柯里化](http://www.itxueyuan.org/view/5637.html)
 + [:mag_right:Js函数柯里化](http://www.w3cfuns.com/notes/17507/f742cc715cacdc1a9656c2645aea55a4.html)
