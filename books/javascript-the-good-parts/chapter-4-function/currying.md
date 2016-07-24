@@ -34,11 +34,11 @@ curryingAdd(1)(2); // 3
 看到这里你可能会想,这样做有什么用?为什么要这样做?这样做能够给我们的应用带来什么样的好处?先别着急,我们接着往下看.
 
 #### :tangerine:为什么要对函数进行柯里化?
-+ 可以使用一些小技巧(见下文)
-+ 提前绑定好函数里面的某些参数,达到参数复用的效果,提高了适用性.
++ :apple:可以使用一些小技巧(见下文)
++ :apple:提前绑定好函数里面的某些参数,达到参数复用的效果,提高了适用性.
 + 固定易变因素
 + 提前返回
-+ 延迟计算
++ :apple:延迟计算
 + 函数柯里化允许和鼓励你分隔复杂功能变成更小更容易分析的部分。这些小的逻辑单元显然是更容易理解和测试的，然后你的应用就会变成干净而整洁的组合，由一些小单元组成的组合。
 
 #### :tangerine:如何对函数进行柯里化?
@@ -277,6 +277,9 @@ curryingAdd(1)(2); // 3
       add(1)(2)(3)(); // 6
       add(1, 2, 3)(); // 6
       ```
++ 延迟计算
+    
+    上面的拿了两个函数`multiply()`和`add()`实际上就是延迟计算的例子.
         
 + 提前绑定好函数里面的某些参数,达到参数复用的效果,提高了适用性.
     
@@ -434,7 +437,7 @@ curryingAdd(1)(2); // 3
 + [浅析 JavaScript 中的 函数 currying 柯里化](http://www.2cto.com/kf/201412/357997.html)
 + [JS闭包与柯里化](http://www.itxueyuan.org/view/5637.html)
 + [:mag_right:Js函数柯里化](http://www.w3cfuns.com/notes/17507/f742cc715cacdc1a9656c2645aea55a4.html)
-+ [深入解析JavaScript中函数的Currying柯里化](http://www.jb51.net/article/81190.htm)
++ [:mag_right:深入解析JavaScript中函数的Currying柯里化](http://www.jb51.net/article/81190.htm)
 + [js基础篇之——JavaScript的柯里化函数详解](http://toutiao.com/i6220924016044016129/)
 + [:mag_right:JS函数柯里化及其应用](http://blog.csdn.net/yhjw2bah/article/details/7897032)
 
@@ -463,7 +466,7 @@ curryingAdd(1)(2); // 3
 
 5.http://www.zhangxinxu.com/wordpress/2013/02/js-currying/
 6.http://blog.jobbole.com/77956/
-7.http://www.jb51.net/article/81190.htm
+
 8.http://www.cnblogs.com/neuscx/p/5163750.html
 9.http://sjpsega.iteye.com/blog/1700320
 10.http://www.w3cfuns.com/notes/17507/f742cc715cacdc1a9656c2645aea55a4.html
