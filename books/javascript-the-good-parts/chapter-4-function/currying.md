@@ -3,7 +3,7 @@
 > [Haskell](https://www.haskell.org/)和[scala](http://www.scala-lang.org/)都支持函数的柯里化,JavaScript函数的柯里化还与[JavaScript的函数编程](http://eloquentjavascript.net/1st_edition/chapter6.html)有很大的联系,如果你感兴趣的话,可以在这些方面多下功夫了解,相信收获一定很多.
 
 #### :tangerine:看本篇文章需要知道的一些知识点
-+ 函数的`.call`,`.apply`,`arguments`
++ 函数部分的`call`/`apply`/`arguments`
 + 闭包
 + 高阶函数
 + 不完全函数
@@ -36,8 +36,8 @@ curryingAdd(1)(2); // 3
 #### :tangerine:为什么要对函数进行柯里化?
 + 可以使用一些小技巧
     - 可以给setTimeout传递的函数添加参数
++ 提前绑定好函数里面的某些参数,达到参数复用的效果,提高了适用性.
 + 固定易变因素
-+ 函数的柯里化可以提前绑定好函数里面的某些参数,达到参数复用的效果,提高了适用性.
 + 提前返回
 + 延迟计算
 + 函数柯里化允许和鼓励你分隔复杂功能变成更小更容易分析的部分。这些小的逻辑单元显然是更容易理解和测试的，然后你的应用就会变成干净而整洁的组合，由一些小单元组成的组合。
@@ -45,7 +45,7 @@ curryingAdd(1)(2); // 3
 #### :tangerine:如何对函数进行柯里化?
 在这一部分里,我们由浅入深的一步步来告诉大家如何对一个多参数的函数进行柯里化.其中用到的知识有`闭包`,`高阶函数`,`不完全函数`等等.
 
-+ **I 先上开胃菜**
++ **I 开胃菜**
 
   假如我们要实现一个功能,就是输出语句`name`喜欢`song`,其中`name`和`song`都是可变参数;那么一般情况下我们会这样写:
   ```javascript
@@ -233,6 +233,32 @@ curryingAdd(1)(2); // 3
         setTimeout(curryingHelper(hello, 'dreamapple'), 3600); // 其中curryingHelper是上面已经提及过的
         ```
         这样也是可以的,是不是很酷.其实函数的`bind`方法也是使用函数的柯里化来完成的,详情可以看这里[Function.prototype.bind()][5].
+    - 写出这样一个函数`multiply(1)(2)(3) == 6`结果为`true`,`multiply(1)(2)(3)(...)(n) == (1)*(2)*(3)*(...)*(n)`结果为`true`
+        
+      这个题目不知道大家碰到过没有,不过通过函数的柯里化,也是有办法解决的,看下面的代码:
+      ```javascript
+      function multiply(x) {
+          var y = function(x) {
+              return multiply(x * y);
+          };
+          y.toString = y.valueOf = function() {
+              return x;
+          };
+          return y;
+      }
+      
+      console.log(multiply(1)(2)(3) == 6); // true
+      console.log(multiply(1)(2)(3)(4)(5) == 120); // true
+      ```  
+      因为`multiply(1)(2)(3)`的直接结果并不是6,而是一个函数对象`{ [Number: 6] valueOf: [Function], toString: [Function] }`,我们
+      之后使用了`==`会将左边这个函数对象转换成为一个数字,所以就达到了我们想要的结果.还有关于为什么使用`toString`和`valueOf`方法
+      可以看看这里的解释[Number.prototype.valueOf()][6],[Function.prototype.toString()][7].
+      
+    - 
+        
++ 提前绑定好函数里面的某些参数,达到参数复用的效果,提高了适用性.
+    
+    我们的`I 开胃菜`部分的`tomLike`和`jerryLike`其实就是属于这种的,绑定好函数里面的第一个参数,然后后面根据情况分别使用不同的函数.
         
 
 #### :tangerine:关于柯里化的性能
@@ -395,6 +421,8 @@ curryingAdd(1)(2); // 3
 [3]: https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Functions/arguments/callee
 [4]: https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Function/caller
 [5]: https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Function/bind
+[6]: https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Number/valueOf
+[7]: https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Function/toString
 
 
 
