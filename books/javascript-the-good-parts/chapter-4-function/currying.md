@@ -1,4 +1,4 @@
-### 掌握JS函数的柯里化
+### 掌握JavaScript函数的柯里化
 
 > [Haskell](https://www.haskell.org/)和[scala](http://www.scala-lang.org/)都支持函数的柯里化,JavaScript函数的柯里化还与[JavaScript的函数编程](http://eloquentjavascript.net/1st_edition/chapter6.html)有很大的联系,如果你感兴趣的话,可以在这些方面多下功夫了解,相信收获一定很多.
 
