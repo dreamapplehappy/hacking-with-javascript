@@ -479,15 +479,15 @@ curryingAdd(1)(2); // 3
 + [:mag_right:Gettin’ Freaky Functional w/Curried JavaScript](http://blog.carbonfive.com/2015/01/14/gettin-freaky-functional-wcurried-javascript/)
 + [:mag_right:A Beginner’s Guide to Currying in Functional JavaScript](https://www.sitepoint.com/currying-in-functional-javascript/)
 + [:mag_right:Currying, Spice Up Your Javascript Functions](http://requiremind.com/currying-spice-up-your-javascript-functions/)
-+ [函数式JavaScript（4）：函数柯里化](http://blog.jobbole.com/77956/)
-+ [前端开发者进阶之函数柯里化Currying](http://www.cnblogs.com/pigtail/p/3447660.html)
++ [:mag_right:函数式JavaScript（4）：函数柯里化](http://blog.jobbole.com/77956/)
++ [:mag_right:前端开发者进阶之函数柯里化Currying](http://www.cnblogs.com/pigtail/p/3447660.html)
 + [:mag_right:JS中的柯里化(currying)](http://www.zhangxinxu.com/wordpress/2013/02/js-currying/)
-+ [浅析 JavaScript 中的 函数 currying 柯里化](http://www.2cto.com/kf/201412/357997.html)
-+ [JS闭包与柯里化](http://www.itxueyuan.org/view/5637.html)
++ [:mag_right:浅析JavaScript中的函数currying柯里化](http://www.2cto.com/kf/201412/357997.html)
 + [:mag_right:Js函数柯里化](http://www.w3cfuns.com/notes/17507/f742cc715cacdc1a9656c2645aea55a4.html)
 + [:mag_right:深入解析JavaScript中函数的Currying柯里化](http://www.jb51.net/article/81190.htm)
 + [:mag_right:js基础篇之——JavaScript的柯里化函数详解](http://toutiao.com/i6220924016044016129/)
 + [:mag_right:JS函数柯里化及其应用](http://blog.csdn.net/yhjw2bah/article/details/7897032)
++ [:mag_right:JS闭包与柯里化](http://www.itxueyuan.org/view/5637.html)
 
 
 
