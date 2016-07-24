@@ -266,6 +266,20 @@ curryingAdd(1)(2); // 3
    */
   hello()()();
   ```
+  `fn.caller`: 返回调用指定函数的函数.详细的解释可以看这里[Function.caller][4],下面是示例代码:
+  ```javascript
+  function hello() {
+      console.log('hello');
+      console.log(hello.caller);
+  }
+  
+  function callHello(fn) {
+      return fn();
+  }
+  
+  callHello(hello); // hello [Function: callHello]
+  ```
+  
   
     
 + 高阶函数(high-order function)
@@ -378,6 +392,7 @@ curryingAdd(1)(2); // 3
 [1]: https://zh.wikipedia.org/zh-cn/%E6%9F%AF%E9%87%8C%E5%8C%96
 [2]: https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Function/bind
 [3]: https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Functions/arguments/callee
+[4]: https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Function/caller
 
 
 
