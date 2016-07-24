@@ -37,7 +37,6 @@ curryingAdd(1)(2); // 3
 + :apple:可以使用一些小技巧(见下文)
 + :apple:提前绑定好函数里面的某些参数,达到参数复用的效果,提高了适用性.
 + :apple:固定易变因素
-+ :apple:提前返回
 + :apple:延迟计算
 
 总之,函数的柯里化能够让你重新组合你的应用,把你的复杂功能拆分成一个一个的小部分,每一个小的部分都是简单的,便于理解的,而且是容易测试的;
@@ -279,6 +278,36 @@ curryingAdd(1)(2); // 3
       add(1)(2)(3)(); // 6
       add(1, 2, 3)(); // 6
       ```
+     - 当我们的需要兼容IE9之前版本的IE浏览器的话,我们可能需要写出一些兼容的方案 ,比如事件监听;一般情况下我们应该会这样写:
+     ```javascript
+     var addEvent = function(el, type, fn ,capture) {
+             if(window.addEventListener) {
+                 el.addEventListener(type, fn, capture);
+             }
+             else {
+                 el.attachEvent('on'+type, fn);
+             }
+         };
+     ```
+     这也写也是可以的,但是性能上会差一点,因为如果是在低版本的IE浏览器上每一次都会运行`if()`语句,产生了不必要的性能开销.
+     我们也可以这样写:
+     ```javascript
+     var addEvent = (function() {
+             if(window.addEventListener) {
+                 return function(el, type, fn, capture) {
+                     el.addEventListener(type, fn, capture);
+                 }
+             }
+             else {
+                 return function(el, type, fn) {
+                     var IEtype = 'on' + type;
+                     el.attachEvent(IEtype, fn);
+                 }
+             }
+         })();
+     ```
+     这样就减少了不必要的开支,整个函数运行一次就可以了.
+     
 + 延迟计算
     
     上面的那两个函数`multiply()`和`add()`实际上就是延迟计算的例子.
