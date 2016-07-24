@@ -232,7 +232,7 @@ curryingAdd(1)(2); // 3
         ```javascript
         setTimeout(curryingHelper(hello, 'dreamapple'), 3600); // 其中curryingHelper是上面已经提及过的
         ```
-        这样也是可以的,是不是很酷.
+        这样也是可以的,是不是很酷.其实函数的`bind`方法也是使用函数的柯里化来完成的,详情可以看这里[Function.prototype.bind()][5].
         
 
 #### :tangerine:关于柯里化的性能
@@ -393,6 +393,7 @@ curryingAdd(1)(2); // 3
 [2]: https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Function/bind
 [3]: https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Functions/arguments/callee
 [4]: https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Function/caller
+[5]: https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Function/bind
 
 
 
@@ -402,7 +403,7 @@ curryingAdd(1)(2); // 3
 
 
 1.http://requiremind.com/currying-spice-up-your-javascript-functions/
-2.callee/caller
+
 3.http://www.cnblogs.com/pigtail/p/3447660.html
 
 5.http://www.zhangxinxu.com/wordpress/2013/02/js-currying/
