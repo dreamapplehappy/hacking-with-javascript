@@ -244,7 +244,7 @@ curryingAdd(1)(2); // 3
   
   `arguments.callee`: 指向的是当前运行的函数.`callee`是`arguments`对象的属性。
   在该函数的函数体内,它可以指向当前正在执行的函数.当函数是匿名函数时,这是很有用的,比如没有名字的函数表达式(也被叫做"匿名函数").
-  我们可以看一下下面的例子:
+  详细解释可以看这里[arguments.callee][3].我们可以看一下下面的例子:
   ```javascript
   function hello() {
       return function() {
@@ -377,6 +377,7 @@ curryingAdd(1)(2); // 3
 
 [1]: https://zh.wikipedia.org/zh-cn/%E6%9F%AF%E9%87%8C%E5%8C%96
 [2]: https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Function/bind
+[3]: https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Functions/arguments/callee
 
 
 
