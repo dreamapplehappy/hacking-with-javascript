@@ -34,8 +34,7 @@ curryingAdd(1)(2); // 3
 看到这里你可能会想,这样做有什么用?为什么要这样做?这样做能够给我们的应用带来什么样的好处?先别着急,我们接着往下看.
 
 #### :tangerine:为什么要对函数进行柯里化?
-+ 可以使用一些小技巧
-    - 可以给setTimeout传递的函数添加参数
++ 可以使用一些小技巧(见下文)
 + 提前绑定好函数里面的某些参数,达到参数复用的效果,提高了适用性.
 + 固定易变因素
 + 提前返回
@@ -254,7 +253,30 @@ curryingAdd(1)(2); // 3
       之后使用了`==`会将左边这个函数对象转换成为一个数字,所以就达到了我们想要的结果.还有关于为什么使用`toString`和`valueOf`方法
       可以看看这里的解释[Number.prototype.valueOf()][6],[Function.prototype.toString()][7].
       
-    - 
+    - 上面的那个函数不够纯粹,我们也可以实现一个更纯粹的函数,但是可以会不太符合题目的要求.
+      我们可以这样做,先把函数的参数存储,然后再对这些参数做处理,一旦有了这个思路,我们就不难写出些面的代码:
+      ```javascript
+      function add() {
+          var args = Array.prototype.slice.call(arguments);
+          var _that = this;
+          return function() {
+              var newArgs = Array.prototype.slice.call(arguments);
+              var total = args.concat(newArgs);
+              if(!arguments.length) {
+                  var result = 1;
+                  for(var i = 0; i < total.length; i++) {
+                      result *= total[i];
+                  }
+                  return result;
+              }
+              else {
+                  return add.apply(_that, total);
+              }
+          }
+      }
+      add(1)(2)(3)(); // 6
+      add(1, 2, 3)(); // 6
+      ```
         
 + 提前绑定好函数里面的某些参数,达到参数复用的效果,提高了适用性.
     
@@ -262,6 +284,10 @@ curryingAdd(1)(2); // 3
         
 
 #### :tangerine:关于柯里化的性能
+  
+  当然,使用柯里化意味着有一些额外的开销;这些开销一般涉及到这些方面,首先是关于函数参数的调用,操作`arguments`对象通常会比操作命名的参数要慢一点;
+  还有,在一些老的版本的浏览器中`arguments.length`的实现是很慢的;直接调用函数`fn`要比使用`fn.apply()`或者`fn.call()`要快一点;产生大量的嵌套
+  作用域还有闭包会带来一些性能还有速度的降低.**但是,大多数的web应用的性能瓶颈时发生在操作DOM上的,所以上面的那些开销比起DOM操作的开销还是比较小的.**
 
 #### :tangerine:关于本章一些知识点的解释
 + 琐碎的知识点
