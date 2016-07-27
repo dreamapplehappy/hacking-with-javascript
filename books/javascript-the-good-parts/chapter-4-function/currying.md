@@ -210,7 +210,7 @@ curryingAdd(1)(2); // 3
 + 关于函数柯里化的一些小技巧
     - 给`setTimeout`传递地进来的函数添加参数
     
-        一般情况下,我们如果想给一个`setTimeout`传递进来的函数添加参数的话,一般会使用之种方法:
+        一般情况下,我们如果想给一个`setTimeout`传递进来的函数添加参数的话,一般会使用这种方法:
         ```javascript
         function hello(name) {
             console.log('Hello, ' + name);
