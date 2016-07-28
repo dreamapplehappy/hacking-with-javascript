@@ -32,6 +32,8 @@
 ------
 #### 工具集合
 + [关于动画的库,包括CSS以及JavaScript](tool/animation/animation-lib.md)
++ [关于图片](tool/about-image/about-image.md)
++ [关于Ajax/XHR]()
 
 #### 没事读读书
 + [JavaScript权威指南](reading/JavaScript权威指南.md)
