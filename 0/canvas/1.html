@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        html,body {
+            height: 100%;
+            width: 100%;
+        }
+        #canvas {
+
+        }
+    </style>
+</head>
+<body>
+<canvas width="1000" height="800" id="canvas"></canvas>
+
+<script>
+    var canvas = document.getElementById('canvas');
+    if(canvas.getContext) {
+        var ctx = canvas.getContext('2d');
+        ctx.fillStyle = 'red';
+        ctx.fillRect(10, 10, 100, 100);
+
+        ctx.fillStyle = 'blue';
+        ctx.strokeRect(30, 30, 100, 100);
+
+        ctx.clearRect(10, 10, 150, 150);
+
+        ctx.fillStyle = 'black';
+
+        var ptCur = generatePath();
+
+//        setInterval(function() {
+//            var pt = generatePath();
+//            ctx.strokeStyle = generateColor();
+//            ctx.beginPath();
+//            ctx.moveTo(ptCur.x, ptCur.y);
+//            ctx.lineTo(pt.x, pt.y);
+//            ctx.closePath();
+//            ctx.stroke();
+//            ptCur = pt;
+//        }, 600);
+    }
+
+    function generatePath() {
+        var path = {};
+        path.x = Math.random() * 1000 | 0;
+        path.y = Math.random() * 800 | 0;
+        return path;
+    }
+
+    function generateColor() {
+        var r = Math.random() * 255 | 0;
+        var g = Math.random() * 255 | 0;
+        var b = Math.random() * 255 | 0;
+        return 'rgb(' + Math.floor(r) + ',' +
+                Math.floor(g) + ','+ Math.floor(b)+')';
+    }
+</script>
+</body>
+</html>

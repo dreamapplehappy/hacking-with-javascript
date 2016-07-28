@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<button id="btn">click</button>
+<script>
+
+    var addEvent1 = function (el, type, fn, capture) {
+        if (window.addEventListener) {
+            el.addEventListener(type, fn, capture);
+        }
+        else {
+            el.attachEvent('on' + type, fn);
+        }
+    };
+
+    var addEvent = (function () {
+        if (window.addEventListener) {
+            return function (el, type, fn, capture) {
+                el.addEventListener(type, fn, capture);
+            }
+        }
+        else {
+            return function (el, type, fn) {
+                var IEtype = 'on' + type;
+                el.attachEvent(IEtype, fn);
+            }
+        }
+    })();
+    var btn = document.getElementById('btn');
+    addEvent1(document.getElementById('btn'), 'click', function (e) {
+        console.log(e);
+        alert(1);
+    });
+
+    console.log(addEvent);
+</script>
+</body>
+</html>

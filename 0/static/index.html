@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>流量客</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <style>
+        /* 公用样式 */
+        body {padding: 0; margin:0; background-color: #f5f5f9; width: 100%;  -webkit-user-select: none; user-select: none;}
+
+        body {
+            overflow-x: hidden;
+        }
+        a{text-decoration: none; background:transparent}
+        /* 响应式 */
+        html {
+            font-size:62.5%;
+        }
+        @media only screen and (min-width: 481px){
+            html {
+                font-size: 94%!important; /* 15.04÷16=94% */
+            }
+        }
+        @media only screen and (min-width: 561px){
+            html {
+                font-size: 109%!important; /* 17.44÷16=109% */
+            }
+        }
+        @media only screen and (min-width: 641px){
+            html {
+                font-size: 125%!important; /* 20÷16=125% */
+            }
+        }
+        .connection-error-container {
+            background-color: #f5f5f9;
+            overflow: auto;
+        }
+        .error-image {
+            background-image: url('http://cdn.lly800.cn/static/images/error/connection-error.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            margin: 0 auto;
+        }
+        .error-info {
+            margin-top: 1.5rem;
+            text-align: center;
+            font-size: 1.8rem;
+            color: #999999;
+        }
+        .retry {
+            margin: 1.5rem auto;
+            display: block;
+            width: 10rem;
+            height: 2rem;
+            font-size: 1.5rem;
+            line-height: 2rem;
+            text-align: center;
+            color: #49246b;
+            border: 1px solid #49246b;
+            border-radius: .5rem;
+        }
+    </style>
+</head>
+<body>
+
+<div class="connection-error-container" id="connection-error-container">
+    <div class="error-image" id="error-image"></div>
+    <p class="error-info">网络连接异常 连接失败</p>
+    <a class="retry" href="http://www.lly800.com/Wap/Frontend/index">点击重试</a>
+</div>
+
+<script>
+    var dw = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+    var dh = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+    document.getElementById('connection-error-container').style.height = dh + 'px';
+    document.getElementById('connection-error-container').style.width = dw + 'px';
+    document.getElementById('error-image').style.height = dh * 450 / 1334 + 'px';
+    document.getElementById('error-image').style.width = dw * 48 / 64 + 'px';
+    document.getElementById('error-image').style.marginTop = dh * 260 / 1334 + 'px';
+</script>
+
+</body>
+</html>
