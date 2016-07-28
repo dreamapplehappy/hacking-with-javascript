@@ -9,17 +9,8 @@
 + [执行环境以及作用域](points/execution-context-and-scope.md)
 + [掌握JavaScript函数的柯里化](books/javascript-the-good-parts/chapter-4-function/currying.md)
 
-#### 关于书籍
-+ **JavaScript: The Good Parts**
-    - 函数
-        + [柯里化](books/javascript-the-good-parts/chapter-4-function/currying.md)
-
 #### 翻译的文章
 + [你想知道的关于JavaScript作用域的一切](translate/everything-you-wanted-to-know-about-javascript-scope.md)
-
-#### You Don't Know JS
-+ 异步和执行
-    - [异步:现在和稍后](you-do-not-know-js/async-performance/now-later.md)
     
 #### 你肯定不会系列
 + [你肯定不会这样使用JavaScript: 0x1](magic/about-bitwise-operators-1.md)
@@ -29,11 +20,14 @@
 + [Vue 系列教程](series-tutorial/vue/README.md)
 + [ES6 系列教程](series-tutorial/es6/README.md)
 
-------
 #### 工具集合
 + [关于动画的库,包括CSS以及JavaScript](tool/animation/animation-lib.md)
 + [关于图片](tool/about-image/about-image.md)
-+ [关于Ajax/XHR]()
++ [关于Ajax/XHR](tool/ajax-xhr/ajax-xhr.md)
 
-#### 没事读读书
+#### 读书实践
++ [**JavaScript: The Good Parts**](books/javascript-the-good-parts)
++ [**You Don't Know JS**](books/you-do-not-know-js)
+
+#### 读书记录
 + [JavaScript权威指南](reading/JavaScript权威指南.md)
