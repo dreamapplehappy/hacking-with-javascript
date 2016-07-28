@@ -1,4 +1,3 @@
-(function() {
-   alert('hello');
-    console.log(1);
-});
+var hr = (function() {
+   alert(123);
+})();
