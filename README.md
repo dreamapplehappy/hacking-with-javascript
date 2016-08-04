@@ -9,6 +9,9 @@
 + [执行环境以及作用域](points/execution-context-and-scope.md)
 + [掌握JavaScript函数的柯里化](books/javascript-the-good-parts/chapter-4-function/currying.md)
 
+#### [Vanilla JS]()
++ [Object.defineProperty()](vanilla-js/object/define-property.md)
+
 #### 翻译的文章
 + [你想知道的关于JavaScript作用域的一切](translate/everything-you-wanted-to-know-about-javascript-scope.md)
     

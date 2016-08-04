@@ -1,6 +1,9 @@
 var age = 33;
 var obj = {};
 obj.name = 'dreamapple';
+
+//Object.prototype.get = function(){}; 重点
+
 Object.defineProperty(obj, 'age', {
     //value: null,
     enumerable: true,
