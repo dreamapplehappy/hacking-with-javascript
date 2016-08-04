@@ -1,6 +1,9 @@
 ### 攀登JavaScript的高峰
 
-**欢迎贡献 fork - > pull request :stuck_out_tongue_winking_eye:**
+**欢迎贡献 fork and pull request :stuck_out_tongue_winking_eye:**
+
+#### [**Vanilla JS**](http://vanilla-js.com/)
++ [Object.defineProperty()](vanilla-js/object/define-property.md)
 
 #### 一点一滴:
 + [理解`prototype`和`__proto__`](points/understand-prototype-__proto__.md)
@@ -8,9 +11,6 @@
 + [掌握JavaScript的闭包](points/master-javascript-closure.md)
 + [执行环境以及作用域](points/execution-context-and-scope.md)
 + [掌握JavaScript函数的柯里化](books/javascript-the-good-parts/chapter-4-function/currying.md)
-
-#### [**Vanilla JS**](http://vanilla-js.com/)
-+ [Object.defineProperty()](vanilla-js/object/define-property.md)
 
 #### 翻译的文章
 + [你想知道的关于JavaScript作用域的一切](translate/everything-you-wanted-to-know-about-javascript-scope.md)
