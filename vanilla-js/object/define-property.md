@@ -7,10 +7,7 @@ var dreamapple = {
     lastName: 'apple'
 };
 ```
-我们的要求就是你要给`dreamapple`添加一个`fullName`属性,当`dreamapple`的`firstName`或者`lastName`
-发生变化的时候,`fullName`也要随之变化;
-而且当我们设置了`fullName`的值的时候,那么相应的它的`firstName`和`lastName`也随之发生变化; 
-那么我们应该怎么做呢?
+我们的要求就是你要给`dreamapple`添加一个`fullName`属性,当`dreamapple`的`firstName`或者`lastName`发生变化的时候,`fullName`也要随之变化;而且当我们设置了`fullName`的值的时候,那么相应的它的`firstName`和`lastName`也随之发生变化; 那么我们应该怎么做呢?
 
 如果你使用过`Vue.js`的话,那么你可以使用它的`计算属性`来达到这个目的,大概的代码应该是下面这个样子:
 ```javascript
@@ -53,9 +50,7 @@ $scope.$watch('vm.fullName', function() {
 });
 ```
 
-那我们使用原生的`JavaScript`可不可以达到这个目的呢?当然可以了;那么我们需要怎么做呢?比较简单的做法就是给这个
-对象的属性`fullName`设置一个`getter`和一个`setter`,因为这是`ES5`的特性所以较低版本的浏览器不支持这种特性,但是基本所有的
-现代浏览器都已经支持.我们只需要写出下面的代码就可以了:
+那我们使用原生的`JavaScript`可不可以达到这个目的呢?当然可以了;那么我们需要怎么做呢?比较简单的做法就是给这个对象的属性`fullName`设置一个`getter`和一个`setter`,因为这是`ES5`的特性所以较低版本的浏览器不支持这种特性,但是基本所有的现代浏览器都已经支持.我们只需要写出下面的代码就可以了:
 
 ```javascript
 var dreamapple = {
@@ -83,26 +78,23 @@ console.log(dreamapple.lastName); // King
 ```
 是不是很方便呢?我们通过给`dreamapple`这个对象设置了属性`fullName`的`getter`和`setter`方法,就达到了我们想要的那种效果.
 
-当然更好的一种方法就是使用[`Object.defineProperty()`][1]这个函数了,下面我们就来好好的探讨一下这个函数.
-这个方法的作用就是直接在一个对象上定义一个新属性,或者修改一个已经存在的属性,并返回这个对象;我们先来看一下怎么使用这个方法:
+当然更好的一种方法就是使用[`Object.defineProperty()`][1]这个函数了,下面我们就来好好的探讨一下这个函数.这个方法的作用就是直接在一个对象上定义一个新属性,或者修改一个已经存在的属性,并返回这个对象;我们先来看一下怎么使用这个方法:
 ```javascript
 Object.defineProperty(obj, prop, descriptor)
 ```
-其中参数`obj`表示的是需要定义属性的那个对象,参数`prop`表示需要被定义或者修改的属性名,
-参数`descriptor`就是我们定义的那个属性`prop`的描述;我们接下来主要讲解这个`descriptor`.
-它是一个对象,它有许多的属性,我们接下来来分析这些属性都是干什么用的:
+其中参数`obj`表示的是需要定义属性的那个对象,参数`prop`表示需要被定义或者修改的属性名,参数`descriptor`就是我们定义的那个属性`prop`的描述;我们接下来主要讲解这个`descriptor`.它是一个对象,它有许多的属性,我们接下来来分析这些属性都是干什么用的:
 
 + **value** 该属性对应的值,可以是任何有效的JavaScript值(数值,对象,函数等),默认为`undefined`.我们可以看下面的一个小例子:
-```javascript
-var dream = {};
-Object.defineProperty(dream, 'name', {
-    value: 'dreamapple'
-});
-
-console.log(dream.name); // dreamapple
-dream.name = 'apple'; // 修改name属性
-console.log(dream.name); // 并不是apple,依旧是dreamapple
-```
+    ```javascript
+    var dream = {};
+    Object.defineProperty(dream, 'name', {
+        value: 'dreamapple'
+    });
+    
+    console.log(dream.name); // dreamapple
+    dream.name = 'apple'; // 修改name属性
+    console.log(dream.name); // 并不是apple,依旧是dreamapple
+    ```
 从上面的代码中我们可以看到,我们给`dream`定义了一个新的属性`name`,然后我们打印出这个属性就是我们预期的那样,得到的是`dreamapple`;
 但是,当我们尝试改变这个属性的时候,却发现这个属性并没有改变,还以第一次我们赋给它的值;这是为什么呢?
 原来,只有当我们这个属性的`writable`修饰为`true`时,我们这个属性才可以被修改.
