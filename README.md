@@ -3,7 +3,7 @@
 **欢迎贡献 fork and pull request :stuck_out_tongue_winking_eye:**
 
 #### [**Vanilla JS**](http://vanilla-js.com/)
-+ [Object.defineProperty()](vanilla-js/object/define-property.md)
++ [理解JavaScript的Object.defineProperty()函数](vanilla-js/object/define-property.md)
 
 #### 一点一滴:
 + [理解`prototype`和`__proto__`](points/understand-prototype-__proto__.md)
