@@ -47,17 +47,33 @@ console.log('------');
 var dreamapple = {
     firstName: 'dream',
     lastName: 'apple',
-    get fullName() {
+    //get fullName() {
+    //    return this.firstName + ' ' + this.lastName;
+    //},
+    //set fullName(fullName) {
+    //    var names = fullName.trim().split(' ');
+    //    if (2 === names.length) {
+    //        this.firstName = names[0];
+    //        this.lastName = names[1];
+    //    }
+    //}
+};
+
+
+
+Object.defineProperty(dreamapple, 'fullName', {
+    enumerable: true,
+    get: function () {
         return this.firstName + ' ' + this.lastName;
     },
-    set fullName(fullName) {
+    set: function (fullName) {
         var names = fullName.trim().split(' ');
-        if(2 === names.length) {
+        if (2 === names.length) {
             this.firstName = names[0];
             this.lastName = names[1];
         }
     }
-};
+});
 
 dreamapple.firstName = 'Dream';
 dreamapple.lastName = 'Apple';
