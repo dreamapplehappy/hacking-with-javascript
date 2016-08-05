@@ -156,6 +156,7 @@ Object.defineProperty(obj, prop, descriptor)
     ```
 + **get** 一个给属性提供`getter`的方法,如果没有`getter`则为`undefined`;该方法返回值被用作属性值,默认为undefined.
 + **set** 一个给属性提供`setter`的方法,如果没有`setter`则为`undefined`;该方法将接受唯一参数,并将该参数的新值分配给该属性,默认为undefined.知道了这些之后我们就可以使用更标准的一种方式去解决我们在文中开头的问题了:
+    
     ```javascript
     Object.defineProperty(dreamapple, 'fullName', {
         enumerable: true,
