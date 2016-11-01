@@ -51,4 +51,23 @@
     这个时候如果在文件的顶部使用`use strict`的话,那么整个文件都是使用的严格模式;
     在文件中间使用`use strict`是没有作用的。**
     
-+ 
++ **我们当然也有应对这种情况的解决方案,那就是使用一个立即调用的函数来包裹我们的代码;
+    达到分离作用域的目的,然后在这个立即执行的函数上方标注我们要使用的模式;如果你想使用严格模式的话,
+    那就添加`use strict`;如果不想使用严格模式的话,那就什么也不添加。**
+    
+    ```javascript
+    (function() {
+        // file1.js 使用了严格模式
+        'use strict';
+        function say() {
+    
+        }
+    })();
+    
+    (function() {
+        // file2.js 使用非严格模式
+        function sayWithNoStrict() {
+            var arguments = [];
+        }
+    })();
+    ```
