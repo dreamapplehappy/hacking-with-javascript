@@ -1,0 +1,3 @@
+function sayWithNoStrict() {
+    var arguments = [];
+}
