@@ -22,12 +22,12 @@
     // file1.js
     'use strict';
     function say() {
-        var arguments = [];
+        var arguments = []; // Uncaught SyntaxError: Unexpected eval or arguments in strict mode
     }
     
     // file2.js
     function sayWithNoStrict() {
-        var arguments = [];
+        var arguments = []; // Uncaught SyntaxError: Unexpected eval or arguments in strict mode
     }
     ```
     [示例](demos/demo3.html)
