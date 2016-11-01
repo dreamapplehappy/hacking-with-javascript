@@ -1,4 +1,4 @@
 'use strict';
 function say() {
-    var arguments = [];
+   // var arguments = [];
 }
