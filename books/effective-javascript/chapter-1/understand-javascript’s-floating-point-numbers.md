@@ -1,4 +1,4 @@
-# 注意JavaScript的浮点数
+### 注意JavaScript的浮点数
 
 ```javascript
 console.log(typeof 36); // number
@@ -28,7 +28,7 @@ console.log((10 + 20) + 30); // 60
 [示例](item2/demo.html)
 
 ------
-# 谨记: 
+### 谨记: 
 
 + JavaScript的数字是`双精度浮点数`。
 + JavaScript中的`整数`只是双精度浮点数的一个子集,不是一种新的类型。
