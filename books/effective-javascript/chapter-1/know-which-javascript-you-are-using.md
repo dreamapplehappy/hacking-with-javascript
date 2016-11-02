@@ -7,7 +7,7 @@
         var arguments = []; // Uncaught SyntaxError: Unexpected eval or arguments in strict mode
     }
     ```
-    [示例](item1/file1.js)
+    [源码](item1/file1.js)
     
 + 在非严格模式下,在函数中重复声明`arguments`不会报错:
     ```javascript
@@ -15,7 +15,7 @@
         var arguments = [];
     }
     ```
-    [示例](item1/file2.js)
+    [源码](item1/file2.js)
 
 + 如果连接两个不同模式的JavaScript文件的话,如果是严格模式的文件放在开始的话,那么整个文件都是处于严格模式的:
     ```javascript
@@ -30,7 +30,7 @@
         var arguments = []; // Uncaught SyntaxError: Unexpected eval or arguments in strict mode
     }
     ```
-    [示例](item1/file3.js)
+    [源码](item1/file3.js)
 
 + 如果连接两个不同模式的JavaScript文件的话,如果是非严格模式的文件放在开始的话,那么整个文件都是处于非严格模式的:
     ```javascript
@@ -45,7 +45,7 @@
         var arguments = [];
     }
     ```
-    [示例](item1/file4.js)
+    [源码](item1/file4.js)
 
 + **因为`file1.js`和`file2.js`如果合并到一个文件中的话,那么它们处于同一个作用域中;
     这个时候如果在文件的顶部使用`use strict`的话,那么整个文件都是使用的严格模式;
@@ -71,4 +71,4 @@
         }
     })();
     ```
-    [示例](item1/file5.js)
+    [源码](item1/file5.js)

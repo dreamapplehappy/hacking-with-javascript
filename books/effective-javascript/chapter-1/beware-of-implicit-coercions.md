@@ -82,7 +82,7 @@ console.log(badPoint(0, 0)); // { x: 1, y: 1 }
 console.log(point(0, 0)); // { x: 0, y: 0 }
 console.log(point()); // { x: 1, y: 1 }
 ```
-[示例](item3/demo.js)
+[源码](item3/demo.js)
 
 -----
 ### 谨记:

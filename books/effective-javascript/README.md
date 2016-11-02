@@ -5,6 +5,7 @@
     - [x] [Item 3: Beware of Implicit Coercions (**当心隐形的强制转换**)](chapter-1/beware-of-implicit-coercions.md) 
     - [x] [Item 4: Prefer Primitives to Object Wrappers (**使用原始类型替代对象包裹**)](chapter-1/prefer-primitives-to-object-wrappers.md) 
     - [x] [Item 5: Avoid using == with Mixed Types (**混合类型避免使用`==`比较是否相等**)](chapter-1/avoid-using-not-strict-equality-with-mixed-types.md) 
+    - [x] [Item 6: Learn the Limits of Semicolon Insertion (**学习分号的插入机制**)](chapter-1/learn-the-limits-of-semicolon-insertion.md) 
 + [ ] Chapter 2
     - [ ] []()    
 + [ ] Chapter 3

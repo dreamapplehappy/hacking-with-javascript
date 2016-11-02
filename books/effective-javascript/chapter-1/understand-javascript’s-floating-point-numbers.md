@@ -25,7 +25,7 @@ console.log(10 + (20 + 30)); // 60
 console.log((10 + 20) + 30); // 60
 ```
 
-[示例](item2/demo.html)
+[源码](item2/demo.html)
 
 ------
 ### 谨记: 

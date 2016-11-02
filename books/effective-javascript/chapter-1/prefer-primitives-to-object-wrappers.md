@@ -22,7 +22,7 @@ console.log(str.toUpperCase()); // HELLO WORLD
 str.someProperty = 'some';
 console.log(str.someProperty); // undefined
 ```
-[示例](item4/demo.js)
+[源码](item4/demo.js)
 
 ------
 ### 谨记

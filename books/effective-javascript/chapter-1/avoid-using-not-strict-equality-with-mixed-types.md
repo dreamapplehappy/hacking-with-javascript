@@ -47,6 +47,7 @@
   var price = '15';
   console.log(+price === 15); // true
   ```
+  [源码](item5/demo.js)
   
 ------
 
