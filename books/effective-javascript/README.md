@@ -11,8 +11,17 @@
     - [x] [Item 5: Avoid using == with Mixed Types (**混合类型避免使用`==`比较是否相等**)](chapter-1/avoid-using-not-strict-equality-with-mixed-types.md) 
     - [x] [Item 6: Learn the Limits of Semicolon Insertion (**学习分号的插入机制**)](chapter-1/learn-the-limits-of-semicolon-insertion.md) 
     - [x] [Item 7: Think of Strings As Sequences of 16-Bit Code Units (**把字符串当做16位编码单元的序列**)](chapter-1/think-of-strings-as-sequences-of-16-bit-code-units.md) 
-+ [ ] Chapter 2
-    - [ ] []()    
++ [x] Chapter 2 **Variable Scope**
+    - [x] [item 8: Minimize Use of the Global Object (尽量少用全局变量)](chapter-2/minimize-use-of-the-global-object.md)    
+    - [x] [item 9: Always Declare Local Variables ()](chapter-2/always-declare-local-variables.md)    
+    - [x] [item 10: Avoid with ()](chapter-2/avoid-with.md)    
+    - [x] [item 11: Get Comfortable with Closures ()](chapter-2/get-comfortable-with-closures.md)    
+    - [x] [item 12: Understand Variable Hoisting ()](chapter-2/understand-variable-hoisting.md)    
+    - [x] [item 13: Use Immediately Invoked Function Expressions to Create Local Scopes ()](chapter-2/use-immediately-invoked-function-expressions-to-create-local-scopes.md)    
+    - [x] [item 14: Beware of Unportable Scoping of Named Function Expressions ()](chapter-2/beware-of-unportable-scoping-of-named-function-expressions.md)    
+    - [x] [item 15: Beware of Unportable Scoping of Block-Local Function Declarations ()](chapter-2/beware-of-unportable-scoping-of-block-local-function-declarations.md)    
+    - [x] [item 16: Avoid Creating Local Variables with eval ()](chapter-2/avoid-creating-local-variables-with-eval.md)    
+    - [x] [item 17: Prefer Indirect eval to Direct eval ()](chapter-2/prefer-indirect-eval-to-direct-eval.md)    
 + [ ] Chapter 3
     - [ ] []()
 + [ ] Chapter 4
