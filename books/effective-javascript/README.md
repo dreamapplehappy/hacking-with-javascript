@@ -16,7 +16,7 @@
     - [x] [item 9: Always Declare Local Variables (**始终声明局部变量**)](chapter-2/always-declare-local-variables.md)    
     - [x] [item 10: Avoid with (**避免使用with**)](chapter-2/avoid-with.md)    
     - [x] [item 11: Get Comfortable with Closures (**熟练掌握闭包**)](chapter-2/get-comfortable-with-closures.md)    
-    - [x] [item 12: Understand Variable Hoisting ()](chapter-2/understand-variable-hoisting.md)    
+    - [x] [item 12: Understand Variable Hoisting (**理解变量声明提升**)](chapter-2/understand-variable-hoisting.md)    
     - [x] [item 13: Use Immediately Invoked Function Expressions to Create Local Scopes ()](chapter-2/use-immediately-invoked-function-expressions-to-create-local-scopes.md)    
     - [x] [item 14: Beware of Unportable Scoping of Named Function Expressions ()](chapter-2/beware-of-unportable-scoping-of-named-function-expressions.md)    
     - [x] [item 15: Beware of Unportable Scoping of Block-Local Function Declarations ()](chapter-2/beware-of-unportable-scoping-of-block-local-function-declarations.md)    
