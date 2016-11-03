@@ -31,8 +31,7 @@
 #### 读书实践
 + [**JavaScript: The Good Parts**](books/javascript-the-good-parts)
 + [**You Don't Know JS**](books/you-do-not-know-js)
-+ [**Effective JavaScript**](books/effective-javascript)
++ [ ] [**Effective JavaScript**](books/effective-javascript)
 
 #### 读书记录
 + [JavaScript权威指南](reading/JavaScript权威指南.md)
-+ 
