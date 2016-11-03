@@ -1,4 +1,8 @@
 # Effective JavaScript
+
+关于电子书: [英语原版][1] [中文版][2]
+
+------
 + [x] Chapter 1 **Accustoming Yourself to JavaScript**
     - [x] [Item 1: Know Which JavaScript You Are Using (**知道你正在使用的JavaScript模式**)](chapter-1/know-which-javascript-you-are-using.md) 
     - [x] [Item 2: Understand JavaScript’s Floating-Point Numbers (**注意JavaScript的浮点数**)](chapter-1/understand-javascript’s-floating-point-numbers.md) 
@@ -22,6 +26,11 @@
        
 ------
 官方的代码在这里,不过是不完整的,只包含第一章和第二章的代码。[code](https://github.com/effectivejs/code)
+
+
+
+[1]:http://o8qt8c0nf.bkt.clouddn.com/%5BEffective%20JavaScript%2068%20Specific%20Ways%20to%20Harness%20the%20Power%20of%20JavaScript%20%28Effective%20Software%20Development%20Series%29%20by%20David%20Herman%20-%202013%5D.pdf
+[2]:http://o8qt8c0nf.bkt.clouddn.com/Effective%20JavaScript%EF%BC%9A%E7%BC%96%E5%86%99%E9%AB%98%E8%B4%A8%E9%87%8FJavaScript%E4%BB%A3%E7%A0%81%E7%9A%8468%E4%B8%AA%E6%9C%89%E6%95%88%E6%96%B9%E6%B3%95%EF%BC%88%E5%B8%A6%E4%B9%A6%E7%AD%BE%E4%B8%AD%E6%96%87%E6%89%AB%E6%8F%8F%E7%89%88%EF%BC%89.pdf
     
     
     
