@@ -1,6 +1,3 @@
-### 始终声明局部变量
-
-```javascript
 var arr = [0, 1, 2];
 
 // 隐形的创建了一个全局变量temp
@@ -20,11 +17,3 @@ function swap1(array, indexI, indexJ) {
 }
 swap1(arr, 1, 2);
 console.log(arr, window.temp1); // [1, 2, 0] undefined
-```
-[源码](item9/demo.js)
-
-------
-
-### 谨记
-+ **始终使用`var`声明新的局部变量**
-+ **考虑使用`lint`工具帮助检查未绑定的变量**

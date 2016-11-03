@@ -1,6 +1,3 @@
-### 避免使用with
-
-```javascript
 // 使用with往往是比较慢的
 console.time('use with');
 with(Math) {
@@ -26,10 +23,3 @@ console.timeEnd('without with');
 // 3
 // 3
 // without with: 0.397ms
-```
-[源码](item10/demo.js)
-
-------
-
-### 谨记
-+ ****
