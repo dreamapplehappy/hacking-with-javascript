@@ -22,7 +22,7 @@
     - [x] [item 15: Beware of Unportable Scoping of Block-Local Function Declarations (**当心局部块函数声明笨拙的作用域**)](chapter-2/beware-of-unportable-scoping-of-block-local-function-declarations.md)    
     - [x] [item 16: Avoid Creating Local Variables with eval (**避免使用eval创建局部变量**)](chapter-2/avoid-creating-local-variables-with-eval.md)    
     - [x] [item 17: Prefer Indirect eval to Direct eval (**间接调用`eval`函数优于直接调用**)](chapter-2/prefer-indirect-eval-to-direct-eval.md)    
-+ [ ] Chapter 3
++ [ ] Chapter 3 **Working with Functions**
     - [x] [item 18: Understand the Difference between Function, Method, and Constructor Calls (****)](chapter-3/understand-the-difference-between-function-method-and-constructor-calls.md) 
     - [x] [item 19: Get Comfortable Using Higher-Order Functions (****)](chapter-3/get-comfortable-using-higher-order-functions.md) 
     - [x] [item 20: Use call to Call Methods with a Custom Receiver (****)](chapter-3/use-call-to-call-methods-with-a-custom-receiver.md) 
