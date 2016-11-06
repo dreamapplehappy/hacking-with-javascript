@@ -23,8 +23,8 @@
     - [x] [item 16: Avoid Creating Local Variables with eval (**避免使用eval创建局部变量**)](chapter-2/avoid-creating-local-variables-with-eval.md)    
     - [x] [item 17: Prefer Indirect eval to Direct eval (**间接调用`eval`函数优于直接调用**)](chapter-2/prefer-indirect-eval-to-direct-eval.md)    
 + [ ] Chapter 3 **Working with Functions**
-    - [x] [item 18: Understand the Difference between Function, Method, and Constructor Calls (****)](chapter-3/understand-the-difference-between-function-method-and-constructor-calls.md) 
-    - [x] [item 19: Get Comfortable Using Higher-Order Functions (****)](chapter-3/get-comfortable-using-higher-order-functions.md) 
+    - [x] [item 18: Understand the Difference between Function, Method, and Constructor Calls (**理解函数调用,方法调用及构造函数调用之间的不同**)](chapter-3/understand-the-difference-between-function-method-and-constructor-calls.md) 
+    - [x] [item 19: Get Comfortable Using Higher-Order Functions (**熟练掌握高阶函数**)](chapter-3/get-comfortable-using-higher-order-functions.md) 
     - [x] [item 20: Use call to Call Methods with a Custom Receiver (****)](chapter-3/use-call-to-call-methods-with-a-custom-receiver.md) 
     - [x] [item 21: Use apply to Call Functions with Different Numbers of Arguments (****)](chapter-3/use-apply-to-call-functions-with-different-numbers-of-arguments.md) 
     - [x] [item 22: Use arguments to Create Variadic Functions (****)](chapter-3/use-arguments-to-create-variadic-functions.md) 
