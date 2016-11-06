@@ -1,17 +1,15 @@
-// 显式的声明全局变量
-var g = 'global';
-// 隐藏的全局变量
-gl = 'it is not good';
-
-function func() {
-    // 隐藏的全局变量
-    inner = 'inner';
-    // 显式的生命局部变量
-    var gg = 'inner gg';
+var str = 'hello';
+function test() {
+    var str = 'world';
+    return eval('str');
 }
+console.log(test()); // world
 
-console.log(window.g === g, g === this.g, g); // true true "global"
-
-// 运行过函数func后inner变量就被添加到了window对象上了, 但是gg变量只存在于函数func中,所以不是全局变量,不会污染全局作用域。
-func();
-console.log(window.inner, window.gg); // inner undefined
+var str1 = 'hello1';
+function test1() {
+    var str1 = 'world1';
+    //var e = eval;
+    //return e('str1');
+    return (0, eval)('str1'); // 等同于上面注释的部分
+}
+console.log(test1()); // hello1
