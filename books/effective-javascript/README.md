@@ -23,7 +23,18 @@
     - [x] [item 16: Avoid Creating Local Variables with eval (**避免使用eval创建局部变量**)](chapter-2/avoid-creating-local-variables-with-eval.md)    
     - [x] [item 17: Prefer Indirect eval to Direct eval (**间接调用`eval`函数优于直接调用**)](chapter-2/prefer-indirect-eval-to-direct-eval.md)    
 + [ ] Chapter 3
-    - [ ] []()
+    - [x] [item 18: Understand the Difference between Function, Method, and Constructor Calls (****)](chapter-3/understand-the-difference-between-function-method-and-constructor-calls.md) 
+    - [x] [item 19: Get Comfortable Using Higher-Order Functions (****)](chapter-3/get-comfortable-using-higher-order-functions.md) 
+    - [x] [item 20: Use call to Call Methods with a Custom Receiver (****)](chapter-3/use-call-to-call-methods-with-a-custom-receiver.md) 
+    - [x] [item 21: Use apply to Call Functions with Different Numbers of Arguments (****)](chapter-3/use-apply-to-call-functions-with-different-numbers-of-arguments.md) 
+    - [x] [item 22: Use arguments to Create Variadic Functions (****)](chapter-3/use-arguments-to-create-variadic-functions.md) 
+    - [x] [item 23: Never Modify the arguments Object (****)](chapter-3/never-modify-the-arguments-object.md) 
+    - [x] [item 24: Use a Variable to Save a Reference to arguments (****)](chapter-3/use-a-variable-to-save-a-reference-to-arguments.md) 
+    - [x] [item 25: Use bind to Extract Methods with a Fixed Receiver (****)](chapter-3/use-bind-to-extract-methods-with-a-fixed-receiver.md) 
+    - [x] [item 26: Use bind to Curry Functions (****)](chapter-3/use-bind-to-curry-functions.md) 
+    - [x] [item 27: Prefer Closures to Strings for Encapsulating Code (****)](chapter-3/prefer-closures-to-strings-for-encapsulating-code.md) 
+    - [x] [item 28: Avoid Relying on the toString Method of Functions (****)](chapter-3/avoid-relying-on-the-toString-method-of-functions.md) 
+    - [x] [item 29: Avoid Nonstandard Stack Inspection Properties (****)](chapter-3/avoid-nonstandard-stack-inspection-properties.md) 
 + [ ] Chapter 4
     - [ ] []()    
 + [ ] Chapter 5
