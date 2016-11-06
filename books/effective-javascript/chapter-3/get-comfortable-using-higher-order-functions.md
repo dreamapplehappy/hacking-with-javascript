@@ -38,7 +38,7 @@ console.log(str1); // cwvceaffki
 var str2 = createStr(6, function() {
     return Math.floor(Math.random() * 10);
 });
-console.log(str2); // 000000
+console.log(str2); // 341119
 ```
 [源码](item19/demo.js)
 
