@@ -1,17 +1,29 @@
-// 显式的声明全局变量
-var g = 'global';
-// 隐藏的全局变量
-gl = 'it is not good';
-
-function func() {
-    // 隐藏的全局变量
-    inner = 'inner';
-    // 显式的生命局部变量
-    var gg = 'inner gg';
+// 强大的eval函数
+function f() {
+    eval('var a = 2');
+    return a;
 }
 
-console.log(window.g === g, g === this.g, g); // true true "global"
+console.log(f()); // 2
 
-// 运行过函数func后inner变量就被添加到了window对象上了, 但是gg变量只存在于函数func中,所以不是全局变量,不会污染全局作用域。
-func();
-console.log(window.inner, window.gg); // inner undefined
+// 在函数内部使用eval很危险,这赋予了外部的调用者改变函数内部的作用域的能力
+function g(str) {
+    var a = 1;
+    eval(str);
+    return a;
+}
+
+console.log(g('var a = 12')); // 12
+console.log(g('var a = 0')); // 0
+
+// 解决的办法就是使用一个立即执行的函数进行包裹,创建一个独立的作用域
+
+function g1(str) {
+    var a = 1;
+    (function() {
+        eval(str);
+    })();
+    return a;
+}
+console.log(g1('var a = 12')); // 1
+console.log(g1('var a = 0')); // 1

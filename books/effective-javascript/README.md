@@ -19,8 +19,8 @@
     - [x] [item 12: Understand Variable Hoisting (**理解变量声明提升**)](chapter-2/understand-variable-hoisting.md)    
     - [x] [item 13: Use Immediately Invoked Function Expressions to Create Local Scopes (**使用立即调用的函数表达式创建新的作用域**)](chapter-2/use-immediately-invoked-function-expressions-to-create-local-scopes.md)    
     - [x] [item 14: Beware of Unportable Scoping of Named Function Expressions (**当心命名函数表达式笨拙的作用域**)](chapter-2/beware-of-unportable-scoping-of-named-function-expressions.md)    
-    - [x] [item 15: Beware of Unportable Scoping of Block-Local Function Declarations ()](chapter-2/beware-of-unportable-scoping-of-block-local-function-declarations.md)    
-    - [x] [item 16: Avoid Creating Local Variables with eval ()](chapter-2/avoid-creating-local-variables-with-eval.md)    
+    - [x] [item 15: Beware of Unportable Scoping of Block-Local Function Declarations (**当心局部块函数声明笨拙的作用域**)](chapter-2/beware-of-unportable-scoping-of-block-local-function-declarations.md)    
+    - [x] [item 16: Avoid Creating Local Variables with eval (**避免使用eval创建局部变量**)](chapter-2/avoid-creating-local-variables-with-eval.md)    
     - [x] [item 17: Prefer Indirect eval to Direct eval ()](chapter-2/prefer-indirect-eval-to-direct-eval.md)    
 + [ ] Chapter 3
     - [ ] []()
