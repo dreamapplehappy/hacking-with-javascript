@@ -1,17 +1,31 @@
-// 显式的声明全局变量
-var g = 'global';
-// 隐藏的全局变量
-gl = 'it is not good';
+// 使用call
+var obj1 = {
+    sayHello: function(msg) {
+        console.log('Hello,' + this.name + ' ' + msg);
+    },
+    name: 'dreamapple'
+};
 
-function func() {
-    // 隐藏的全局变量
-    inner = 'inner';
-    // 显式的生命局部变量
-    var gg = 'inner gg';
+var obj2 = {
+    name: 'dream'
+};
+
+
+// 第一个参数是方法的调用者,剩余的参数就是原函数的参数
+obj1.sayHello.call(obj2, 'haha'); // Hello,dream haha
+
+// 高阶函数使用call
+function compute(arg) {
+    var sum = 0;
+    for(var i = 0; i < arg.length; i++) {
+        sum += arg[i];
+    }
+    return sum;
 }
 
-console.log(window.g === g, g === this.g, g); // true true "global"
+function highFunc() {
+    return compute.call(null, arguments);
+}
 
-// 运行过函数func后inner变量就被添加到了window对象上了, 但是gg变量只存在于函数func中,所以不是全局变量,不会污染全局作用域。
-func();
-console.log(window.inner, window.gg); // inner undefined
+console.log(highFunc(1, 2, 3, 4, 5)); // 15
+

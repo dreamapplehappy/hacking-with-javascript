@@ -25,8 +25,8 @@
 + [ ] Chapter 3 **Working with Functions**
     - [x] [item 18: Understand the Difference between Function, Method, and Constructor Calls (**理解函数调用,方法调用及构造函数调用之间的不同**)](chapter-3/understand-the-difference-between-function-method-and-constructor-calls.md) 
     - [x] [item 19: Get Comfortable Using Higher-Order Functions (**熟练掌握高阶函数**)](chapter-3/get-comfortable-using-higher-order-functions.md) 
-    - [x] [item 20: Use call to Call Methods with a Custom Receiver (****)](chapter-3/use-call-to-call-methods-with-a-custom-receiver.md) 
-    - [x] [item 21: Use apply to Call Functions with Different Numbers of Arguments (****)](chapter-3/use-apply-to-call-functions-with-different-numbers-of-arguments.md) 
+    - [x] [item 20: Use call to Call Methods with a Custom Receiver (**使用`call`方法自定义接受者来调用方法**)](chapter-3/use-call-to-call-methods-with-a-custom-receiver.md) 
+    - [x] [item 21: Use apply to Call Functions with Different Numbers of Arguments (**使用`apply`方法通过不同数量的参数调用函数**)](chapter-3/use-apply-to-call-functions-with-different-numbers-of-arguments.md) 
     - [x] [item 22: Use arguments to Create Variadic Functions (****)](chapter-3/use-arguments-to-create-variadic-functions.md) 
     - [x] [item 23: Never Modify the arguments Object (****)](chapter-3/never-modify-the-arguments-object.md) 
     - [x] [item 24: Use a Variable to Save a Reference to arguments (****)](chapter-3/use-a-variable-to-save-a-reference-to-arguments.md) 
