@@ -53,4 +53,4 @@ console.log(fixCallMethod(obj, 'add', 1, 2)); // 3
 
 ### 谨记
 + **永远不要修改`arguments`对象。**
-+ **使用`[].slice.call(arguments)`将`arguments`对象复制到一个真正的数组中在进行修改。**
++ **使用`[].slice.call(arguments)`将`arguments`对象复制到一个真正的数组中再进行修改。**
