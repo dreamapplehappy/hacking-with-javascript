@@ -1,17 +1,35 @@
-// 显式的声明全局变量
-var g = 'global';
-// 隐藏的全局变量
-gl = 'it is not good';
-
 function func() {
-    // 隐藏的全局变量
-    inner = 'inner';
-    // 显式的生命局部变量
-    var gg = 'inner gg';
+    //'use strict'; 严格模式下,下面的语句会报错
+    console.log(arguments.callee, arguments.caller);
 }
 
-console.log(window.g === g, g === this.g, g); // true true "global"
+function sayHi() {
+    func();
+}
 
-// 运行过函数func后inner变量就被添加到了window对象上了, 但是gg变量只存在于函数func中,所以不是全局变量,不会污染全局作用域。
-func();
-console.log(window.inner, window.gg); // inner undefined
+sayHi(); // [Function: func] undefined
+
+// 简易的栈追踪
+function traceStack() {
+    var stack = [];
+    for(var f = traceStack.caller; f; f = f.caller) {
+        stack.push(f);
+    }
+    return stack;
+}
+
+function f1() {
+    return traceStack();
+}
+
+function f2() {
+    return f1();
+}
+
+console.log(f2()); // [ [Function: f1], [Function: f2]](chrome浏览器环境下)
+
+// 递归的调用将会进入一个死循环
+function f3(n) {
+    return n === 0 ? traceStack() : f3(n-1);
+}
+console.log(f3(1)); // infinite loop 死循环
