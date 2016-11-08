@@ -32,4 +32,4 @@ console.log(f2()); // [ [Function: f1], [Function: f2]](chrome浏览器环境下
 function f3(n) {
     return n === 0 ? traceStack() : f3(n-1);
 }
-console.log(f3(1)); // infinite loop 死循环
+//console.log(f3(1)); // infinite loop 死循环
