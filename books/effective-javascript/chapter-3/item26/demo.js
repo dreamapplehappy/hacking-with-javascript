@@ -1,17 +1,14 @@
-// 显式的声明全局变量
-var g = 'global';
-// 隐藏的全局变量
-gl = 'it is not good';
-
-function func() {
-    // 隐藏的全局变量
-    inner = 'inner';
-    // 显式的生命局部变量
-    var gg = 'inner gg';
+function sayHello(name, words) {
+    console.log('Hello, ' + name + words);
 }
 
-console.log(window.g === g, g === this.g, g); // true true "global"
+// 将函数与其参数的一个子集绑定的技术称为函数的柯里化
+function sayHelloToDr(words) {
+    sayHello('dreamapple', words);
+}
 
-// 运行过函数func后inner变量就被添加到了window对象上了, 但是gg变量只存在于函数func中,所以不是全局变量,不会污染全局作用域。
-func();
-console.log(window.inner, window.gg); // inner undefined
+sayHello('dreamapple', ' happy'); // Hello, dreamapple happy
+sayHello('dreamapple1', ' happy1'); // Hello, dreamapple1 happy1
+
+sayHelloToDr(' a nice day'); // Hello, dreamapple a nice day
+sayHelloToDr(' nice to meet you'); // Hello, dreamapple nice to meet you

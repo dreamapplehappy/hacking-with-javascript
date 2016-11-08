@@ -1,17 +1,45 @@
-// 显式的声明全局变量
-var g = 'global';
-// 隐藏的全局变量
-gl = 'it is not good';
-
-function func() {
-    // 隐藏的全局变量
-    inner = 'inner';
-    // 显式的生命局部变量
-    var gg = 'inner gg';
+// 尝试修改arguments对象
+function callMethod(obj, method) {
+    var shift = [].shift;
+    shift.call(arguments);
+    shift.call(arguments);
+    console.log(arguments); // { '0': 1, '1': 2 }
+    console.log(arguments[0] === obj, arguments[0] === 1); // true true(当我们的第三个参数是数字1)
+    console.log(arguments[1] === method, arguments[1] === 2); // true true(当我们的第四个参数是数字2)
+    // 因为obj === arguments[0]
+    // 因为method === arguments[1]
+    return obj[method].apply(obj, arguments); // 相当于[]
 }
 
-console.log(window.g === g, g === this.g, g); // true true "global"
+var obj = {
+    add: function(x, y) {
+        return x + y;
+    }
+};
 
-// 运行过函数func后inner变量就被添加到了window对象上了, 但是gg变量只存在于函数func中,所以不是全局变量,不会污染全局作用域。
-func();
-console.log(window.inner, window.gg); // inner undefined
+//callMethod(obj, 'add', 1, 2); // Cannot read property 'apply' of undefined
+
+// 严格模式下
+function strictMode(x) {
+    'use strict';
+    arguments[0] = 'something';
+    console.log(x, arguments[0]); // hello something
+    return x === arguments[0];
+}
+// 非严格模式下
+function notStrictMode(x) {
+    arguments[0] = 'something';
+    console.log(x, arguments[0]); // something something
+    return x === arguments[0];
+}
+
+console.log(strictMode('hello')); // false
+console.log(notStrictMode('hello')); // true
+
+// 修复刚开始的方法
+function fixCallMethod(obj, method) {
+    var args = [].slice.call(arguments, 2);
+    return obj[method].apply(obj, args);
+}
+
+console.log(fixCallMethod(obj, 'add', 1, 2)); // 3

@@ -1,17 +1,46 @@
-// 显式的声明全局变量
-var g = 'global';
-// 隐藏的全局变量
-gl = 'it is not good';
-
-function func() {
-    // 隐藏的全局变量
-    inner = 'inner';
-    // 显式的生命局部变量
-    var gg = 'inner gg';
+// 一个迭代器 错误的版本
+function iterator() {
+    var i = 0;
+    var n = arguments.length;
+    return {
+        hasNext: function() {
+            return i < n;
+        },
+        next: function() {
+            if(i >= n) {
+                throw new Error('end of iteration!');
+            }
+            return arguments[i++];
+        }
+    }
 }
 
-console.log(window.g === g, g === this.g, g); // true true "global"
+// 正确的版本
+function iterator1() {
+    var i = 0;
+    var n = arguments.length;
+    var args = arguments;
+    return {
+        hasNext: function() {
+            return i < n;
+        },
+        next: function() {
+            if(i >= n) {
+                throw new Error('end of iteration!');
+            }
+            return args[i++];
+        }
+    }
+}
 
-// 运行过函数func后inner变量就被添加到了window对象上了, 但是gg变量只存在于函数func中,所以不是全局变量,不会污染全局作用域。
-func();
-console.log(window.inner, window.gg); // inner undefined
+var item = iterator(1, 2, 3, 4);
+var item1 = iterator1(1, 2, 3, 4);
+
+console.log(item.hasNext()); // true
+console.log(item.next()); // undefined
+
+console.log(item1.next()); // 1
+console.log(item1.hasNext()); // true
+console.log(item1.next()); // 2
+console.log(item1.hasNext()); // true
+

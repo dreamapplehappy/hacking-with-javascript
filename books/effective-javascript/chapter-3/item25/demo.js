@@ -1,17 +1,20 @@
-// 显式的声明全局变量
-var g = 'global';
-// 隐藏的全局变量
-gl = 'it is not good';
+var buffer = {
+    entries: [],
+    add: function(value) {
+        this.entries.push(value);
+    },
+    join: function() {
+        return this.entries.join("");
+    }
+};
 
-function func() {
-    // 隐藏的全局变量
-    inner = 'inner';
-    // 显式的生命局部变量
-    var gg = 'inner gg';
-}
+var input = ['137', '-', '4526', '-', '3980'];
+//input.forEach(buffer.add); // Cannot read property 'push' of undefined
 
-console.log(window.g === g, g === this.g, g); // true true "global"
+// forEach函数可以让我们添加一个函数的接受者
+input.forEach(buffer.add, buffer);
+console.log(buffer.join()); // 137-4526-3980
 
-// 运行过函数func后inner变量就被添加到了window对象上了, 但是gg变量只存在于函数func中,所以不是全局变量,不会污染全局作用域。
-func();
-console.log(window.inner, window.gg); // inner undefined
+// 最好的办法就是我们直接使用bind
+input.forEach(buffer.add.bind(buffer));
+console.log(buffer.join()); // 137-4526-3980 (要注释掉上面的部分,不然结果就是: 137-4526-3980137-4526-3980)
