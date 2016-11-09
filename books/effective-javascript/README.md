@@ -36,8 +36,8 @@
     - [x] [item 28: **不要信赖函数的对象的`toString`方法** (Avoid Relying on the toString Method of Functions)](chapter-3/avoid-relying-on-the-toString-method-of-functions.md) 
     - [x] [item 29: **避免使用非标准的栈检查属性** (Avoid Nonstandard Stack Inspection Properties)](chapter-3/avoid-nonstandard-stack-inspection-properties.md) 
 + [ ] Chapter 4 **Objects and Prototypes**
-    - [x] [item 30: **** (Understand the Difference between prototype, getPrototypeOf, and __proto__)](chapter-4/understand-the-difference-between-prototype-getPrototypeOf-and-__proto__.md)    
-    - [x] [item 31: **** (Prefer Object.getPrototypeOf to __proto__)](chapter-4/prefer-object.getPrototypeOf-to-__proto__.md)    
+    - [x] [item 30: **理解`prototype`,`getPrototypeOf`和`__proto__`之间的不同** (Understand the Difference between prototype, getPrototypeOf, and __proto__)](chapter-4/understand-the-difference-between-prototype-getPrototypeOf-and-__proto__.md)    
+    - [x] [item 31: **使用`Object.getPropertyOf`函数而不要使用`__proto__`属性** (Prefer Object.getPrototypeOf to __proto__)](chapter-4/prefer-object.getPrototypeOf-to-__proto__.md)    
     - [x] [item 32: **** (Never Modify __proto__)](chapter-4/never-modify-__proto__.md)    
     - [x] [item 33: **** (Make Your Constructors new-Agnostic)](chapter-4/make-your-constructors-new-agnostic.md)    
     - [x] [item 34: **** (Store Methods on Prototypes)](chapter-4/store-methods-on-prototypes.md)    

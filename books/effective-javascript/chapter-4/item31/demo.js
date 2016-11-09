@@ -1,22 +1,14 @@
-function hello() {
-    console.log('Hello, World');
-}
-// 函数的调用
-hello(); // Hello, World
+var obj = Object.create(null);
+console.log('__proto__' in obj); // false
+console.log(Object.getPrototypeOf(obj)); // null
 
-var obj = {
-    welcome: function() {
-        console.log('Hello, ' + this.name);
-    },
-    name: 'dreamapple'
-};
-// 方法调用
-obj.welcome(); // Hello, dreamapple
-
-function Student(name, age) {
-    this.name = name;
-    this.age = age;
-    console.log('My name is ' + this.name + ', and my age is ' + this.age);
+// 可以使用 __proto__属性来模仿 Object.getPropertyOf() 函数
+if('undefined' === typeof Object.getPrototypeOf) {
+    Object.getPrototypeOf = function(obj) {
+        var t = typeof obj;
+        if(!obj || (t !== 'object' && t !== 'function')) {
+            throw new Error('not an object');
+        }
+        return obj.__proto__;
+    }
 }
-// 构造函数的调用
-var s = new Student('dreamapple', 23); // My name is dreamapple, and my age is 23
