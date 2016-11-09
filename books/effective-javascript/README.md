@@ -35,8 +35,20 @@
     - [x] [item 27: **使用闭包而不是字符串来封装代码** (Prefer Closures to Strings for Encapsulating Code)](chapter-3/prefer-closures-to-strings-for-encapsulating-code.md) 
     - [x] [item 28: **不要信赖函数的对象的`toString`方法** (Avoid Relying on the toString Method of Functions)](chapter-3/avoid-relying-on-the-toString-method-of-functions.md) 
     - [x] [item 29: **避免使用非标准的栈检查属性** (Avoid Nonstandard Stack Inspection Properties)](chapter-3/avoid-nonstandard-stack-inspection-properties.md) 
-+ [ ] Chapter 4
-    - [ ] []()    
++ [ ] Chapter 4 **Objects and Prototypes**
+    - [x] [item 30: **** (Understand the Difference between prototype, getPrototypeOf, and __proto__)](chapter-4/understand-the-difference-between-prototype-getPrototypeOf-and-__proto__.md)    
+    - [x] [item 31: **** (Prefer Object.getPrototypeOf to __proto__)](chapter-4/prefer-object.getPrototypeOf-to-__proto__.md)    
+    - [x] [item 32: **** (Never Modify __proto__)](chapter-4/never-modify-__proto__.md)    
+    - [x] [item 33: **** (Make Your Constructors new-Agnostic)](chapter-4/make-your-constructors-new-agnostic.md)    
+    - [x] [item 34: **** (Store Methods on Prototypes)](chapter-4/store-methods-on-prototypes.md)    
+    - [x] [item 35: **** (Use Closures to Store Private Data)](chapter-4/use-closures-to-store-private-data.md)    
+    - [x] [item 36: **** (Store Instance State Only on Instance Objects)](chapter-4/store-instance-state-only-on-instance-objects.md)    
+    - [x] [item 37: **** (Recognize the Implicit Binding of this)](chapter-4/recognize-the-implicit-binding-of-this.md)    
+    - [x] [item 38: **** (Call Superclass Constructors from Subclass Constructors)](chapter-4/call-superclass-constructors-from-subclass-constructors.md)    
+    - [x] [item 39: **** (Never Reuse Superclass Property Names)](chapter-4/never-reuse-superclass-property-names.md)    
+    - [x] [item 40: **** (Avoid Inheriting from Standard Classes)](chapter-4/avoid-inheriting-from-standard-classes.md)    
+    - [x] [item 41: **** (Treat Prototypes As an Implementation Detail)](chapter-4/treat-prototypes-as-an-implementation-detail.md)    
+    - [x] [item 42: **** (Avoid Reckless Monkey-Patching)](chapter-4/avoid-reckless-monkey-patching.md)    
 + [ ] Chapter 5
     - [ ] []()
 + [ ] Chapter 6
