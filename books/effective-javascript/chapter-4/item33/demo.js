@@ -1,22 +1,62 @@
-function hello() {
-    console.log('Hello, World');
-}
-// 函数的调用
-hello(); // Hello, World
-
-var obj = {
-    welcome: function() {
-        console.log('Hello, ' + this.name);
-    },
-    name: 'dreamapple'
-};
-// 方法调用
-obj.welcome(); // Hello, dreamapple
-
-function Student(name, age) {
+// 一步一步来实现一个不需要通过使用new操作符来创建对象的函数
+// @1
+function User1(name) {
+    //'use strict';
     this.name = name;
-    this.age = age;
-    console.log('My name is ' + this.name + ', and my age is ' + this.age);
 }
-// 构造函数的调用
-var s = new Student('dreamapple', 23); // My name is dreamapple, and my age is 23
+// 使用new
+var user1 = new User1('dreamapple');
+console.log(user1); // User1 { name: 'dreamapple' }
+// 不使用new 那么就没有创建一个新的对象 函数中的this指向window 所以name属性也就添加到了全局中
+var u1 = User1('dreamapple');
+console.log(u1); // undefined
+console.log(this.name); // dreamapple
+// 如果我们给构造函数使用严格模式的话,那它会提早报错,可以更早的发现错误。
+
+// 修改我们的函数
+// @2
+function User2(name) {
+    if(this instanceof User2) {
+        this.name = name;
+    }
+    else {
+        return new User2(name);
+    }
+}
+// 我们可以不使用new操作符
+var user2 = User2('dreamapple');
+console.log(user2); // User2 {name: "dreamapple"}
+var u2 = new User2('dreamapple');
+console.log(u2); // User2 {name: "dreamapple"}
+console.log(u2 instanceof User2, user2 instanceof User2); // true true
+// 上面虽然实现了我们想要的目的,但是它需要额外的函数调用,因此代价有点高
+
+// @3 不使用额外的函数调用,通过会用Object.create()
+function User3(name) {
+    var self = this instanceof User3 ? this : Object.create(User3.prototype);
+    self.name = name;
+    return self;
+}
+var user3 = new User3('dreamapple3');
+console.log(user3); // User3 {name: "dreamapple3"}
+var u3 = User3('dreamapple3');
+console.log(u3); // User3 {name: "dreamapple3"}
+
+// @4 在不支持Object.create()的环境中使用
+if('undefined' === typeof Object.create) {
+    Object.create = function(prototype) {
+        function O() {}
+        O.prototype = prototype;
+        return new O();
+    }
+}
+function User4(name) {
+    var self = this instanceof User4 ? this : Object.create(User4.prototype);
+    self.name = name;
+    return self;
+}
+
+var user4 = new User4('dreamapple');
+console.log(user4); // User4 {name: "dreamapple"}
+var u4 = User4('dreamapple');
+console.log(u4); // User4 {name: "dreamapple"}

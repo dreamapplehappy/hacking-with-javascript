@@ -38,9 +38,9 @@
 + [ ] Chapter 4 **Objects and Prototypes**
     - [x] [item 30: **理解`prototype`,`getPrototypeOf`和`__proto__`之间的不同** (Understand the Difference between prototype, getPrototypeOf, and __proto__)](chapter-4/understand-the-difference-between-prototype-getPrototypeOf-and-__proto__.md)    
     - [x] [item 31: **使用`Object.getPropertyOf`函数而不要使用`__proto__`属性** (Prefer Object.getPrototypeOf to __proto__)](chapter-4/prefer-object.getPrototypeOf-to-__proto__.md)    
-    - [x] [item 32: **** (Never Modify __proto__)](chapter-4/never-modify-__proto__.md)    
-    - [x] [item 33: **** (Make Your Constructors new-Agnostic)](chapter-4/make-your-constructors-new-agnostic.md)    
-    - [x] [item 34: **** (Store Methods on Prototypes)](chapter-4/store-methods-on-prototypes.md)    
+    - [x] [item 32: **始终不要修改`__proto__`属性** (Never Modify __proto__)](chapter-4/never-modify-__proto__.md)    
+    - [x] [item 33: **使构造函数与操作符`new`无关** (Make Your Constructors new-Agnostic)](chapter-4/make-your-constructors-new-agnostic.md)    
+    - [x] [item 34: **在原型中存储方法** (Store Methods on Prototypes)](chapter-4/store-methods-on-prototypes.md)    
     - [x] [item 35: **** (Use Closures to Store Private Data)](chapter-4/use-closures-to-store-private-data.md)    
     - [x] [item 36: **** (Store Instance State Only on Instance Objects)](chapter-4/store-instance-state-only-on-instance-objects.md)    
     - [x] [item 37: **** (Recognize the Implicit Binding of this)](chapter-4/recognize-the-implicit-binding-of-this.md)    
