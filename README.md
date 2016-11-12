@@ -2,6 +2,11 @@
 
 **欢迎贡献 fork and pull request :stuck_out_tongue_winking_eye:**
 
+#### 读书实践
++ (**进行中...**)[**Effective JavaScript**](books/effective-javascript)
++ [**JavaScript: The Good Parts**](books/javascript-the-good-parts)
++ [**You Don't Know JS**](books/you-do-not-know-js)
+
 #### [**Vanilla JS**](http://vanilla-js.com/)
 + [理解JavaScript的Object.defineProperty()函数](vanilla-js/object/define-property.md)
 
@@ -27,11 +32,6 @@
 + [关于动画的库,包括CSS以及JavaScript](tool/animation/animation-lib.md)
 + [关于图片](tool/about-image/about-image.md)
 + [关于Ajax/XHR](tool/ajax-xhr/ajax-xhr.md)
-
-#### 读书实践
-+ [**JavaScript: The Good Parts**](books/javascript-the-good-parts)
-+ [**You Don't Know JS**](books/you-do-not-know-js)
-+ (**进行中...**)[**Effective JavaScript**](books/effective-javascript)
 
 #### 读书记录
 + [JavaScript权威指南](reading/JavaScript权威指南.md)
