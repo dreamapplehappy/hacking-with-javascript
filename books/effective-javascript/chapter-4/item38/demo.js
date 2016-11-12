@@ -1,22 +1,24 @@
-function hello() {
-    console.log('Hello, World');
-}
-// 函数的调用
-hello(); // Hello, World
-
-var obj = {
-    welcome: function() {
-        console.log('Hello, ' + this.name);
-    },
-    name: 'dreamapple'
-};
-// 方法调用
-obj.welcome(); // Hello, dreamapple
-
-function Student(name, age) {
+// 定义一个父类
+function Person(name, age) {
     this.name = name;
     this.age = age;
-    console.log('My name is ' + this.name + ', and my age is ' + this.age);
 }
-// 构造函数的调用
-var s = new Student('dreamapple', 23); // My name is dreamapple, and my age is 23
+Person.prototype.sayHello = function() {
+    console.log('My name is ' + this.name + ' and my age is ' + this.age);
+};
+
+// 定义我们的子类
+function Student(name, age, school) {
+    Person.call(this, name, age);
+    this.school = school;
+}
+// 将子类与父类的原型关联
+Student.prototype = Object.create(Person.prototype);
+// 定义子类的公用方法
+Student.prototype.getSchool = function() {
+    console.log('My school is ' + this.school);
+};
+
+var stu = new Student('dreamapple', 22, 'Happy');
+stu.getSchool(); // My school is Happy
+stu.sayHello(); // My name is dreamapple and my age is 22

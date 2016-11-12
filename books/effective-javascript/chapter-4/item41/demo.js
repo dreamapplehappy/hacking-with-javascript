@@ -1,22 +1,14 @@
-function hello() {
-    console.log('Hello, World');
+function A(attr1) {
+    this.attr1 = attr1;
 }
-// 函数的调用
-hello(); // Hello, World
+A.prototype.method1 = function(){};
 
-var obj = {
-    welcome: function() {
-        console.log('Hello, ' + this.name);
-    },
-    name: 'dreamapple'
-};
-// 方法调用
-obj.welcome(); // Hello, dreamapple
-
-function Student(name, age) {
-    this.name = name;
-    this.age = age;
-    console.log('My name is ' + this.name + ', and my age is ' + this.age);
+function B(attr1, attr2) {
+    A.call(this, attr1);
+    this.attr2 = attr2;
 }
-// 构造函数的调用
-var s = new Student('dreamapple', 23); // My name is dreamapple, and my age is 23
+B.prototype = Object.create(A.prototype);
+B.prototype.method2 = function(){};
+
+console.log(new B('attr1', 'attr2'));
+

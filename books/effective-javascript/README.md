@@ -41,11 +41,11 @@
     - [x] [item 35: **使用闭包存储私有数据** (Use Closures to Store Private Data)](chapter-4/use-closures-to-store-private-data.md)    
     - [x] [item 36: **只将实例状态存储在实例对象中** (Store Instance State Only on Instance Objects)](chapter-4/store-instance-state-only-on-instance-objects.md)    
     - [x] [item 37: **认识到`this`变量的隐式绑定问题** (Recognize the Implicit Binding of this)](chapter-4/recognize-the-implicit-binding-of-this.md)    
-    - [x] [item 38: **** (Call Superclass Constructors from Subclass Constructors)](chapter-4/call-superclass-constructors-from-subclass-constructors.md)    
-    - [x] [item 39: **** (Never Reuse Superclass Property Names)](chapter-4/never-reuse-superclass-property-names.md)    
-    - [x] [item 40: **** (Avoid Inheriting from Standard Classes)](chapter-4/avoid-inheriting-from-standard-classes.md)    
-    - [x] [item 41: **** (Treat Prototypes As an Implementation Detail)](chapter-4/treat-prototypes-as-an-implementation-detail.md)    
-    - [x] [item 42: **** (Avoid Reckless Monkey-Patching)](chapter-4/avoid-reckless-monkey-patching.md)    
+    - [x] [item 38: **在子类的构造函数中调用父类的构造函数** (Call Superclass Constructors from Subclass Constructors)](chapter-4/call-superclass-constructors-from-subclass-constructors.md)    
+    - [x] [item 39: **不要重用父类的属性名** (Never Reuse Superclass Property Names)](chapter-4/never-reuse-superclass-property-names.md)    
+    - [x] [item 40: **避免继承标准类** (Avoid Inheriting from Standard Classes)](chapter-4/avoid-inheriting-from-standard-classes.md)    
+    - [x] [item 41: **将原形视为实现的细节** (Treat Prototypes As an Implementation Detail)](chapter-4/treat-prototypes-as-an-implementation-detail.md)    
+    - [x] [item 42: **避免使用轻率的猴子补丁** (Avoid Reckless Monkey-Patching)](chapter-4/avoid-reckless-monkey-patching.md)    
 + [ ] Chapter 5
     - [ ] []()
 + [ ] Chapter 6

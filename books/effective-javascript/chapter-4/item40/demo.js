@@ -1,22 +1,36 @@
-function hello() {
-    console.log('Hello, World');
+// 尝试继承标准类
+function Dir(path, entries) {
+    this.path = path;
+    for(var i = 0; i < entries.length; i++) {
+        this[i] = entries[i];
+    }
 }
-// 函数的调用
-hello(); // Hello, World
+Dir.prototype = Object.create(Array.prototype);
 
-var obj = {
-    welcome: function() {
-        console.log('Hello, ' + this.name);
-    },
-    name: 'dreamapple'
+var dir = new Dir('/temp/mysite', ['index.html', 'script.js', 'style.css']);
+// dir的长度是0 继承没有成功
+console.log(dir.length); // 0
+
+// 查看对象属性
+console.log(Object.prototype.toString.call(dir)); // [object Object]
+console.log(Object.prototype.toString.call([])); // [object Array]
+
+// 重新实现一个
+function Dir1(path, entries) {
+    this.path = path;
+    this.entries = entries;
+}
+// 将相应的数组的方法委托给entries属性来完成
+Dir1.prototype.forEach = function(f, thisArg) {
+    if(typeof thisArg === 'undefined') {
+        thisArg = this;
+    }
+    this.entries.forEach(f, thisArg);
 };
-// 方法调用
-obj.welcome(); // Hello, dreamapple
 
-function Student(name, age) {
-    this.name = name;
-    this.age = age;
-    console.log('My name is ' + this.name + ', and my age is ' + this.age);
-}
-// 构造函数的调用
-var s = new Student('dreamapple', 23); // My name is dreamapple, and my age is 23
+
+
+
+
+
+
