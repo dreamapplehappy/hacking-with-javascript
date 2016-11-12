@@ -4,8 +4,8 @@
 
 #### 多读书
 + (**进行中...**)[**Effective JavaScript**](books/effective-javascript)
-+ [**JavaScript: The Good Parts**](books/javascript-the-good-parts)
-+ [**You Don't Know JS**](books/you-do-not-know-js)
++ [JavaScript: The Good Parts](books/javascript-the-good-parts)
++ [You Don't Know JS](books/you-do-not-know-js)
 
 #### [**Vanilla JS**](http://vanilla-js.com/)
 + [理解JavaScript的Object.defineProperty()函数](vanilla-js/object/define-property.md)
