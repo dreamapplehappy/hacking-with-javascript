@@ -1,22 +1,22 @@
-function hello() {
-    console.log('Hello, World');
+function Counter() {
+    // count信息只存在于函数的内部,外部无法直接访问
+    var count = 0;
+    return {
+        getCount: function() {
+            return count;
+        },
+        increment: function() {
+            count++;
+        },
+        decrement: function() {
+            count--;
+        }
+    }
 }
-// 函数的调用
-hello(); // Hello, World
-
-var obj = {
-    welcome: function() {
-        console.log('Hello, ' + this.name);
-    },
-    name: 'dreamapple'
-};
-// 方法调用
-obj.welcome(); // Hello, dreamapple
-
-function Student(name, age) {
-    this.name = name;
-    this.age = age;
-    console.log('My name is ' + this.name + ', and my age is ' + this.age);
-}
-// 构造函数的调用
-var s = new Student('dreamapple', 23); // My name is dreamapple, and my age is 23
+var counter = Counter();
+console.log(counter.getCount()); // 0
+counter.increment();
+counter.increment();
+console.log(counter.getCount()); // 2
+counter.decrement();
+console.log(counter.getCount()); // 1

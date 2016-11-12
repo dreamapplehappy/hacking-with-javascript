@@ -1,22 +1,29 @@
-function hello() {
-    console.log('Hello, World');
+function CSVReader(separators) {
+    this.separators = separators || [','];
+    this.regexp = new RegExp(this.separators.map(function(separator) {
+        return '\\' + separator[0];
+    }).join('|'));
 }
-// 函数的调用
-hello(); // Hello, World
+CSVReader.prototype.read = function(str) {
+    var lines = str.trim().split(/\n/);
+    // @1 使用map函数的第二个参数绑定this
+    //return lines.map(function(line) {
+    //    console.log(this); //
+    //    return line.split(this.regexp);
+    //}, this); // 如果这里不绑定this的话,上面的this.regexp中的this指的就是window
 
-var obj = {
-    welcome: function() {
-        console.log('Hello, ' + this.name);
-    },
-    name: 'dreamapple'
+    // @2 使用变量绑定this
+    //var that = this;
+    //return lines.map(function(line) {
+    //    return line.split(that.regexp);
+    //});
+
+    // @3
+    return lines.map(function(line) {
+        return line.split(this.regexp);
+    }.bind(this));
 };
-// 方法调用
-obj.welcome(); // Hello, dreamapple
 
-function Student(name, age) {
-    this.name = name;
-    this.age = age;
-    console.log('My name is ' + this.name + ', and my age is ' + this.age);
-}
-// 构造函数的调用
-var s = new Student('dreamapple', 23); // My name is dreamapple, and my age is 23
+var reader = new CSVReader();
+console.log(reader.regexp); // /\,/
+console.log(reader.read('a,b,c\nd,e,f\n')); // [ [ 'a', 'b', 'c' ], [ 'd', 'e', 'f' ] ]
