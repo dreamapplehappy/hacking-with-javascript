@@ -32,7 +32,7 @@
     - [x] [item 27: **使用闭包而不是字符串来封装代码** (Prefer Closures to Strings for Encapsulating Code)](chapter-3/prefer-closures-to-strings-for-encapsulating-code.md) 
     - [x] [item 28: **不要信赖函数的对象的`toString`方法** (Avoid Relying on the toString Method of Functions)](chapter-3/avoid-relying-on-the-toString-method-of-functions.md) 
     - [x] [item 29: **避免使用非标准的栈检查属性** (Avoid Nonstandard Stack Inspection Properties)](chapter-3/avoid-nonstandard-stack-inspection-properties.md) 
-+ [ ] Chapter 4 **Objects and Prototypes**
++ [x] Chapter 4 **Objects and Prototypes**
     - [x] [item 30: **理解`prototype`,`getPrototypeOf`和`__proto__`之间的不同** (Understand the Difference between prototype, getPrototypeOf, and __proto__)](chapter-4/understand-the-difference-between-prototype-getPrototypeOf-and-__proto__.md)    
     - [x] [item 31: **使用`Object.getPropertyOf`函数而不要使用`__proto__`属性** (Prefer Object.getPrototypeOf to __proto__)](chapter-4/prefer-object.getPrototypeOf-to-__proto__.md)    
     - [x] [item 32: **始终不要修改`__proto__`属性** (Never Modify __proto__)](chapter-4/never-modify-__proto__.md)    
@@ -46,8 +46,17 @@
     - [x] [item 40: **避免继承标准类** (Avoid Inheriting from Standard Classes)](chapter-4/avoid-inheriting-from-standard-classes.md)    
     - [x] [item 41: **将原形视为实现的细节** (Treat Prototypes As an Implementation Detail)](chapter-4/treat-prototypes-as-an-implementation-detail.md)    
     - [x] [item 42: **避免使用轻率的猴子补丁** (Avoid Reckless Monkey-Patching)](chapter-4/avoid-reckless-monkey-patching.md)    
-+ [ ] Chapter 5
-    - [ ] []()
++ [ ] Chapter 5 **Arrays and Dictionaries**
+    - [x] [item 43: **** (Build Lightweight Dictionaries from Direct Instances of Object)](chapter-5/build-lightweight-dictionaries-from-direct-instances-of-object.md)
+    - [x] [item 44: **** (Use null Prototypes to Prevent Prototype Pollution)](chapter-5/use-null-prototypes-to-prevent-prototype-pollution.md)
+    - [x] [item 45: **** (Use hasOwnProperty to Protect Against Prototype Pollution)](chapter-5/use-hasOwnProperty-to-protect-against-prototype-pollution.md)
+    - [x] [item 46: **** (Prefer Arrays to Dictionaries for Ordered Collections)](chapter-5/prefer-arrays-to-dictionaries-for-ordered-collections.md)
+    - [x] [item 47: **** (Never Add Enumerable Properties to Object.prototype)](chapter-5/never-add-enumerable-properties-to-Object.prototype.md)
+    - [x] [item 48: **** (Avoid Modifying an Object during Enumeration)](chapter-5/avoid-modifying-an-Object-during-enumeration.md)
+    - [x] [item 49: **** (Prefer for Loops to for...in Loops for Array Iteration)](chapter-5/prefer-for-loops-to-for-in-loops-for-array-iteration.md)
+    - [x] [item 50: **** (Prefer Iteration Methods to Loops)](chapter-5/prefer-iteration-methods-to-loops.md)
+    - [x] [item 51: **** (Reuse Generic Array Methods on Array-Like Objects)](chapter-5/reuse-generic-array-methods-on-array-like-Objects.md)
+    - [x] [item 52: **** (Prefer Array Literals to the Array Constructor)](chapter-5/)
 + [ ] Chapter 6
     - [ ] []()    
 + [ ] Chapter 7

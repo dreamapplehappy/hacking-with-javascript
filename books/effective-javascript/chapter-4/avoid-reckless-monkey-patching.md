@@ -19,7 +19,7 @@ function addSplitToArray() {
 addSplitToArray(); // 函数执行之后我们就可以使用上面的方法了。
 
 // 为不支持map函数的array环境添加这个方法
-if('function' === typeof Array.prototype.map) {
+if('function' !== typeof Array.prototype.map) {
     Array.prototype.map = function(fn, thisArg) {
         var result  = [];
         for(var i = 0; i < this.length; i++) {
