@@ -48,17 +48,17 @@
     - [x] [item 40: **避免继承标准类** (Avoid Inheriting from Standard Classes)](chapter-4/avoid-inheriting-from-standard-classes.md)    
     - [x] [item 41: **将原形视为实现的细节** (Treat Prototypes As an Implementation Detail)](chapter-4/treat-prototypes-as-an-implementation-detail.md)    
     - [x] [item 42: **避免使用轻率的猴子补丁** (Avoid Reckless Monkey-Patching)](chapter-4/avoid-reckless-monkey-patching.md)    
-+ [ ] Chapter 5 **Arrays and Dictionaries**
++ [x] Chapter 5 **Arrays and Dictionaries**
     - [x] [item 43: **使用`Object`的直接实例构造轻量级的字典** (Build Lightweight Dictionaries from Direct Instances of Object)](chapter-5/build-lightweight-dictionaries-from-direct-instances-of-object.md)
     - [x] [item 44: **使用`null`原型以防止原型污染** (Use null Prototypes to Prevent Prototype Pollution)](chapter-5/use-null-prototypes-to-prevent-prototype-pollution.md)
     - [x] [item 45: **使用`hasOwnProperty`方法以避免原型污染** (Use hasOwnProperty to Protect Against Prototype Pollution)](chapter-5/use-hasOwnProperty-to-protect-against-prototype-pollution.md)
     - [x] [item 46: **使用数组而不要使用字典来存储有序集合** (Prefer Arrays to Dictionaries for Ordered Collections)](chapter-5/prefer-arrays-to-dictionaries-for-ordered-collections.md)
     - [x] [item 47: **绝不要在`Object.prototype`中增加可枚举的属性** (Never Add Enumerable Properties to Object.prototype)](chapter-5/never-add-enumerable-properties-to-Object.prototype.md)
-    - [x] [item 48: **** (Avoid Modifying an Object during Enumeration)](chapter-5/avoid-modifying-an-Object-during-enumeration.md)
-    - [x] [item 49: **** (Prefer for Loops to for...in Loops for Array Iteration)](chapter-5/prefer-for-loops-to-for-in-loops-for-array-iteration.md)
-    - [x] [item 50: **** (Prefer Iteration Methods to Loops)](chapter-5/prefer-iteration-methods-to-loops.md)
-    - [x] [item 51: **** (Reuse Generic Array Methods on Array-Like Objects)](chapter-5/reuse-generic-array-methods-on-array-like-Objects.md)
-    - [x] [item 52: **** (Prefer Array Literals to the Array Constructor)](chapter-5/)
+    - [x] [item 48: **(非常值得自己实践一下)避免在枚举期间修改对象** (Avoid Modifying an Object during Enumeration)](chapter-5/avoid-modifying-an-Object-during-enumeration.md)
+    - [x] [item 49: **数组迭代要优先使用`for`循环而不是`for...in`循环** (Prefer for Loops to for...in Loops for Array Iteration)](chapter-5/prefer-for-loops-to-for-in-loops-for-array-iteration.md)
+    - [x] [item 50: **迭代方法优于循环** (Prefer Iteration Methods to Loops)](chapter-5/prefer-iteration-methods-to-loops.md)
+    - [x] [item 51: **在类数组对象上复用通用的数组方法** (Reuse Generic Array Methods on Array-Like Objects)](chapter-5/reuse-generic-array-methods-on-array-like-Objects.md)
+    - [x] [item 52: **数组字面量优于数组构造函数** (Prefer Array Literals to the Array Constructor)](chapter-5/prefer-array-literals-to-the-array-constructor.md)
 + [ ] Chapter 6
     - [ ] []()    
 + [ ] Chapter 7

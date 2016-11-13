@@ -1,16 +1,10 @@
-// 创建一个类
-function Student(name, age) {
-    this.name = name;
-    this.age = age;
+var a1 = new Array(8);
+console.log(a1, a1.length); // [ , , , , , , ,  ] 8
+var a2 = [8];
+console.log(a2, a2.length); // [ 8 ] 1
+
+function fn(Array) {
+    return new Array(1, 2, 3);
 }
-// 创建原型
-Student.prototype.info = function() {
-    console.log('My name is ' + this.name + ' and my age is ' + this.age);
-};
-// C.prototype == new C().__proto_   C.prototype == Object.getPrototypeOf(new C())
-
-var s = new Student('dreamapple', 22);
-s.info(); // My name is dreamapple and my age is 22
-
-console.log(Student.prototype === s.__proto__); // true
-console.log(Student.prototype === Object.getPrototypeOf(s)); // true
+var a3 = fn(String);
+console.log(a3); // [String: '1']

@@ -1,16 +1,19 @@
-// 创建一个类
-function Student(name, age) {
-    this.name = name;
-    this.age = age;
+var scores = [1, 2, 3, 4, 5];
+var total = 0,
+    aver = 0;
+for(var score in scores) {
+    total += score;
 }
-// 创建原型
-Student.prototype.info = function() {
-    console.log('My name is ' + this.name + ' and my age is ' + this.age);
-};
-// C.prototype == new C().__proto_   C.prototype == Object.getPrototypeOf(new C())
+console.log(total); // 001234
+aver = total / scores.length;
+console.log(aver); // 246.8
 
-var s = new Student('dreamapple', 22);
-s.info(); // My name is dreamapple and my age is 22
-
-console.log(Student.prototype === s.__proto__); // true
-console.log(Student.prototype === Object.getPrototypeOf(s)); // true
+total = 0;
+aver = 0;
+// 实际上,我们应该使用for循环不会那么容易出错
+var len = scores.length;
+for(var i = 0; i < len; i++) {
+    total += scores[i];
+}
+aver = total / scores.length;
+console.log(aver); // 3
