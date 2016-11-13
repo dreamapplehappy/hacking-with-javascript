@@ -1,16 +1,32 @@
-// 创建一个类
-function Student(name, age) {
-    this.name = name;
-    this.age = age;
-}
-// 创建原型
-Student.prototype.info = function() {
-    console.log('My name is ' + this.name + ' and my age is ' + this.age);
+var info = {
+    'name': 'dream',
+    '1': '10',
+    'A': function() {}
 };
-// C.prototype == new C().__proto_   C.prototype == Object.getPrototypeOf(new C())
 
-var s = new Student('dreamapple', 22);
-s.info(); // My name is dreamapple and my age is 22
+for(var i in info) {
+    console.log(i + ' : ' + info[i]);
+}
+// 输出结果如下, 并不是按照顺序输出的
+// 1 : 10
+// name : dream
+// A : function () {}
 
-console.log(Student.prototype === s.__proto__); // true
-console.log(Student.prototype === Object.getPrototypeOf(s)); // true
+// 按照顺序的输出要使用数组
+var info1 = [
+    {name: 'dream'},
+    {'1': '10'},
+    {'A': function() {}}
+];
+
+for(var i = 0; i < info1.length; i++) {
+    for(var j in info1[i]) {
+        if(Object.hasOwnProperty.call(info1[i], j)) {
+            console.log(j + ' : ' + info1[i][j]);
+        }
+    }
+}
+// 输出的结果是按照顺序的
+// name : dream
+// 1 : 10
+// A : function () {}
