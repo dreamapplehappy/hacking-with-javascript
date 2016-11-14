@@ -1,6 +1,15 @@
 ### 使用`promise`模式清洁异步逻辑
 
 ```javascript
+// 使用ES6的 Promise
+    let p = new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    resolve('hello')
+                }, 2000);
+            })
+    p.then((res) => {
+        console.log(res);
+    })
 ```
 [源码](item68/demo.js)
 
