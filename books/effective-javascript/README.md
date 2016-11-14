@@ -84,8 +84,8 @@
 + 官方的代码在这里,不过是不完整的,只包含第一章和第二章的代码。[code](https://github.com/effectivejs/code)
 + 如果你觉着这些知识对你有用,那么别忘了打赏呀;如果你确实准备打赏,可以备注`ej+你的名字`,我会把你们列举下来,我就想试试有多少人愿意花钱买知识,尽管这是可以免费的
 
-+ ![支付宝](http://angular.angular-china.org/a4f09982-a529-4750-99ea-20f28dbef068.jpg)
-+ ![微信](http://angular.angular-china.org/d5f50f92-0768-46b1-90c5-101e7b4dc889.jpg)
++ 支付宝 ![支付宝](http://angular.angular-china.org/a4f09982-a529-4750-99ea-20f28dbef068.jpg)
++ 微信 ![微信](http://angular.angular-china.org/d5f50f92-0768-46b1-90c5-101e7b4dc889.jpg)
 
 
 
