@@ -83,20 +83,6 @@
 + 关于电子书: [英语原版][1] [中文版][2]
 + 官方的代码在这里,不过是不完整的,只包含第一章和第二章的代码。[code](https://github.com/effectivejs/code)
 + 第二章至第七章的例子跟电子书上的不太一样,我简化了部分,演示了重点。
-+ 如果你觉着这些知识对你有用,那么别忘了打赏呀;如果你确实准备打赏,可以备注`ej+你的名字`,我会把你们列举下来,
-  我就想试试有多少人愿意花钱买知识,尽管这是可以免费的。
-
-------  
-
-### 支付宝
-
-![支付宝](http://angular.angular-china.org/a4f09982-a529-4750-99ea-20f28dbef068.jpg)
-  
------- 
-### 微信 
-  
-![微信](http://angular.angular-china.org/d5f50f92-0768-46b1-90c5-101e7b4dc889.jpg)
-
 
 
 [1]:http://o8qt8c0nf.bkt.clouddn.com/%5BEffective%20JavaScript%2068%20Specific%20Ways%20to%20Harness%20the%20Power%20of%20JavaScript%20%28Effective%20Software%20Development%20Series%29%20by%20David%20Herman%20-%202013%5D.pdf
