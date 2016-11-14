@@ -2,10 +2,10 @@
 
 **欢迎贡献 fork and pull request :stuck_out_tongue_winking_eye:**
 
-#### 多读书
-+ (**进行中...**)[**Effective JavaScript**](books/effective-javascript)
-+ [JavaScript: The Good Parts](books/javascript-the-good-parts)
-+ [You Don't Know JS](books/you-do-not-know-js)
+#### :books:多读书
++ (**进行中...**)[**:book:Effective JavaScript**](books/effective-javascript)
++ [:book:JavaScript: The Good Parts](books/javascript-the-good-parts)
++ [:book:You Don't Know JS](books/you-do-not-know-js)
 
 #### [**Vanilla JS**](http://vanilla-js.com/)
 + [理解JavaScript的Object.defineProperty()函数](vanilla-js/object/define-property.md)
