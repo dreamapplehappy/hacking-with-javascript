@@ -46,7 +46,7 @@ console.log('------');
 
 var dreamapple = {
     firstName: 'dream',
-    lastName: 'apple',
+    lastName: 'apple'
     //get fullName() {
     //    return this.firstName + ' ' + this.lastName;
     //},
