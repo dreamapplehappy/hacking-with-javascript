@@ -3,7 +3,7 @@
 **欢迎贡献 fork and pull request :stuck_out_tongue_winking_eye:**
 
 #### :books: 多读书
-+ **:heavy_check_mark:** [**:book: Effective JavaScript**](books/effective-javascript) **完成度: 100%**
++ [**:book: Effective JavaScript**](books/effective-javascript) **完成度: 100%**
 + [:book: JavaScript: The Good Parts](books/javascript-the-good-parts)
 + [:book: You Don't Know JS](books/you-do-not-know-js)
 
