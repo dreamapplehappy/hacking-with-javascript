@@ -1,45 +1,25 @@
-// 使用一个对象作为字典来使用
-var dict1 = {
-    key1: 'value1',
-    key2: 'value2',
-    key3: 'value3'
+// 无状态的API
+console.log('hello'.toUpperCase()); // HELLO
+
+// 定义一个类名 和一个有状态的方法
+function User(name, age) {
+    this.name = name;
+    this.age = age;
+}
+User.prototype.setAge = function(age) {
+    this.age = age;
 };
-var props1 = [];
-for(var p in dict1) {
-    props1.push(p);
-}
-console.log(props1); // [ 'key1', 'key2', 'key3' ]
+// 无状态的方法,取决于给对象的age
+User.prototype.sayHello = function() {
+    if(this.age > 60) {
+        console.log('I am old.');
+    }
+    else {
+        console.log('I am young.');
+    }
+};
 
-// 使用数组作为一个字典
-var dict2 = [];
-dict2.key1 = 'value1';
-dict2.key2 = 'value2';
-dict2.key3 = 'value3';
-var props2 = [];
-for(var p in dict2) {
-    props2.push(p);
-}
-console.log(props2); // [ 'key1', 'key2', 'key3' ]
-
-// 如果我们污染了dict1或者dict2的原型的话,我们再使用for...in的话就会有问题
-//dict1.__proto__ = {
-//    toString: function(){},
-//    valueOf: function(){}
-//};
-// 使用Object.getPrototypeOf() 避免使用 __proto__
-var dict1P = Object.getPrototypeOf(dict1);
-dict1P.say = function(){};
-var props3 = [];
-for(var p in dict1) {
-    props3.push(p);
-}
-console.log(props3); // [ 'key1', 'key2', 'key3', 'say' ]
-
-Array.prototype.first = function(){};
-Array.prototype.last = function(){};
-
-var props4 = [];
-for(var p in dict2) {
-    props4.push(p);
-}
-console.log(props4); // [ 'key1', 'key2', 'key3', 'first', 'last' ]
+var u1 = new User('dream', 20);
+u1.sayHello(); // I am young.
+u1.setAge(80);
+u1.sayHello(); // I am old.

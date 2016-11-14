@@ -59,15 +59,15 @@
     - [x] [item 50: **迭代方法优于循环** (Prefer Iteration Methods to Loops)](chapter-5/prefer-iteration-methods-to-loops.md)
     - [x] [item 51: **在类数组对象上复用通用的数组方法** (Reuse Generic Array Methods on Array-Like Objects)](chapter-5/reuse-generic-array-methods-on-array-like-Objects.md)
     - [x] [item 52: **数组字面量优于数组构造函数** (Prefer Array Literals to the Array Constructor)](chapter-5/prefer-array-literals-to-the-array-constructor.md)
-+ [ ] Chapter 6 **Library and API Design**
++ [x] Chapter 6 **Library and API Design**
     - [x] [item 53: **保持一致的约定** (Maintain Consistent Conventions)](chapter-6/maintain-consistent-conventions.md)    
     - [x] [item 54: **将`undefined`看做"没有值"** (Treat undefined As “No Value”)](chapter-6/treat-undefined-as-no-value.md)    
     - [x] [item 55: **接收关键字参数的选项对象** (Accept Options Objects for Keyword Arguments)](chapter-6/accept-options-objects-for-keyword-arguments.md)    
-    - [x] [item 56: **** (Avoid Unnecessary State)](chapter-6/avoid-unnecessary-state.md)    
-    - [x] [item 57: **** (Use Structural Typing for Flexible Interfaces)](chapter-6/use-structural-typing-for-flexible-interfaces.md)    
-    - [x] [item 58: **** (Distinguish between Array and Array-Like)](chapter-6/distinguish-between-array-and-array-like.md)    
-    - [x] [item 59: **** (Avoid Excessive Coercion)](chapter-6/avoid-excessive-coercion.md)    
-    - [x] [item 60: **** (Support Method Chaining)](chapter-6/support-method-chaining.md)    
+    - [x] [item 56: **避免不必要的状态** (Avoid Unnecessary State)](chapter-6/avoid-unnecessary-state.md)    
+    - [x] [item 57: **使用结构类型设计灵活的接口** (Use Structural Typing for Flexible Interfaces)](chapter-6/use-structural-typing-for-flexible-interfaces.md)    
+    - [x] [item 58: **区分数组对象和类数组对象** (Distinguish between Array and Array-Like)](chapter-6/distinguish-between-array-and-array-like.md)    
+    - [x] [item 59: **避免过度的强制转换** (Avoid Excessive Coercion)](chapter-6/avoid-excessive-coercion.md)    
+    - [x] [item 60: **支持方法链** (Support Method Chaining)](chapter-6/support-method-chaining.md)    
 + [ ] Chapter 7
     - [x] [item 61: **** (Don’t Block the Event Queue on I/O)](chapter-7/do-not-block-the-event-queue-on-io.md) 
     - [x] [item 62: **** (Use Nested or Named Callbacks for Asynchronous Sequencing)](chapter-7/use-nested-or-named-callbacks-for-asynchronous-sequencing.md) 
