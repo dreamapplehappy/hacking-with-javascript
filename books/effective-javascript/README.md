@@ -59,10 +59,24 @@
     - [x] [item 50: **迭代方法优于循环** (Prefer Iteration Methods to Loops)](chapter-5/prefer-iteration-methods-to-loops.md)
     - [x] [item 51: **在类数组对象上复用通用的数组方法** (Reuse Generic Array Methods on Array-Like Objects)](chapter-5/reuse-generic-array-methods-on-array-like-Objects.md)
     - [x] [item 52: **数组字面量优于数组构造函数** (Prefer Array Literals to the Array Constructor)](chapter-5/prefer-array-literals-to-the-array-constructor.md)
-+ [ ] Chapter 6
-    - [ ] []()    
++ [ ] Chapter 6 **Library and API Design**
+    - [x] [item 53: **** (Maintain Consistent Conventions)](chapter-6/maintain-consistent-conventions.md)    
+    - [x] [item 54: **** (Treat undefined As “No Value”)](chapter-6/treat-undefined-as-no-value.md)    
+    - [x] [item 55: **** (Accept Options Objects for Keyword Arguments)](chapter-6/accept-options-objects-for-keyword-arguments.md)    
+    - [x] [item 56: **** (Avoid Unnecessary State)](chapter-6/avoid-unnecessary-state.md)    
+    - [x] [item 57: **** (Use Structural Typing for Flexible Interfaces)](chapter-6/use-structural-typing-for-flexible-interfaces.md)    
+    - [x] [item 58: **** (Distinguish between Array and Array-Like)](chapter-6/distinguish-between-array-and-array-like.md)    
+    - [x] [item 59: **** (Avoid Excessive Coercion)](chapter-6/avoid-excessive-coercion.md)    
+    - [x] [item 60: **** (Support Method Chaining)](chapter-6/support-method-chaining.md)    
 + [ ] Chapter 7
-    - [ ] []() 
+    - [x] [item 61: **** (Don’t Block the Event Queue on I/O)](chapter-7/do-not-block-the-event-queue-on-io.md) 
+    - [x] [item 62: **** (Use Nested or Named Callbacks for Asynchronous Sequencing)](chapter-7/use-nested-or-named-callbacks-for-asynchronous-sequencing.md) 
+    - [x] [item 63: **** (Be Aware of Dropped Errors)](chapter-7/be-aware-of-dropped-errors.md) 
+    - [x] [item 64: **** (Use Recursion for Asynchronous Loops)](chapter-7/use-recursion-for-asynchronous-loops.md) 
+    - [x] [item 65: **** (Don’t Block the Event Queue on Computation)](chapter-7/do-not-block-the-event-queue-on-computation.md) 
+    - [x] [item 66: **** (Use a Counter to Perform Concurrent Operations)](chapter-7/use-a-counter-to-perform-concurrent-operations.md) 
+    - [x] [item 67: **** (Never Call Asynchronous Callbacks Synchronously)](chapter-7/never-call-asynchronous-callbacks-synchronously.md) 
+    - [x] [item 68: **** (Use Promises for Cleaner Asynchronous Logic)](chapter-7/) 
        
 ------
 
