@@ -1,6 +1,6 @@
 ## Effective JavaScript
 
-**只是看看的话,对你的帮助没有多大,你需要的是一条一条实践**
+**:joy:只是看看的话,对你的帮助没有多大,你需要的是一条一条实践**
 
 + [x] Chapter 1 **Accustoming Yourself to JavaScript**
     - [x] [Item 1: **知道你正在使用的JavaScript模式** (Know Which JavaScript You Are Using)](chapter-1/know-which-javascript-you-are-using.md) 
@@ -82,7 +82,7 @@
 
 + 关于电子书: [英语原版][1] [中文版][2]
 + 官方的代码在这里,不过是不完整的,只包含第一章和第二章的代码。[code](https://github.com/effectivejs/code)
-+ 第二章至第七章的例子跟电子书上的不太一样,我简化了部分,演示了重点。
++ 第三章至第七章的例子跟书上的不太一样,我简化了部分,演示了重点。
 
 
 [1]:http://o8qt8c0nf.bkt.clouddn.com/%5BEffective%20JavaScript%2068%20Specific%20Ways%20to%20Harness%20the%20Power%20of%20JavaScript%20%28Effective%20Software%20Development%20Series%29%20by%20David%20Herman%20-%202013%5D.pdf
