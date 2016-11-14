@@ -1,45 +1,12 @@
-// 使用一个对象作为字典来使用
-var dict1 = {
-    key1: 'value1',
-    key2: 'value2',
-    key3: 'value3'
-};
-var props1 = [];
-for(var p in dict1) {
-    props1.push(p);
+// 我们应该判断参数是否是undefined来决定是否使用默认值
+function Element(width, height) {
+    this.width = width === undefined ? 100 : width;
+    this.height = height === undefined ? 100 : height;
 }
-console.log(props1); // [ 'key1', 'key2', 'key3' ]
 
-// 使用数组作为一个字典
-var dict2 = [];
-dict2.key1 = 'value1';
-dict2.key2 = 'value2';
-dict2.key3 = 'value3';
-var props2 = [];
-for(var p in dict2) {
-    props2.push(p);
-}
-console.log(props2); // [ 'key1', 'key2', 'key3' ]
-
-// 如果我们污染了dict1或者dict2的原型的话,我们再使用for...in的话就会有问题
-//dict1.__proto__ = {
-//    toString: function(){},
-//    valueOf: function(){}
-//};
-// 使用Object.getPrototypeOf() 避免使用 __proto__
-var dict1P = Object.getPrototypeOf(dict1);
-dict1P.say = function(){};
-var props3 = [];
-for(var p in dict1) {
-    props3.push(p);
-}
-console.log(props3); // [ 'key1', 'key2', 'key3', 'say' ]
-
-Array.prototype.first = function(){};
-Array.prototype.last = function(){};
-
-var props4 = [];
-for(var p in dict2) {
-    props4.push(p);
-}
-console.log(props4); // [ 'key1', 'key2', 'key3', 'first', 'last' ]
+var ele = new Element();
+console.log(ele); // Element { width: 100, height: 100 }
+var ele1 = new Element(20);
+console.log(ele1); // Element { width: 20, height: 100 }
+var ele2 = new Element(20, 30);
+console.log(ele2); // Element { width: 20, height: 30 }

@@ -60,9 +60,9 @@
     - [x] [item 51: **在类数组对象上复用通用的数组方法** (Reuse Generic Array Methods on Array-Like Objects)](chapter-5/reuse-generic-array-methods-on-array-like-Objects.md)
     - [x] [item 52: **数组字面量优于数组构造函数** (Prefer Array Literals to the Array Constructor)](chapter-5/prefer-array-literals-to-the-array-constructor.md)
 + [ ] Chapter 6 **Library and API Design**
-    - [x] [item 53: **** (Maintain Consistent Conventions)](chapter-6/maintain-consistent-conventions.md)    
-    - [x] [item 54: **** (Treat undefined As “No Value”)](chapter-6/treat-undefined-as-no-value.md)    
-    - [x] [item 55: **** (Accept Options Objects for Keyword Arguments)](chapter-6/accept-options-objects-for-keyword-arguments.md)    
+    - [x] [item 53: **保持一致的约定** (Maintain Consistent Conventions)](chapter-6/maintain-consistent-conventions.md)    
+    - [x] [item 54: **将`undefined`看做"没有值"** (Treat undefined As “No Value”)](chapter-6/treat-undefined-as-no-value.md)    
+    - [x] [item 55: **接收关键字参数的选项对象** (Accept Options Objects for Keyword Arguments)](chapter-6/accept-options-objects-for-keyword-arguments.md)    
     - [x] [item 56: **** (Avoid Unnecessary State)](chapter-6/avoid-unnecessary-state.md)    
     - [x] [item 57: **** (Use Structural Typing for Flexible Interfaces)](chapter-6/use-structural-typing-for-flexible-interfaces.md)    
     - [x] [item 58: **** (Distinguish between Array and Array-Like)](chapter-6/distinguish-between-array-and-array-like.md)    
@@ -82,6 +82,10 @@
 
 + 关于电子书: [英语原版][1] [中文版][2]
 + 官方的代码在这里,不过是不完整的,只包含第一章和第二章的代码。[code](https://github.com/effectivejs/code)
++ 如果你觉着这些知识对你有用,那么别忘了打赏我
+  ![支付宝](http://angular.angular-china.org/a4f09982-a529-4750-99ea-20f28dbef068.jpg)
+  ![微信](http://angular.angular-china.org/d5f50f92-0768-46b1-90c5-101e7b4dc889.jpg)
++ 如果你确实准备打赏,可以备注`ej+你的名字`,我会把你们列举下来,我就想试试有多少人愿意花钱买知识,尽管这是可以免费的。  
 
 
 
