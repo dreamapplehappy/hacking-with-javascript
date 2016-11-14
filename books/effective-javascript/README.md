@@ -68,15 +68,15 @@
     - [x] [item 58: **区分数组对象和类数组对象** (Distinguish between Array and Array-Like)](chapter-6/distinguish-between-array-and-array-like.md)    
     - [x] [item 59: **避免过度的强制转换** (Avoid Excessive Coercion)](chapter-6/avoid-excessive-coercion.md)    
     - [x] [item 60: **支持方法链** (Support Method Chaining)](chapter-6/support-method-chaining.md)    
-+ [ ] Chapter 7
-    - [x] [item 61: **** (Don’t Block the Event Queue on I/O)](chapter-7/do-not-block-the-event-queue-on-io.md) 
-    - [x] [item 62: **** (Use Nested or Named Callbacks for Asynchronous Sequencing)](chapter-7/use-nested-or-named-callbacks-for-asynchronous-sequencing.md) 
-    - [x] [item 63: **** (Be Aware of Dropped Errors)](chapter-7/be-aware-of-dropped-errors.md) 
-    - [x] [item 64: **** (Use Recursion for Asynchronous Loops)](chapter-7/use-recursion-for-asynchronous-loops.md) 
-    - [x] [item 65: **** (Don’t Block the Event Queue on Computation)](chapter-7/do-not-block-the-event-queue-on-computation.md) 
-    - [x] [item 66: **** (Use a Counter to Perform Concurrent Operations)](chapter-7/use-a-counter-to-perform-concurrent-operations.md) 
-    - [x] [item 67: **** (Never Call Asynchronous Callbacks Synchronously)](chapter-7/never-call-asynchronous-callbacks-synchronously.md) 
-    - [x] [item 68: **** (Use Promises for Cleaner Asynchronous Logic)](chapter-7/) 
++ [ ] Chapter 7 **Concurrency**
+    - [x] [item 61: **不要阻塞I/O事件队列** (Don’t Block the Event Queue on I/O)](chapter-7/do-not-block-the-event-queue-on-io.md) 
+    - [x] [item 62: **(已经不推荐使用)在异步序列中使用嵌套或命名的回调函数** (Use Nested or Named Callbacks for Asynchronous Sequencing)](chapter-7/use-nested-or-named-callbacks-for-asynchronous-sequencing.md) 
+    - [x] [item 63: **当心丢弃错误** (Be Aware of Dropped Errors)](chapter-7/be-aware-of-dropped-errors.md) 
+    - [x] [item 64: **对异步的循环使用递归** (Use Recursion for Asynchronous Loops)](chapter-7/use-recursion-for-asynchronous-loops.md) 
+    - [x] [item 65: **不要在计算时阻塞事件队列** (Don’t Block the Event Queue on Computation)](chapter-7/do-not-block-the-event-queue-on-computation.md) 
+    - [x] [item 66: **使用计数器来执行并行操作** (Use a Counter to Perform Concurrent Operations)](chapter-7/use-a-counter-to-perform-concurrent-operations.md) 
+    - [x] [item 67: **绝不要同步地调用异步的回调函数** (Never Call Asynchronous Callbacks Synchronously)](chapter-7/never-call-asynchronous-callbacks-synchronously.md) 
+    - [x] [item 68: **(非常值得自己实践)使用`promise`模式清洁异步逻辑** (Use Promises for Cleaner Asynchronous Logic)](chapter-7/) 
        
 ------
 
