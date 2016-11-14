@@ -1,6 +1,8 @@
 ## Effective JavaScript
 
-**:joy:只是看看的话,对你的帮助没有多大,你需要的是一条一条实践**
+**:joy:只是看看的话,对你的帮助没有多大,你需要的是一条一条的实践**
+
+**理论上,实践过下面的68个项目之后,你的JS能力应该提高了很多啦**
 
 + [x] Chapter 1 **Accustoming Yourself to JavaScript**
     - [x] [Item 1: **知道你正在使用的JavaScript模式** (Know Which JavaScript You Are Using)](chapter-1/know-which-javascript-you-are-using.md) 
@@ -68,7 +70,7 @@
     - [x] [item 58: **区分数组对象和类数组对象** (Distinguish between Array and Array-Like)](chapter-6/distinguish-between-array-and-array-like.md)    
     - [x] [item 59: **避免过度的强制转换** (Avoid Excessive Coercion)](chapter-6/avoid-excessive-coercion.md)    
     - [x] [item 60: **支持方法链** (Support Method Chaining)](chapter-6/support-method-chaining.md)    
-+ [ ] Chapter 7 **Concurrency**
++ [x] Chapter 7 **Concurrency**
     - [x] [item 61: **不要阻塞I/O事件队列** (Don’t Block the Event Queue on I/O)](chapter-7/do-not-block-the-event-queue-on-io.md) 
     - [x] [item 62: **(已经不推荐使用)在异步序列中使用嵌套或命名的回调函数** (Use Nested or Named Callbacks for Asynchronous Sequencing)](chapter-7/use-nested-or-named-callbacks-for-asynchronous-sequencing.md) 
     - [x] [item 63: **当心丢弃错误** (Be Aware of Dropped Errors)](chapter-7/be-aware-of-dropped-errors.md) 
