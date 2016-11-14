@@ -81,4 +81,4 @@ console.log(dreamapple.fullName); // Dream Apple
 
 dreamapple.fullName = 'Jams King';
 console.log(dreamapple.firstName); // Jams
-console.log(dreamapple.lastName); // King
+console.log(dreamapple.lastName); // King.
